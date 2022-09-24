@@ -8,21 +8,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Reserva View Controller-->
-        <scene sceneID="dcZ-R8-zkh">
+        <!--Reserva Table View Controller-->
+        <scene sceneID="GYT-XM-KBT">
             <objects>
-                <viewController id="kcU-zp-nZi" customClass="ReservaViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="f2B-PF-bAf">
+                <tableViewController id="h01-Zs-inT" userLabel="Reserva Table View Controller" customClass="ReservaTableViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="CUs-S8-Tvw">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="jLf-43-q4x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="R1a-rJ-Y2v"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bl3-2X-oA7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReserva" textLabel="AAJ-zO-GfA" detailTextLabel="bvI-1H-vaH" style="IBUITableViewCellStyleSubtitle" id="CDB-P8-tib">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CDB-P8-tib" id="1IT-er-UON">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AAJ-zO-GfA">
+                                            <rect key="frame" x="20" y="7.0000000000000009" width="25" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bvI-1H-vaH">
+                                            <rect key="frame" x="19.999999999999996" y="23.333333333333336" width="40.666666666666664" height="13.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="h01-Zs-inT" id="6fY-C3-9nD"/>
+                            <outlet property="delegate" destination="h01-Zs-inT" id="Jqd-jS-XAx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Reservas actuales" id="gDJ-4q-5q3"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJS-s0-MxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1566.1538461538462" y="-79.620853080568722"/>
+            <point key="canvasLocation" x="1537" y="-80"/>
         </scene>
         <!--Cuenta View Controller-->
         <scene sceneID="37o-qa-VaQ">
@@ -95,7 +124,7 @@
         <!--Reservaciones-->
         <scene sceneID="QXJ-qk-sa7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="doF-K0-KbS" sceneMemberID="viewController">
+                <navigationController id="doF-K0-KbS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Reservaciones" image="studentdesk" id="dPh-Ds-prZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uyp-QU-WM7">
@@ -104,12 +133,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="kcU-zp-nZi" kind="relationship" relationship="rootViewController" id="pXh-dG-m0H"/>
+                        <segue destination="h01-Zs-inT" kind="relationship" relationship="rootViewController" id="7b9-4C-iYX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcT-WK-wfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636.92307692307691" y="-79.620853080568722"/>
+            <point key="canvasLocation" x="637" y="-80"/>
         </scene>
         <!--Cuenta-->
         <scene sceneID="9fP-Ec-ymT">
