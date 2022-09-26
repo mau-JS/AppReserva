@@ -9,11 +9,12 @@ import UIKit
 
 class ReservaTableViewController: UITableViewController {
     var reservas: [Reservas] = [
-        Reservas(dia: 5, mes: 10, anio: 2021, titulo: "happiness"),
-        Reservas(dia: 7, mes: 10, anio: 2022, titulo: "marte"),
-        Reservas(dia: 5, mes: 10, anio: 1994, titulo: "retiroA"),
-        Reservas(dia: 5, mes: 10, anio: 1996, titulo: "Mapas"),
-        Reservas(dia: 5, mes: 10, anio: 2010, titulo: "hola")
+        Reservas(dia: 10, mes: 10, anio: 10,diaFinal: 10, mesFinal: 10, anioFinal: 10, titulo: "A-102", tipo: "dsd", description: "Esta es una descripción")
+        //Reservas(dia: 5, mes: 10, anio: 2021, titulo: "happiness"),
+        //Reservas(dia: 7, mes: 10, anio: 2022, titulo: "marte"),
+        //Reservas(dia: 5, mes: 10, anio: 1994, titulo: "retiroA"),
+        //Reservas(dia: 5, mes: 10, anio: 1996, titulo: "Mapas"),
+        //Reservas(dia: 5, mes: 10, anio: 2010, titulo: "hola")
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +59,10 @@ class ReservaTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReserva", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReserva", for: indexPath) as! ReservaTableViewCell
         let reserva = reservas[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = "\(reserva.titulo)"
-        content.secondaryText = "\(reserva.dia)/\(reserva.mes)/\(reserva.anio)"
-        cell.contentConfiguration = content
+        cell.update(with: reserva)
+        cell.showsReorderControl = true
         // Configure the cell...
         cell.showsReorderControl = true
         return cell
