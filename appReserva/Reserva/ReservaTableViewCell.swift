@@ -20,7 +20,7 @@ class ReservaTableViewCell: UITableViewCell {
     func update(with reserva: Reservas){
         AulaLabel.text = reserva.titulo
         DescripcionLabel.text = reserva.description
-        HorarioLabel.text = String(reserva.dia) + "/" + String(reserva.mes) + "/" + String(reserva.anio) + "  " + String(reserva.diaFinal) + "/" + String(reserva.mesFinal) + "/" + String(reserva.anioFinal)
+        HorarioLabel.text = "Inicio: " + String(reserva.dia) + "/" + String(reserva.mes) + "/" + String(reserva.anio) + "    Final: " + String(reserva.diaFinal) + "/" + String(reserva.mesFinal) + "/" + String(reserva.anioFinal)
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
