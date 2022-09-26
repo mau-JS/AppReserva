@@ -27,15 +27,11 @@ class ReservaTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
-        {
-            if editingStyle == .delete {
-                // Delete the row from the data source
-                reservas.remove(at: indexPath.row)
-                // Then, delete the row from the table itself
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-        }
+    
+    //Es para dar la opción de borrar celdas
+    override func tableView(_ tableView:UITableView, editingStyleForRowAt indexPath: IndexPath) ->UITableViewCell.EditingStyle{
+        return .delete
+    }
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         let moverReserva = reservas.remove(at: fromIndexPath.row)
         reservas.insert(moverReserva, at: to.row)
@@ -77,17 +73,16 @@ class ReservaTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            reservas.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        } 
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
