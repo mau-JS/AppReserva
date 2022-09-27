@@ -16,7 +16,7 @@ class AddEditReservaTableViewController: UITableViewController {
     
     //Código para fechas
     let datePicker = UIDatePicker()
-    
+    let datePicker2 = UIDatePicker()
     //Termina Código de fechas
     
     init?(coder: NSCoder, reservas: Reservas?){
@@ -29,7 +29,8 @@ class AddEditReservaTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        createDatePicker()  //Función para fecha
+        createDatePicker()  //Función para fecha inicial
+        createDatePicker2() //Función para fecha final
         if let reservas = reservas {
             aulaTextField.text = reservas.aula
             tipoTextField.text = reservas.tipo
@@ -49,6 +50,16 @@ class AddEditReservaTableViewController: UITableViewController {
         toolbar.setItems([doneBtn], animated: true)
         return toolbar
     }
+    func createToolbar2 () -> UIToolbar{
+        //Creando Toolbar
+        let toolbar2 = UIToolbar()
+        //Dando tamaño para que ocupe toda la pantalla
+        toolbar2.sizeToFit()
+        //Botón de fin
+        let doneBtn2 = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed2))
+        toolbar2.setItems([doneBtn2], animated: true)
+        return toolbar2
+    }
     //Función para botón
     func createDatePicker(){
         
@@ -56,6 +67,14 @@ class AddEditReservaTableViewController: UITableViewController {
         datePicker.datePickerMode = .date
         horarioInicial.inputView = datePicker
         horarioInicial.inputAccessoryView = createToolbar()
+        
+    }
+    func createDatePicker2(){
+        
+        datePicker2.preferredDatePickerStyle = .wheels // Darle formato de wheels a la fecha
+        datePicker2.datePickerMode = .date
+        horarioFinal.inputView = datePicker2
+        horarioFinal.inputAccessoryView = createToolbar2()
         
     }
     
@@ -70,6 +89,19 @@ class AddEditReservaTableViewController: UITableViewController {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         self.horarioInicial.text = dateFormatter.string(from: datePicker.date)
         print(self.horarioInicial.text!)
+        self.view.endEditing(true)
+    }
+    
+    @objc func donePressed2(){
+        let dateFormatter2 = DateFormatter()
+        dateFormatter2.dateStyle = .medium
+        dateFormatter2.timeStyle = .none
+        //Extraemos el texto de la fecha
+        //self.birthdayField.text = "\(datePicker.date)"
+        horarioFinal.textAlignment = .center
+        dateFormatter2.dateFormat = "yyyy-MM-dd"
+        self.horarioFinal.text = dateFormatter2.string(from: datePicker2.date)
+        print(self.horarioFinal.text!)
         self.view.endEditing(true)
     }
     
