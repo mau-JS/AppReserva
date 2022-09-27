@@ -9,7 +9,7 @@ import UIKit
 
 class ReservaTableViewController: UITableViewController {
     var reservas: [Reservas] = [
-        Reservas(dia: 10, mes: 10, anio: 10,diaFinal: 10, mesFinal: 10, anioFinal: 10, titulo: "A-102", tipo: "dsd", description: "Esta es una descripción")
+        Reservas(aula: "A-102", tipo: "Este es un tipo",description: "Esta es una descripción", horarioInicio: "2020-09-14", horarioFinal: "2022-10-25")
         //Reservas(dia: 5, mes: 10, anio: 2021, titulo: "happiness"),
         //Reservas(dia: 7, mes: 10, anio: 2022, titulo: "marte"),
         //Reservas(dia: 5, mes: 10, anio: 1994, titulo: "retiroA"),
@@ -47,10 +47,7 @@ class ReservaTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return reservas.count
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let reserva = reservas[indexPath.row]
-        print("\(reserva.titulo) \(indexPath)")
-    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReserva", for: indexPath) as! ReservaTableViewCell
@@ -107,4 +104,15 @@ class ReservaTableViewController: UITableViewController {
     }
     */
 
+    @IBSegueAction func addEditReserva(_ coder: NSCoder, sender: Any?) -> UITableViewController? {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
+            //Editando Reserva
+            let reservaToEdit = reservas[indexPath.row]
+            return AddEditReservaTableViewController(coder: coder, reservas: reservaToEdit)
+        }
+        else{
+            //Agregando reserva
+            return AddEditReservaTableViewController(coder: coder, reservas: nil)
+        }
+    }
 }

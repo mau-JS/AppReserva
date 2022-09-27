@@ -7,15 +7,16 @@
 
 import Foundation
 struct Reservas {
-    var dia: Int
-    var mes: Int
-    var anio: Int
+    //var dia: Int
+    //var mes: Int
+    //var anio: Int
     
-    var diaFinal: Int
-    var mesFinal: Int
-    var anioFinal: Int
-    
-    var titulo: String
+    //var diaFinal: Int
+    //var mesFinal: Int
+    //var anioFinal: Int
+    var aula: String
     var tipo: String
     var description: String
+    var horarioInicio: String
+    var horarioFinal: String
 }
