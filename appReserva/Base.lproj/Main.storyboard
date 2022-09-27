@@ -203,6 +203,8 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="uKZ-iL-R0V"/>
                     <connections>
                         <outlet property="aulaTextField" destination="lw8-Z3-3EW" id="RBd-sQ-ZXL"/>
+                        <outlet property="horarioFinal" destination="lJJ-Xe-Lbm" id="9Xh-a3-dRo"/>
+                        <outlet property="horarioInicial" destination="q79-St-Bau" id="Evg-GP-fuD"/>
                         <outlet property="tipoTextField" destination="pnG-JH-rn6" id="4Pf-3k-kqo"/>
                     </connections>
                 </tableViewController>
