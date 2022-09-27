@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C7A38FE28DEAF9700D0B501 /* Reservas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A38FD28DEAF9700D0B501 /* Reservas.swift */; };
+		5C87906A28E35FCA00980E06 /* AddEditReservaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */; };
 		5CCE173B28D94685008B9C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE173A28D94685008B9C1D /* AppDelegate.swift */; };
 		5CCE173D28D94685008B9C1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE173C28D94685008B9C1D /* SceneDelegate.swift */; };
 		5CCE174228D94685008B9C1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCE174028D94685008B9C1D /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		5C7A38FD28DEAF9700D0B501 /* Reservas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservas.swift; sourceTree = "<group>"; };
+		5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditReservaTableViewController.swift; sourceTree = "<group>"; };
 		5CCE173728D94685008B9C1D /* appReserva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appReserva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCE173A28D94685008B9C1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CCE173C28D94685008B9C1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				5CE2B88E28DEB324005FF7D7 /* ReservaTableViewController.swift */,
 				5C7A38FD28DEAF9700D0B501 /* Reservas.swift */,
 				5CE2B89628E1631B005FF7D7 /* ReservaTableViewCell.swift */,
+				5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */,
 			);
 			path = Reserva;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C87906A28E35FCA00980E06 /* AddEditReservaTableViewController.swift in Sources */,
 				5CE2B89728E1631B005FF7D7 /* ReservaTableViewCell.swift in Sources */,
 				5C7A38FE28DEAF9700D0B501 /* Reservas.swift in Sources */,
 				5CCE175028D950AC008B9C1D /* CuentaViewController.swift in Sources */,

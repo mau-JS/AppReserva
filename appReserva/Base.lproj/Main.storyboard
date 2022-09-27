@@ -64,6 +64,7 @@
                                     <outlet property="AulaLabel" destination="lpk-PC-Kyt" id="YfP-Z6-ETV"/>
                                     <outlet property="DescripcionLabel" destination="PHJ-3N-0J3" id="8UL-57-Fgp"/>
                                     <outlet property="HorarioLabel" destination="uxV-7G-z1G" id="yEN-fW-aoF"/>
+                                    <segue destination="Gcq-4U-YAd" kind="presentation" id="wCv-57-mP8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -72,11 +73,62 @@
                             <outlet property="delegate" destination="h01-Zs-inT" id="Jqd-jS-XAx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Reservas actuales" id="gDJ-4q-5q3"/>
+                    <navigationItem key="navigationItem" title="Reservas actuales" id="gDJ-4q-5q3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hxu-QS-Cfd">
+                            <connections>
+                                <segue destination="Gcq-4U-YAd" kind="presentation" id="AyU-Um-aBs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJS-s0-MxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1540" y="-80"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="EHf-IC-ZJy">
+            <objects>
+                <tableViewController id="25g-lC-bg3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FZA-vR-IVd">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xVG-K3-H7n">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xVG-K3-H7n" id="bAb-Wz-bQX">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="25g-lC-bg3" id="5wy-0C-1H9"/>
+                            <outlet property="delegate" destination="25g-lC-bg3" id="frK-Ys-lZ3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="uKZ-iL-R0V"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPl-Nd-BG8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3188" y="-80"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2lq-uR-Yve">
+            <objects>
+                <navigationController id="Gcq-4U-YAd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x2J-xx-acR">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="25g-lC-bg3" kind="relationship" relationship="rootViewController" id="7zY-Ft-ueg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4Q-Ph-LMc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2278" y="-80"/>
         </scene>
         <!--Cuenta View Controller-->
         <scene sceneID="37o-qa-VaQ">
@@ -223,6 +275,9 @@
             <point key="canvasLocation" x="636.92307692307691" y="1397.6303317535544"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="AyU-Um-aBs"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.2" width="14" height="11"/>
         <image name="person.circle" width="11" height="11"/>
