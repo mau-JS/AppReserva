@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C7A38FE28DEAF9700D0B501 /* Reservas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A38FD28DEAF9700D0B501 /* Reservas.swift */; };
+		5C87906A28E35FCA00980E06 /* AddEditReservaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */; };
 		5CCE173B28D94685008B9C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE173A28D94685008B9C1D /* AppDelegate.swift */; };
 		5CCE173D28D94685008B9C1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE173C28D94685008B9C1D /* SceneDelegate.swift */; };
 		5CCE174228D94685008B9C1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCE174028D94685008B9C1D /* Main.storyboard */; };
@@ -17,10 +18,12 @@
 		5CCE175628D956C0008B9C1D /* AjustesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE175528D956C0008B9C1D /* AjustesViewController.swift */; };
 		5CCE175928D956FE008B9C1D /* AyudaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE175828D956FE008B9C1D /* AyudaViewController.swift */; };
 		5CE2B88F28DEB324005FF7D7 /* ReservaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE2B88E28DEB324005FF7D7 /* ReservaTableViewController.swift */; };
+		5CE2B89728E1631B005FF7D7 /* ReservaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE2B89628E1631B005FF7D7 /* ReservaTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C7A38FD28DEAF9700D0B501 /* Reservas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservas.swift; sourceTree = "<group>"; };
+		5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditReservaTableViewController.swift; sourceTree = "<group>"; };
 		5CCE173728D94685008B9C1D /* appReserva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appReserva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCE173A28D94685008B9C1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CCE173C28D94685008B9C1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		5CCE175528D956C0008B9C1D /* AjustesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesViewController.swift; sourceTree = "<group>"; };
 		5CCE175828D956FE008B9C1D /* AyudaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyudaViewController.swift; sourceTree = "<group>"; };
 		5CE2B88E28DEB324005FF7D7 /* ReservaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaTableViewController.swift; sourceTree = "<group>"; };
+		5CE2B89628E1631B005FF7D7 /* ReservaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			children = (
 				5CE2B88E28DEB324005FF7D7 /* ReservaTableViewController.swift */,
 				5C7A38FD28DEAF9700D0B501 /* Reservas.swift */,
+				5CE2B89628E1631B005FF7D7 /* ReservaTableViewCell.swift */,
+				5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */,
 			);
 			path = Reserva;
 			sourceTree = "<group>";
@@ -182,6 +188,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C87906A28E35FCA00980E06 /* AddEditReservaTableViewController.swift in Sources */,
+				5CE2B89728E1631B005FF7D7 /* ReservaTableViewCell.swift in Sources */,
 				5C7A38FE28DEAF9700D0B501 /* Reservas.swift in Sources */,
 				5CCE175028D950AC008B9C1D /* CuentaViewController.swift in Sources */,
 				5CCE175628D956C0008B9C1D /* AjustesViewController.swift in Sources */,

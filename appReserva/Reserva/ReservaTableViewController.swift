@@ -8,12 +8,31 @@
 import UIKit
 
 class ReservaTableViewController: UITableViewController {
+    //Al presionar el botón save se crea un objeto y es agregado al vector
+    @IBAction func unwindToTableView(_ segue: UIStoryboardSegue){
+        guard segue.identifier == "saveUnwind",
+              let sourceViewController = segue.source as? AddEditReservaTableViewController,
+              let reserva = sourceViewController.reservas else {return}
+            
+        if let selectedIndexPath = tableView.indexPathForSelectedRow{
+            reservas[selectedIndexPath.row] = reserva
+            tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            
+        }
+        // Aquí es donde insertamos el objeto agregado
+        else{
+            let newIndexPath = IndexPath(row: reservas.count, section: 0)
+            reservas.append(reserva)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
     var reservas: [Reservas] = [
-        Reservas(dia: 5, mes: 10, anio: 2021, titulo: "happiness"),
-        Reservas(dia: 7, mes: 10, anio: 2022, titulo: "marte"),
-        Reservas(dia: 5, mes: 10, anio: 1994, titulo: "retiroA"),
-        Reservas(dia: 5, mes: 10, anio: 1996, titulo: "Mapas"),
-        Reservas(dia: 5, mes: 10, anio: 2010, titulo: "hola")
+        Reservas(aula: "A-102", tipo: "Este es un tipo",description: "Esta es una descripción", horarioInicio: "2020-09-14", horarioFinal: "2022-10-25")
+        //Reservas(dia: 5, mes: 10, anio: 2021, titulo: "happiness"),
+        //Reservas(dia: 7, mes: 10, anio: 2022, titulo: "marte"),
+        //Reservas(dia: 5, mes: 10, anio: 1994, titulo: "retiroA"),
+        //Reservas(dia: 5, mes: 10, anio: 1996, titulo: "Mapas"),
+        //Reservas(dia: 5, mes: 10, anio: 2010, titulo: "hola")
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +45,9 @@ class ReservaTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
-        {
-            if editingStyle == .delete {
-                // Delete the row from the data source
-                reservas.remove(at: indexPath.row)
-                // Then, delete the row from the table itself
-                tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-        }
+    
+    //Es para dar la opción de borrar celdas
+    
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         let moverReserva = reservas.remove(at: fromIndexPath.row)
         reservas.insert(moverReserva, at: to.row)
@@ -52,18 +65,13 @@ class ReservaTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return reservas.count
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let reserva = reservas[indexPath.row]
-        print("\(reserva.titulo) \(indexPath)")
-    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReserva", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellReserva", for: indexPath) as! ReservaTableViewCell
         let reserva = reservas[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = "\(reserva.titulo)"
-        content.secondaryText = "\(reserva.dia)/\(reserva.mes)/\(reserva.anio)"
-        cell.contentConfiguration = content
+        cell.update(with: reserva)
+        cell.showsReorderControl = true
         // Configure the cell...
         cell.showsReorderControl = true
         return cell
@@ -78,17 +86,16 @@ class ReservaTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            reservas.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        } 
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -115,4 +122,15 @@ class ReservaTableViewController: UITableViewController {
     }
     */
 
+    @IBSegueAction func addEditReserva(_ coder: NSCoder, sender: Any?) -> UITableViewController? {
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
+            //Editando Reserva
+            let reservaToEdit = reservas[indexPath.row]
+            return AddEditReservaTableViewController(coder: coder, reservas: reservaToEdit)
+        }
+        else{
+            //Agregando reserva
+            return AddEditReservaTableViewController(coder: coder, reservas: nil)
+        }
+    }
 }
