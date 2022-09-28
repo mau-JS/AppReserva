@@ -8,7 +8,7 @@
 import UIKit
 
 class ReservaTableViewController: UITableViewController {
-    
+    //Al presionar el botón save se crea un objeto y es agregado al vector
     @IBAction func unwindToTableView(_ segue: UIStoryboardSegue){
         guard segue.identifier == "saveUnwind",
               let sourceViewController = segue.source as? AddEditReservaTableViewController,
@@ -19,6 +19,7 @@ class ReservaTableViewController: UITableViewController {
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
             
         }
+        // Aquí es donde insertamos el objeto agregado
         else{
             let newIndexPath = IndexPath(row: reservas.count, section: 0)
             reservas.append(reserva)

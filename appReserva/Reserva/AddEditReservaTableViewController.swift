@@ -26,7 +26,8 @@ class AddEditReservaTableViewController: UITableViewController {
         self.reservas = reservas
         super.init(coder: coder)
     }
-    //Aquí elegimos el contenido a guardar
+    //MÁS IMPORTANTE
+    //Esta función es donde vamos agregando los datos, al final creamos un objeto de tipo reservas
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "saveUnwind" else{return}
         let aula = aulaTextField.text!
