@@ -8,6 +8,23 @@
 import UIKit
 
 class ReservaTableViewController: UITableViewController {
+    
+    @IBAction func unwindToTableView(_ segue: UIStoryboardSegue){
+        guard segue.identifier == "saveUnwind",
+              let sourceViewController = segue.source as? AddEditReservaTableViewController,
+              let reserva = sourceViewController.reservas else {return}
+            
+        if let selectedIndexPath = tableView.indexPathForSelectedRow{
+            reservas[selectedIndexPath.row] = reserva
+            tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            
+        }
+        else{
+            let newIndexPath = IndexPath(row: reservas.count, section: 0)
+            reservas.append(reserva)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
     var reservas: [Reservas] = [
         Reservas(aula: "A-102", tipo: "Este es un tipo",description: "Esta es una descripción", horarioInicio: "2020-09-14", horarioFinal: "2022-10-25")
         //Reservas(dia: 5, mes: 10, anio: 2021, titulo: "happiness"),

@@ -12,8 +12,11 @@ class AddEditReservaTableViewController: UITableViewController {
     @IBOutlet var tipoTextField: UITextField!
     @IBOutlet var horarioInicial: UITextField!
     @IBOutlet var horarioFinal: UITextField!
+    @IBOutlet var saveButton: UIBarButtonItem!
+    @IBAction func textEditingChanged (_ sender: UITextField){
+        
+    }
     var reservas: Reservas?
-    
     //Código para fechas
     let datePicker = UIDatePicker()
     let datePicker2 = UIDatePicker()
@@ -23,21 +26,39 @@ class AddEditReservaTableViewController: UITableViewController {
         self.reservas = reservas
         super.init(coder: coder)
     }
-    
+    //Aquí elegimos el contenido a guardar
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "saveUnwind" else{return}
+        let aula = aulaTextField.text!
+        let tipo = tipoTextField.text ?? ""
+        let description = "Esta es una descripción"
+        let horarioI = horarioInicial.text ?? ""
+        let horarioF = horarioFinal.text ?? ""
+        reservas = Reservas(aula: aula, tipo: tipo, description: description, horarioInicio: horarioI, horarioFinal: horarioF)
+    }
+    //Aquí se agrega el contenido a guardar
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        createDatePicker()  //Función para fecha inicial
-        createDatePicker2() //Función para fecha final
+        
+        //Aquí almacenamos los datos en los text field
         if let reservas = reservas {
             aulaTextField.text = reservas.aula
             tipoTextField.text = reservas.tipo
+            horarioInicial.text = reservas.horarioInicio
+            horarioFinal.text = reservas.horarioFinal
+            title = "Editar Reserva"
         }
         else{
             title = "Agregar Reserva"
         }
+        createDatePicker()  //Función para fecha inicial
+        createDatePicker2() //Función para fecha final
+
+        
     }
     //Código para botón de fecha
     func createToolbar () -> UIToolbar{
@@ -77,7 +98,6 @@ class AddEditReservaTableViewController: UITableViewController {
         horarioFinal.inputAccessoryView = createToolbar2()
         
     }
-    
     //Función botón 1
     @objc func donePressed(){
         let dateFormatter = DateFormatter()
@@ -105,5 +125,7 @@ class AddEditReservaTableViewController: UITableViewController {
         self.view.endEditing(true)
     }
     
+    //Terminan funciones de horario
+
     
 }
