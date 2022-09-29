@@ -36,6 +36,8 @@ class ReservaTableViewController: UITableViewController {
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 44.0
         navigationItem.leftBarButtonItem = editButtonItem
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
