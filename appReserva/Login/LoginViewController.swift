@@ -28,27 +28,24 @@ class LoginViewController: UIViewController {
         Utilities.styleFilledButton(LoginButton)
     }
     
+
     @IBAction func presionaLogin(_ sender: Any) {
-        //Validar campos
-        
-        //Limpiando espacios de los text fields y asumiendo que todos los campos son válidos
+        //Removiendo espacios
         let email = eMailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        //Login al usuario
+        
+        //Login con usuario
         Auth.auth().signIn(withEmail: email, password: password){(result, error) in
             if error != nil{
-                //No se pudo iniciar sesión. Desplegando tipo de error
+                //Hay un error
                 self.errorLabel.text = error!.localizedDescription
                 self.errorLabel.alpha = 1
             }
             else{
-                let homeViewController =
-                self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewcontroller) as? HomeViewController
+                let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewcontroller) as? HomeViewController
+                
                 self.view.window?.rootViewController = homeViewController
-                self.view.window?.makeKeyAndVisible()
-            }
-            
+                self.view.window?.makeKeyAndVisible()            }
         }
-        
     }
 }
