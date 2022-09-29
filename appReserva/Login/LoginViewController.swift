@@ -42,10 +42,14 @@ class LoginViewController: UIViewController {
                 self.errorLabel.alpha = 1
             }
             else{
-                let mainTabBarController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.MainTabBarController) as? MainTabBarController
-                
+                // Moverse a través de segue condicional
+                self.performSegue(withIdentifier: "main", sender: self)
+               // self.performSegue(withIdentifier: "main", sender: nil)
+                /*let mainTabBarController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.MainTabBarController) as? MainTabBarController
                 self.view.window?.rootViewController = mainTabBarController
-                self.view.window?.makeKeyAndVisible()      }
+                self.view.window?.makeKeyAndVisible()*/
+                
+            }
         }
     }
 }

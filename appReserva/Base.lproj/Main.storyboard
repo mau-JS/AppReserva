@@ -405,7 +405,8 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="jpK-6S-Eo9">
             <objects>
-                <tabBarController storyboardIdentifier="HomeVC" id="aec-LN-JMH" customClass="MainTabBarController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="main" id="aec-LN-JMH" customClass="MainTabBarController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="g45-hm-GOg"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MuA-dd-jDq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -589,11 +590,12 @@
                         <outlet property="eMailTextField" destination="afY-wH-WyJ" id="Ey9-Av-os6"/>
                         <outlet property="errorLabel" destination="01R-CQ-btA" id="Wa1-ZA-VHU"/>
                         <outlet property="passwordTextField" destination="MB7-qq-Njx" id="wo0-ZQ-uCO"/>
+                        <segue destination="aec-LN-JMH" kind="show" identifier="main" id="hXq-M6-sV5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGp-el-64R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="753.84615384615381" y="633.41232227488149"/>
+            <point key="canvasLocation" x="1198" y="454"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aMJ-9a-xeJ">

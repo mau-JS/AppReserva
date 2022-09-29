@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct Reservas {
     //var dia: Int
     //var mes: Int

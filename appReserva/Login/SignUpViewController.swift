@@ -85,6 +85,7 @@ class SignUpViewController: UIViewController {
                     //Hubo un error al crear el usuario
                     self.showError("Error creando el usuario")
                 }
+//--------------------- Aquí es donde agregamos los nombres a la base de datos.-------------------------
                 else{
                     //El usuario fue creado satisfactoriamente, ahora guardar el nombre y apellido
                     //Creando el objeto donde llamaremos todas las funciones de la base de datos
