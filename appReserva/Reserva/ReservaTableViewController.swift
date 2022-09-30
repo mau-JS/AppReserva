@@ -6,10 +6,15 @@
 //
 
 import UIKit
-
+import FirebaseCore
+import FirebaseAnalytics
+import FirebaseAuth
+import FirebaseFirestore
 class ReservaTableViewController: UITableViewController {
     //Al presionar el botón save se crea un objeto y es agregado al vector
+    
     @IBAction func unwindToTableView(_ segue: UIStoryboardSegue){
+        
         guard segue.identifier == "saveUnwind",
               let sourceViewController = segue.source as? AddEditReservaTableViewController,
               let reserva = sourceViewController.reservas else {return}
@@ -26,19 +31,21 @@ class ReservaTableViewController: UITableViewController {
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
     }
-    var reservas: [Reservas] = [
-        Reservas(aula: "A-102", tipo: "Este es un tipo",description: "Esta es una descripción", horarioInicio: "2020-09-14", horarioFinal: "2022-10-25")
+    var reservas: [Reservas] = []
+        //Reservas(aula: "A-102", tipo: "Este es un tipo",description: "Esta es una descripción", //horarioInicio: "2020-09-14", horarioFinal: "2022-10-25")
         //Reservas(dia: 5, mes: 10, anio: 2021, titulo: "happiness"),
         //Reservas(dia: 7, mes: 10, anio: 2022, titulo: "marte"),
         //Reservas(dia: 5, mes: 10, anio: 1994, titulo: "retiroA"),
         //Reservas(dia: 5, mes: 10, anio: 1996, titulo: "Mapas"),
         //Reservas(dia: 5, mes: 10, anio: 2010, titulo: "hola")
-    ]
+    
     override func viewDidLoad() {
+        print(Usuario.id)
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0
         navigationItem.leftBarButtonItem = editButtonItem
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -49,7 +56,7 @@ class ReservaTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     //Es para dar la opción de borrar celdas
-    
+    //Esta función es para mover celdas
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         let moverReserva = reservas.remove(at: fromIndexPath.row)
         reservas.insert(moverReserva, at: to.row)

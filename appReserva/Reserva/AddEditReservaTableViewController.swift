@@ -6,7 +6,10 @@
 //
 
 import UIKit
-
+import FirebaseAuth
+import FirebaseCore
+import FirebaseAnalytics
+import FirebaseFirestore
 class AddEditReservaTableViewController: UITableViewController {
     @IBOutlet var aulaTextField: UITextField!
     @IBOutlet var tipoTextField: UITextField!
@@ -30,12 +33,25 @@ class AddEditReservaTableViewController: UITableViewController {
     //Esta función es donde vamos agregando los datos, al final creamos un objeto de tipo reservas
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "saveUnwind" else{return}
+        let db = Firestore.firestore()
         let aula = aulaTextField.text!
         let tipo = tipoTextField.text ?? ""
         let description = "Esta es una descripción"
         let horarioI = horarioInicial.text ?? ""
         let horarioF = horarioFinal.text ?? ""
+        
+        //Queries
+       /* print(db.collection("users/" + String(Usuario.id) + "/reservas").whereField("first_name", isEqualTo: "May"))*/
+        
+        
+        //Aquí enviamos la información a la base de datos desde los datos que agrega el usuario
+        
+        db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva1").setData(["aula": aula, "tipo": tipo, "descripción": description, "horarioI":horarioI, "horarioF": horarioF],merge:true)
+        
+        //db.collection("users/" + String(Usuario.id) + "/reservas").addDocument(data: ["year" : 2017])
+        //db.collection("users").document(Usuario.id).setData(["hofgfgfla": "testar545452"], merge: true)
         reservas = Reservas(aula: aula, tipo: tipo, description: description, horarioInicio: horarioI, horarioFinal: horarioF)
+        
     }
     //Aquí se agrega el contenido a guardar
     required init?(coder: NSCoder) {

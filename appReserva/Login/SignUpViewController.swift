@@ -92,7 +92,8 @@ class SignUpViewController: UIViewController {
                     let db = Firestore.firestore()
                     //Result contiene el id del usuario
                     //result!.user.uid tiene el id del usuario
-                    db.collection("users").addDocument(data: ["first_name":firstName, "last_name":lastName, "uid": result!.user.uid]){ (error) in
+                    db.collection("users").document(result!.user.uid).setData(["first_name": firstName,"last_name": lastName])
+                    /*db.collection("users").addDocument(data: ["first_name":firstName, "last_name":lastName, "uid": result!.user.uid])*/{ (error) in
                         if error != nil{
                             self.showError("Error guardando la información del usuario")
                         }

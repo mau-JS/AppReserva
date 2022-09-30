@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
                 //Obteniendo userID
                 
                 //guard let userID = Auth.auth().currentUser?.uid else { return }
-
+        
                 self.performSegue(withIdentifier: "main", sender: self)
                // self.performSegue(withIdentifier: "main", sender: nil)
                 /*let mainTabBarController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.MainTabBarController) as? MainTabBarController
@@ -60,6 +60,12 @@ class LoginViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Enviando UID a los demás controllers
+        
+           /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let barViewControllers = segue.destination as! UITabBarController
+            let destinationViewController = barViewControllers.viewControllers![0] as! ViewControllerB
+            destinationViewController.containsData = Data
+        }*/
         
             if let destination = segue.destination as? MainTabBarController {
                 //Enviando el ID para realizar operaciones de usuario
