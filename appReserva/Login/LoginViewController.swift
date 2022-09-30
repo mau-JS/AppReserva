@@ -9,6 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseCore
 import FirebaseAnalytics
+import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     
@@ -43,13 +44,27 @@ class LoginViewController: UIViewController {
             }
             else{
                 // Moverse a través de segue condicional
+                //Obteniendo userID
+                
+                //guard let userID = Auth.auth().currentUser?.uid else { return }
+
                 self.performSegue(withIdentifier: "main", sender: self)
                // self.performSegue(withIdentifier: "main", sender: nil)
                 /*let mainTabBarController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.MainTabBarController) as? MainTabBarController
                 self.view.window?.rootViewController = mainTabBarController
                 self.view.window?.makeKeyAndVisible()*/
                 
+                
             }
         }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Enviando UID a los demás controllers
+        
+            if let destination = segue.destination as? MainTabBarController {
+                //Enviando el ID para realizar operaciones de usuario
+                destination.idUsuario = Auth.auth().currentUser!.uid
+            }
+        
     }
 }

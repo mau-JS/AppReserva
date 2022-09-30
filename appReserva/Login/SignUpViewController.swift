@@ -98,7 +98,7 @@ class SignUpViewController: UIViewController {
                         }
                     }
                     //Transición a página de inicio
-                    self.transitionToHome()
+                    self.performSegue(withIdentifier: "main2", sender: self)
                 }
                 
             }
@@ -111,10 +111,13 @@ class SignUpViewController: UIViewController {
         errorLabel.text = message
         errorLabel.alpha = 1
     }
-    func transitionToHome(){
-        let mainTabBarController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.MainTabBarController) as? MainTabBarController
-        
-        self.view.window?.rootViewController = mainTabBarController
-        self.view.window?.makeKeyAndVisible()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Enviando UID a los demás controllers
+        if segue.identifier == "main2" {
+            if let destination = segue.destination as? MainTabBarController {
+                //Enviando el ID para realizar operaciones de usuario
+                destination.idUsuario = Auth.auth().currentUser!.uid
+            }
+        }
     }
 }

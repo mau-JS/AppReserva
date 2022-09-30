@@ -396,6 +396,7 @@
                         <outlet property="nombreTextField" destination="Kkf-wK-PbG" id="g93-Bs-h4I"/>
                         <outlet property="passwordtextField" destination="gay-uW-pdS" id="2mh-p0-KlL"/>
                         <outlet property="registrarse" destination="f7D-JO-h73" id="2HW-dF-ms4"/>
+                        <segue destination="aec-LN-JMH" kind="show" identifier="main2" id="Y2G-tt-ceH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfZ-nv-3jI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -405,7 +406,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="jpK-6S-Eo9">
             <objects>
-                <tabBarController storyboardIdentifier="main" id="aec-LN-JMH" customClass="MainTabBarController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="main" interfaceStyle="light" id="aec-LN-JMH" customClass="MainTabBarController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="g45-hm-GOg"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MuA-dd-jDq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -421,7 +422,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGD-El-BKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2375" y="-125"/>
+            <point key="canvasLocation" x="2469" y="-123"/>
         </scene>
         <!--Ajustes View Controller-->
         <scene sceneID="jQO-Kz-c6B">
@@ -617,6 +618,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Y2G-tt-ceH"/>
         <segue reference="AyU-Um-aBs"/>
     </inferredMetricsTieBreakers>
     <resources>

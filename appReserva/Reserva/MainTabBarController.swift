@@ -8,14 +8,18 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-    
+    //Recibiendo información desde pantalla de inicio
+    var idUsuario: String = "Not set"
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        print(idUsuario)
         // Do any additional setup after loading the view.
     }
-    
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
+    }
     /*
     // MARK: - Navigation
 
