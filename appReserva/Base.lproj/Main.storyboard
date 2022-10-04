@@ -3,7 +3,6 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -287,7 +286,7 @@
                                             <constraint firstAttribute="height" constant="40" id="IMs-uT-hBH"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Registrarse"/>
                                         <connections>
                                             <segue destination="3zg-pT-Qw5" kind="show" id="A4e-kT-Uql"/>
                                         </connections>
@@ -295,7 +294,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fp-Xc-chB">
                                         <rect key="frame" x="0.0" y="60" width="310" height="40"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Iniciar Sesión"/>
                                         <connections>
                                             <segue destination="PJ8-nr-9ev" kind="show" id="fxr-WM-XrG"/>
                                         </connections>
@@ -338,22 +337,22 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kkf-wK-PbG">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellidos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCT-nQ-qqF">
                                         <rect key="frame" x="0.0" y="60" width="310" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kS-Ty-DrQ">
                                         <rect key="frame" x="0.0" y="120" width="310" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gay-uW-pdS">
                                         <rect key="frame" x="0.0" y="180" width="310" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7D-JO-h73">
                                         <rect key="frame" x="0.0" y="240" width="310" height="40"/>
@@ -460,7 +459,6 @@
         <!--Reservaciones-->
         <scene sceneID="QXJ-qk-sa7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PcT-WK-wfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="doF-K0-KbS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Reservaciones" image="studentdesk" id="dPh-Ds-prZ"/>
                     <toolbarItems/>
@@ -474,23 +472,15 @@
                         <segue destination="h01-Zs-inT" kind="relationship" relationship="rootViewController" id="7b9-4C-iYX"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PcT-WK-wfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3424.6153846153843" y="-80.33175355450237"/>
         </scene>
         <!--Cuenta-->
         <scene sceneID="9fP-Ec-ymT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WOn-wv-CRY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8iq-bh-iJ9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cuenta" id="bXf-8q-VqM">
-                        <imageReference key="image" image="tabBarItem:bXf-8q-VqM:image" renderingMode="hierarchical-single">
-                            <hierarchicalColors>
-                                <color systemColor="labelColor"/>
-                                <color systemColor="secondaryLabelColor"/>
-                                <color systemColor="tertiaryLabelColor"/>
-                            </hierarchicalColors>
-                        </imageReference>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Cuenta" id="bXf-8q-VqM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WXj-hi-k6x">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -501,6 +491,7 @@
                         <segue destination="7dk-no-hOS" kind="relationship" relationship="rootViewController" id="tze-PC-f5j"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOn-wv-CRY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566.1538461538462" y="-814.69194312796208"/>
         </scene>
@@ -569,7 +560,7 @@
                                             <constraint firstAttribute="height" constant="40" id="9Ft-Cb-52B"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Iniciar sesión"/>
                                         <connections>
                                             <action selector="presionaLogin:" destination="PJ8-nr-9ev" eventType="touchUpInside" id="CXf-cS-hxe"/>
                                         </connections>
@@ -628,199 +619,15 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hXq-M6-sV5"/>
+        <segue reference="Y2G-tt-ceH"/>
         <segue reference="AyU-Um-aBs"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.2" width="14" height="11"/>
         <image name="questionmark.circle" width="11" height="11"/>
         <image name="studentdesk" width="10" height="12"/>
-        <image name="tabBarItem:bXf-8q-VqM:image" width="11" height="11">
-            <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
-S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBQLDBscIRkmMTIzNz4/REdKU1pbXlUkbnVsbNcNDg8QERIT
-FBUWFxgZGlZOU1NpemVWJGNsYXNzXE5TSW1hZ2VGbGFnc1ZOU1JlcHNXTlNDb2xvcl5OU1Jlc2l6aW5n
-TW9kZVxOU0lzVGVtcGxhdGWAAoATEiDAAACAA4APEAAJWHsxMSwgMTF90h0OHiBaTlMub2JqZWN0c6Ef
-gASADtIdDiIloiMkgAWABoAN1w0OJygpKissLS4vGRkwWU5TUERGRGF0YV8QEE5TQ29sb3JTcGFjZU5h
-bWVfEBlOU0ludGVybmFsTGF5b3V0RGlyZWN0aW9uXxAPTlNCaXRzUGVyU2FtcGxlXE5TQ29sb3JTcGFj
-ZYAHgAyAC4AIgAlYezExLCAxMX1fEBlOU0NhbGlicmF0ZWRSR0JDb2xvclNwYWNl0jQONTZUTlNJRBAB
-gArSODk6O1okY2xhc3NuYW1lWCRjbGFzc2VzXE5TQ29sb3JTcGFjZaI8PVxOU0NvbG9yU3BhY2VYTlNP
-YmplY3RPERKxJVBERi0xLjMKJcTl8uXrp/Og0MTGCjMgMCBvYmoKPDwgL0ZpbHRlciAvRmxhdGVEZWNv
-ZGUgL0xlbmd0aCAzODMgPj4Kc3RyZWFtCngBTVM5juQwDMz9Cr1AI/ESGe8L5g0CFhtMB4P+P7Altw5n
-ZrFUxcu/6Tv9pq8/75r6O5X07klzJVIVRK/UclD1hu9aMmmVligzMQkdZL7wqx9sPpShUFXJ7pRopWFQ
-jeoB+tRk39hVlvWoYxmkjmD7j4/Q0EMY3J7+LT7CHCYuXK8X3nl1Vjvg+GpNhfxOUql3ckJP081rWRhq
-Qwt0SpHJC7Xd04o7yheypocyUzEy0FhP43oYbc40sEku8ah68h/d3U3jiUVlQXFW3KPe62MLY7Q3oR8I
-qqvIA2vZgsdgKDcbuwfng0Aq1EsxGCwscZZoqp4Mhl7Nk2T3dmYwww4mt2Ko/YNATUWl+JHYyMPogc1y
-UL0y42JWG2P+d68bWWu/D0szBeMuXliLU6u4ZUDeNBhFc+AgYqQCs/FrI4aurTmkNoRVCQZQj5DnAs6j
-2w30S7KMy+a0Mc4uhXHXW2gjx21DqyTM6yOE0+BSKEb9n39mtTau/G/6/g/XCLyPCmVuZHN0cmVhbQpl
-bmRvYmoKMSAwIG9iago8PCAvVHlwZSAvUGFnZSAvUGFyZW50IDIgMCBSIC9SZXNvdXJjZXMgNCAwIFIg
-L0NvbnRlbnRzIDMgMCBSID4+CmVuZG9iago0IDAgb2JqCjw8IC9Qcm9jU2V0IFsgL1BERiBdIC9Db2xv
-clNwYWNlIDw8IC9DczEgNSAwIFIgPj4gPj4KZW5kb2JqCjYgMCBvYmoKPDwgL04gMSAvQWx0ZXJuYXRl
-IC9EZXZpY2VHcmF5IC9MZW5ndGggMzM4NSAvRmlsdGVyIC9GbGF0ZURlY29kZSA+PgpzdHJlYW0KeAGl
-VwdcU1fbPzf3ZrDCnjLCRpYBZcuIzACyh+AiJoGEEWIgCIiLUqxg3eLAUdGiqEWrFYE6UYtW6satL9RS
-QanFWlxYfZ+bgMLb/t7v+35f7u9w/+c541n/89wDQtpbeFJpLgUhlCcplIUncNKmpaWz6PcRAxkiTeSK
-NHn8AiknLi4apiBJvkRIvsf+Xt5EGCm57kLuNXbsf+xRBcICPsw6Ba1EUMDPQwibjBDDhC+VFSKkMg3k
-1vMKpSQuA6yXk5QQDHgVzFEfXgtiZBEulAhlYj4rXMYrYYXz8vJ4LHdXd1acLD9TnPsPVpOL/j+/vFw5
-aTf5s4CmXpCTGAVvV7C/QsALIbEv4EN8XmgiYG/A/UXilBjAQQhRbKSFUxIARwIWyHOSOYCdATdmysKS
-AQcAviuSR5B4EkK4UakoKRWwCeDonPwocq0V4EzJnJhYwKAL/4JfEJwO2AFwm0jIJXNmA/iJLD+BnOOI
-EMEUCENCAYMdhLe4kJs0jCsLihJJOdhJ3CgVBZN2gi6qejYvMg6wHWA7YW44qRf2oUZLC+PIPaFPLZLk
-xpC6ggCfFxYo/IU+jVEoSooAuTvgpEJZErkW7KFVZorDuIDDAO8VySJIOfhLG5DmKngGMaG78mSh4SCH
-mNCLZfIEMg7gI32XUJJMxhM4Qn+IUjAeEqJ8NAf+8pEEdSMWKkBiVKRAWYiH8qCxwAJnaOEwSwJNBjMK
-UA7IswD3fBwn++QKco0LksJYPsqEubmwckTOQgLYQbmS3CUfGtkjd+5V7Mwf1ugKGoPNv0ZyGBehfhgX
-AZqKuhSSYrAwD/rBIJXDWBbg0VrcgUnuKE5hrdIGcpzU0jesJR9WCBS6lOtIP5W2BYPNElQKY6RtCt8J
-Q4JNTITmR0QT/gRboU0GM0qQi0I+WSEb0frJc9K3vo9a54Kto70fHbGRKJ+GeBXCzrngoWQ4PgVgzTuw
-O2d49adoKjSuMpE7SKU1K+K5s+rBXvC8XDZbzL+8cqC97JgRYt1cfuoCYu3Xajmv8IeMDKuTaJ5xXb29
-7L9k9VM2R2wbm9XY0bxRMEnwN96ALuo16hXqQ+oNxIL3L9ROai+ge9T78Nz5aM+nHJCcEoNcyQkl2/gY
-rphJspADkclVjOZBNMhMCRV5Cod1PIhvAURPDrwjc+0CDBidi7EMIXcbPU4yQqk9C/ZV9j4xnq+QkAwh
-9ZNs+Xt8/i8nZNT5yJSsMpFKZ9WXDQmlyvyRuRMujXkZg8qd2QfZ/exd7P3sF+yHiigo8se+xf6N3cne
-ASNP8bX4Efw43oK34h2IBb1W/DTeokD78WPwfPtx3dgToYzx2BNB8pM/fAJI7wuHOTj6rIyuCmQ+yH3I
-bJDzR2KYPXyyR3OVjPhoDpGx/N9ZNDrWYyuIMvuKU8q0Zrox6UxHpgeTw8SYlvC4M4MAWTOtmNFMQxiN
-YNozQ5jjPsZjJGO5ICEZRDLvExeVdS8NrBxhGumfCLIvU1Q53rC//+kja4yXZAUUjz5nmAacZKUmZQ0Z
-0TkSV0WGx1TQZNAkRvPADhnElawOEqg9rDFzyNpNVi1gPDZdkcN/4CjNl2ZPC6XZw1pltWLRQmgRtDDE
-ormRctoEWiRgH3IWYU64EVyoerGIRXAIDyJoGJOVcDI8ZB1UxsiFCITRACKE8CZr5GhvwRJlbMlq+c+e
-jj6FcNcoFBbDfQWh4HxpiUycJSpkceBmJGRxJXxXZ5Y72w2+iOQ9i5yD0It4xf0JM+jgy2VFShlBvqhI
-Fe5gesgYmSNr+Kq7gK1eyA++s6Fwb4hFSSgNzQLrRJBLGcS2DC1BlagarULr0Wa0He1CDagRHUJH0TF0
-Gv2ALqIrqBPdgy9QD3qKBtBLNIRhGB3TwHQxY8wCs8WcMHfMGwvAQrFoLAFLwzKwLEyCybEy7DOsGluD
-bcZ2YA3Yt1gLdhq7gF3F7mDdWB/2B/aWglPUKXoUM4odZQLFm8KhRFGSKDMpWZS5lFJKBWUFZSOljrKf
-0kQ5TblI6aR0UZ5SBnGEq+EGuCXugnvjwXgsno5n4jJ8IV6F1+B1eCNUgXb8Ot6F9+NvCBqhS7AIF8hN
-BJFM8Im5xEJiObGZ2EM0EWeJ60Q3MUC8p2pQTalOVF8qlzqNmkWdR62k1lDrqUeo56Bq91Bf0mg0A+CF
-F/AljZZNm09bTttKO0A7RbtKe0QbpNPpxnQnuj89ls6jF9Ir6Zvo++kn6dfoPfTXDDWGBcOdEcZIZ0gY
-5Ywaxl7GCcY1xmPGkIqWiq2Kr0qsikClRGWlyi6VVpXLKj0qQ6raqvaq/qpJqtmqS1Q3qjaqnlO9r/pC
-TU3NSs1HLV5NrLZYbaPaQbXzat1qb9R11B3Vg9VnqMvVV6jvVj+lfkf9hYaGhp1GkEa6RqHGCo0GjTMa
-DzVeM3WZrkwuU8BcxKxlNjGvMZ9pqmjaanI0Z2mWatZoHta8rNmvpaJlpxWsxdNaqFWr1aJ1S2tQW1fb
-TTtWO097ufZe7QvavTp0HTudUB2BToXOTp0zOo90cV1r3WBdvu5nurt0z+n26NH07PW4etl61Xrf6F3S
-G9DX0Z+kn6JfrF+rf1y/ywA3sDPgGuQarDQ4ZHDT4K2hmSHHUGi4zLDR8JrhK6NxRkFGQqMqowNGnUZv
-jVnGocY5xquNjxo/MCFMHE3iTeaZbDM5Z9I/Tm+c3zj+uKpxh8bdNaWYOpommM433WnaYTpoZm4WbiY1
-22R2xqzf3MA8yDzbfJ35CfM+C12LAAuxxTqLkxZPWPosDiuXtZF1ljVgaWoZYSm33GF5yXLIyt4q2arc
-6oDVA2tVa2/rTOt11m3WAzYWNlNtymz22dy1VbH1thXZbrBtt31lZ2+XarfU7qhdr72RPde+1H6f/X0H
-DYdAh7kOdQ43xtPGe4/PGb91/BVHiqOHo8ix1vGyE8XJ00nstNXpqjPV2cdZ4lznfMtF3YXjUuSyz6Xb
-1cA12rXc9ajrswk2E9InrJ7QPuE924OdC9+3e246bpFu5W6tbn+4O7rz3Wvdb0zUmBg2cdHE5onPJzlN
-Ek7aNum2h67HVI+lHm0ef3l6eco8Gz37vGy8Mry2eN3y1vOO817ufd6H6jPFZ5HPMZ83vp6+hb6HfH/3
-c/HL8dvr1zvZfrJw8q7Jj/yt/Hn+O/y7AlgBGQFfBXQFWgbyAusCfw6yDhIE1Qc95oznZHP2c55NYU+R
-TTky5VWwb/CC4FMheEh4SFXIpVCd0OTQzaEPw6zCssL2hQ2Ee4TPDz8VQY2IilgdcYtrxuVzG7gDkV6R
-CyLPRqlHJUZtjvo52jFaFt06lTI1curaqfdjbGMkMUdjUSw3dm3sgzj7uLlx38fT4uPia+N/TXBLKEto
-T9RNnJ24N/Fl0pSklUn3kh2S5cltKZopM1IaUl6lhqSuSe2aNmHagmkX00zSxGnN6fT0lPT69MHpodPX
-T++Z4TGjcsbNmfYzi2demGUyK3fW8dmas3mzD2dQM1Iz9ma848Xy6niDc7hztswZ4AfzN/CfCoIE6wR9
-Qn/hGuHjTP/MNZm9Wf5Za7P6RIGiGlG/OFi8Wfw8OyJ7e/arnNic3TkfclNzD+Qx8jLyWiQ6khzJ2Xzz
-/OL8q1InaaW0a67v3PVzB2RRsvoCrGBmQXOhHvxT2iF3kH8u7y4KKKotej0vZd7hYu1iSXFHiWPJspLH
-pWGlX88n5vPnt5VZli0p617AWbBjIbZwzsK2RdaLKhb1LA5fvGeJ6pKcJT+Vs8vXlP/5WepnrRVmFYsr
-Hn0e/vm+SmalrPLWUr+l278gvhB/cWnZxGWblr2vElT9WM2urql+t5y//Mcv3b7c+OWHFZkrLq30XLlt
-FW2VZNXN1YGr96zRXlO65tHaqWub1rHWVa37c/3s9RdqJtVs36C6Qb6ha2P0xuZNNptWbXq3WbS5s3ZK
-7YEtpluWbXm1VbD12ragbY3bzbZXb3/7lfir2zvCdzTV2dXV7KTtLNr5666UXe1fe3/dUG9SX13/127J
-7q49CXvONng1NOw13btyH2WffF/f/hn7r3wT8k1zo0vjjgMGB6oPooPyg0++zfj25qGoQ22HvQ83fmf7
-3ZYjukeqmrCmkqaBo6KjXc1pzVdbIlvaWv1aj3zv+v3uY5bHao/rH195QvVExYkPJ0tPDp6Snuo/nXX6
-Udvstntnpp25cTb+7KVzUefO/xD2w5l2TvvJ8/7nj13wvdDyo/ePRy96Xmzq8Og48pPHT0cueV5quux1
-ufmKz5XWq5OvnrgWeO309ZDrP9zg3rjYGdN59Wbyzdu3Ztzqui243Xsn987zu0V3h+4thot91QOtBzUP
-TR/W/Wv8vw50eXYd7w7p7vg58ed7j/iPnv5S8Mu7nopfNX6teWzxuKHXvfdYX1jflSfTn/Q8lT4d6q/8
-Tfu3Lc8cnn33e9DvHQPTBnqey55/+GP5C+MXu/+c9GfbYNzgw5d5L4deVb02fr3njfeb9repbx8PzXtH
-f7fxr/F/tb6Pen//Q96HD/8GCQ/4YgplbmRzdHJlYW0KZW5kb2JqCjUgMCBvYmoKWyAvSUNDQmFzZWQg
-NiAwIFIgXQplbmRvYmoKMiAwIG9iago8PCAvVHlwZSAvUGFnZXMgL01lZGlhQm94IFswIDAgMTAuMjUx
-NDcgMTAuMjQ1MTJdIC9Db3VudCAxIC9LaWRzIFsgMSAwIFIgXQo+PgplbmRvYmoKNyAwIG9iago8PCAv
-VHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjggMCBvYmoKPDwgL1Byb2R1Y2VyICht
-YWNPUyBWZXJzaW9uIDEyLjIuMSBcKEJ1aWxkIDIxRDYyXCkgUXVhcnR6IFBERkNvbnRleHQpIC9DcmVh
-dGlvbkRhdGUKKEQ6MjAyMjA5MzAwMjAxMTFaMDAnMDAnKSAvTW9kRGF0ZSAoRDoyMDIyMDkzMDAyMDEx
-MVowMCcwMCcpID4+CmVuZG9iagp4cmVmCjAgOQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDA0Nzcg
-MDAwMDAgbiAKMDAwMDAwNDE0NiAwMDAwMCBuIAowMDAwMDAwMDIyIDAwMDAwIG4gCjAwMDAwMDA1NTcg
-MDAwMDAgbiAKMDAwMDAwNDExMSAwMDAwMCBuIAowMDAwMDAwNjI1IDAwMDAwIG4gCjAwMDAwMDQyMzkg
-MDAwMDAgbiAKMDAwMDAwNDI4OCAwMDAwMCBuIAp0cmFpbGVyCjw8IC9TaXplIDkgL1Jvb3QgNyAwIFIg
-L0luZm8gOCAwIFIgL0lEIFsgPGUyYmVmMjAxNDhmM2RkYWNiYTY4NTdiMzYzNzU5YjYwPgo8ZTJiZWYy
-MDE0OGYzZGRhY2JhNjg1N2IzNjM3NTliNjA+IF0gPj4Kc3RhcnR4cmVmCjQ0NTEKJSVFT0YK0jg5QEFd
-TlNQREZJbWFnZVJlcKNCQz1dTlNQREZJbWFnZVJlcFpOU0ltYWdlUmVw0jg5RUZXTlNBcnJheaJFPdI4
-OUhJXk5TTXV0YWJsZUFycmF5o0hFPdVLTCtNDk5PUFFSV05TV2hpdGVcTlNDb21wb25lbnRzXxASTlND
-dXN0b21Db2xvclNwYWNlRDAgMABDMCAwEAOAEIAS1DRUVQ5WV1g2VU5TSUNDV05TTW9kZWwQCYAREACA
-Ck8REZwAABGcYXBwbAIAAABtbnRyR1JBWVhZWiAH3AAIABcADwAuAA9hY3NwQVBQTAAAAABub25lAAAA
-AAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAVkZXNjAAAAwAAAAHlkc2NtAAABPAAACBpjcHJ0AAAJWAAAACN3dHB0AAAJ
-fAAAABRrVFJDAAAJkAAACAxkZXNjAAAAAAAAAB9HZW5lcmljIEdyYXkgR2FtbWEgMi4yIFByb2ZpbGUA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAbWx1YwAAAAAAAAAfAAAADHNrU0sAAAAuAAABhGRhREsAAAA6AAAB
-smNhRVMAAAA4AAAB7HZpVk4AAABAAAACJHB0QlIAAABKAAACZHVrVUEAAAAsAAACrmZyRlUAAAA+AAAC
-2mh1SFUAAAA0AAADGHpoVFcAAAAaAAADTGtvS1IAAAAiAAADZm5iTk8AAAA6AAADiGNzQ1oAAAAoAAAD
-wmhlSUwAAAAkAAAD6nJvUk8AAAAqAAAEDmRlREUAAABOAAAEOGl0SVQAAABOAAAEhnN2U0UAAAA4AAAE
-1HpoQ04AAAAaAAAFDGphSlAAAAAmAAAFJmVsR1IAAAAqAAAFTHB0UE8AAABSAAAFdm5sTkwAAABAAAAF
-yGVzRVMAAABMAAAGCHRoVEgAAAAyAAAGVHRyVFIAAAAkAAAGhmZpRkkAAABGAAAGqmhySFIAAAA+AAAG
-8HBsUEwAAABKAAAHLmFyRUcAAAAsAAAHeHJ1UlUAAAA6AAAHpGVuVVMAAAA8AAAH3gBWAWEAZQBvAGIA
-ZQBjAG4A4QAgAHMAaQB2AOEAIABnAGEAbQBhACAAMgAsADIARwBlAG4AZQByAGkAcwBrACAAZwByAOUA
-IAAyACwAMgAgAGcAYQBtAG0AYQAtAHAAcgBvAGYAaQBsAEcAYQBtAG0AYQAgAGQAZQAgAGcAcgBpAHMA
-bwBzACAAZwBlAG4A6AByAGkAYwBhACAAMgAuADIAQx6lAHUAIABoAOwAbgBoACAATQDgAHUAIAB4AOEA
-bQAgAEMAaAB1AG4AZwAgAEcAYQBtAG0AYQAgADIALgAyAFAAZQByAGYAaQBsACAARwBlAG4A6QByAGkA
-YwBvACAAZABhACAARwBhAG0AYQAgAGQAZQAgAEMAaQBuAHoAYQBzACAAMgAsADIEFwQwBDMEMAQ7BEwE
-PQQwACAARwByAGEAeQAtBDMEMAQ8BDAAIAAyAC4AMgBQAHIAbwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEA
-dQBlACAAZwByAGkAcwAgAGcAYQBtAG0AYQAgADIALAAyAMEAbAB0AGEAbADhAG4AbwBzACAAcwB6APwA
-cgBrAGUAIABnAGEAbQBtAGEAIAAyAC4AMpAadShwcJaOUUlepgAyAC4AMoJyX2ljz4/wx3y8GAAg1ozA
-yQAgrBC5yAAgADIALgAyACDVBLhc0wzHfABHAGUAbgBlAHIAaQBzAGsAIABnAHIA5QAgAGcAYQBtAG0A
-YQAgADIALAAyAC0AcAByAG8AZgBpAGwATwBiAGUAYwBuAOEAIAFhAGUAZADhACAAZwBhAG0AYQAgADIA
-LgAyBdIF0AXeBdQAIAXQBeQF1QXoACAF2wXcBdwF2QAgADIALgAyAEcAYQBtAGEAIABnAHIAaQAgAGcA
-ZQBuAGUAcgBpAGMBAwAgADIALAAyAEEAbABsAGcAZQBtAGUAaQBuAGUAcwAgAEcAcgBhAHUAcwB0AHUA
-ZgBlAG4ALQBQAHIAbwBmAGkAbAAgAEcAYQBtAG0AYQAgADIALAAyAFAAcgBvAGYAaQBsAG8AIABnAHIA
-aQBnAGkAbwAgAGcAZQBuAGUAcgBpAGMAbwAgAGQAZQBsAGwAYQAgAGcAYQBtAG0AYQAgADIALAAyAEcA
-ZQBuAGUAcgBpAHMAawAgAGcAcgDlACAAMgAsADIAIABnAGEAbQBtAGEAcAByAG8AZgBpAGxmbpAacHBe
-pnz7ZXAAMgAuADJjz4/wZYdO9k4AgiwwsDDsMKQwrDDzMN4AIAAyAC4AMgAgMNcw7TDVMKEwpDDrA5MD
-tQO9A7kDugPMACADkwO6A8EDuQAgA5MDrAO8A7wDsQAgADIALgAyAFAAZQByAGYAaQBsACAAZwBlAG4A
-6QByAGkAYwBvACAAZABlACAAYwBpAG4AegBlAG4AdABvAHMAIABkAGEAIABHAGEAbQBtAGEAIAAyACwA
-MgBBAGwAZwBlAG0AZQBlAG4AIABnAHIAaQBqAHMAIABnAGEAbQBtAGEAIAAyACwAMgAtAHAAcgBvAGYA
-aQBlAGwAUABlAHIAZgBpAGwAIABnAGUAbgDpAHIAaQBjAG8AIABkAGUAIABnAGEAbQBtAGEAIABkAGUA
-IABnAHIAaQBzAGUAcwAgADIALAAyDiMOMQ4HDioONQ5BDgEOIQ4hDjIOQA4BDiMOIg5MDhcOMQ5IDicO
-RA4bACAAMgAuADIARwBlAG4AZQBsACAARwByAGkAIABHAGEAbQBhACAAMgAsADIAWQBsAGUAaQBuAGUA
-bgAgAGgAYQByAG0AYQBhAG4AIABnAGEAbQBtAGEAIAAyACwAMgAgAC0AcAByAG8AZgBpAGkAbABpAEcA
-ZQBuAGUAcgBpAQ0AawBpACAARwByAGEAeQAgAEcAYQBtAG0AYQAgADIALgAyACAAcAByAG8AZgBpAGwA
-VQBuAGkAdwBlAHIAcwBhAGwAbgB5ACAAcAByAG8AZgBpAGwAIABzAHoAYQByAG8BWwBjAGkAIABnAGEA
-bQBtAGEAIAAyACwAMgY6BicGRQYnACAAMgAuADIAIAZEBkgGRgAgBjEGRQYnBi8GSgAgBjkGJwZFBB4E
-MQRJBDAETwAgBEEENQRABDAETwAgBDMEMAQ8BDwEMAAgADIALAAyAC0EPwRABD4ERAQ4BDsETABHAGUA
-bgBlAHIAaQBjACAARwByAGEAeQAgAEcAYQBtAG0AYQAgADIALgAyACAAUAByAG8AZgBpAGwAZQAAdGV4
-dAAAAABDb3B5cmlnaHQgQXBwbGUgSW5jLiwgMjAxMgAAWFlaIAAAAAAAAPNRAAEAAAABFsxjdXJ2AAAA
-AAAABAAAAAAFAAoADwAUABkAHgAjACgALQAyADcAOwBAAEUASgBPAFQAWQBeAGMAaABtAHIAdwB8AIEA
-hgCLAJAAlQCaAJ8ApACpAK4AsgC3ALwAwQDGAMsA0ADVANsA4ADlAOsA8AD2APsBAQEHAQ0BEwEZAR8B
-JQErATIBOAE+AUUBTAFSAVkBYAFnAW4BdQF8AYMBiwGSAZoBoQGpAbEBuQHBAckB0QHZAeEB6QHyAfoC
-AwIMAhQCHQImAi8COAJBAksCVAJdAmcCcQJ6AoQCjgKYAqICrAK2AsECywLVAuAC6wL1AwADCwMWAyED
-LQM4A0MDTwNaA2YDcgN+A4oDlgOiA64DugPHA9MD4APsA/kEBgQTBCAELQQ7BEgEVQRjBHEEfgSMBJoE
-qAS2BMQE0wThBPAE/gUNBRwFKwU6BUkFWAVnBXcFhgWWBaYFtQXFBdUF5QX2BgYGFgYnBjcGSAZZBmoG
-ewaMBp0GrwbABtEG4wb1BwcHGQcrBz0HTwdhB3QHhgeZB6wHvwfSB+UH+AgLCB8IMghGCFoIbgiCCJYI
-qgi+CNII5wj7CRAJJQk6CU8JZAl5CY8JpAm6Cc8J5Qn7ChEKJwo9ClQKagqBCpgKrgrFCtwK8wsLCyIL
-OQtRC2kLgAuYC7ALyAvhC/kMEgwqDEMMXAx1DI4MpwzADNkM8w0NDSYNQA1aDXQNjg2pDcMN3g34DhMO
-Lg5JDmQOfw6bDrYO0g7uDwkPJQ9BD14Peg+WD7MPzw/sEAkQJhBDEGEQfhCbELkQ1xD1ERMRMRFPEW0R
-jBGqEckR6BIHEiYSRRJkEoQSoxLDEuMTAxMjE0MTYxODE6QTxRPlFAYUJxRJFGoUixStFM4U8BUSFTQV
-VhV4FZsVvRXgFgMWJhZJFmwWjxayFtYW+hcdF0EXZReJF64X0hf3GBsYQBhlGIoYrxjVGPoZIBlFGWsZ
-kRm3Gd0aBBoqGlEadxqeGsUa7BsUGzsbYxuKG7Ib2hwCHCocUhx7HKMczBz1HR4dRx1wHZkdwx3sHhYe
-QB5qHpQevh7pHxMfPh9pH5Qfvx/qIBUgQSBsIJggxCDwIRwhSCF1IaEhziH7IiciVSKCIq8i3SMKIzgj
-ZiOUI8Ij8CQfJE0kfCSrJNolCSU4JWgllyXHJfcmJyZXJocmtyboJxgnSSd6J6sn3CgNKD8ocSiiKNQp
-Bik4KWspnSnQKgIqNSpoKpsqzysCKzYraSudK9EsBSw5LG4soizXLQwtQS12Last4S4WLkwugi63Lu4v
-JC9aL5Evxy/+MDUwbDCkMNsxEjFKMYIxujHyMioyYzKbMtQzDTNGM38zuDPxNCs0ZTSeNNg1EzVNNYc1
-wjX9Njc2cjauNuk3JDdgN5w31zgUOFA4jDjIOQU5Qjl/Obw5+To2OnQ6sjrvOy07azuqO+g8JzxlPKQ8
-4z0iPWE9oT3gPiA+YD6gPuA/IT9hP6I/4kAjQGRApkDnQSlBakGsQe5CMEJyQrVC90M6Q31DwEQDREdE
-ikTORRJFVUWaRd5GIkZnRqtG8Ec1R3tHwEgFSEtIkUjXSR1JY0mpSfBKN0p9SsRLDEtTS5pL4kwqTHJM
-uk0CTUpNk03cTiVObk63TwBPSU+TT91QJ1BxULtRBlFQUZtR5lIxUnxSx1MTU19TqlP2VEJUj1TbVShV
-dVXCVg9WXFapVvdXRFeSV+BYL1h9WMtZGllpWbhaB1pWWqZa9VtFW5Vb5Vw1XIZc1l0nXXhdyV4aXmxe
-vV8PX2Ffs2AFYFdgqmD8YU9homH1YklinGLwY0Njl2PrZEBklGTpZT1lkmXnZj1mkmboZz1nk2fpaD9o
-lmjsaUNpmmnxakhqn2r3a09rp2v/bFdsr20IbWBtuW4SbmtuxG8eb3hv0XArcIZw4HE6cZVx8HJLcqZz
-AXNdc7h0FHRwdMx1KHWFdeF2Pnabdvh3VnezeBF4bnjMeSp5iXnnekZ6pXsEe2N7wnwhfIF84X1BfaF+
-AX5ifsJ/I3+Ef+WAR4CogQqBa4HNgjCCkoL0g1eDuoQdhICE44VHhauGDoZyhteHO4efiASIaYjOiTOJ
-mYn+imSKyoswi5aL/IxjjMqNMY2Yjf+OZo7OjzaPnpAGkG6Q1pE/kaiSEZJ6kuOTTZO2lCCUipT0lV+V
-yZY0lp+XCpd1l+CYTJi4mSSZkJn8mmia1ZtCm6+cHJyJnPedZJ3SnkCerp8dn4uf+qBpoNihR6G2oiai
-lqMGo3aj5qRWpMelOKWpphqmi6b9p26n4KhSqMSpN6mpqhyqj6sCq3Wr6axcrNCtRK24ri2uoa8Wr4uw
-ALB1sOqxYLHWskuywrM4s660JbSctRO1irYBtnm28Ldot+C4WbjRuUq5wro7urW7LrunvCG8m70VvY++
-Cr6Evv+/er/1wHDA7MFnwePCX8Lbw1jD1MRRxM7FS8XIxkbGw8dBx7/IPci8yTrJuco4yrfLNsu2zDXM
-tc01zbXONs62zzfPuNA50LrRPNG+0j/SwdNE08bUSdTL1U7V0dZV1tjXXNfg2GTY6Nls2fHadtr724Dc
-BdyK3RDdlt4c3qLfKd+v4DbgveFE4cziU+Lb42Pj6+Rz5PzlhOYN5pbnH+ep6DLovOlG6dDqW+rl63Dr
-++yG7RHtnO4o7rTvQO/M8Fjw5fFy8f/yjPMZ86f0NPTC9VD13vZt9vv3ivgZ+Kj5OPnH+lf65/t3/Af8
-mP0p/br+S/7c/23//9I4OVxdV05TQ29sb3KiXD3SODlfYFdOU0ltYWdlol89AAgAEQAaACQAKQAyADcA
-SQBMAFEAUwBqAHAAfwCGAI0AmgChAKkAuADFAMcAyQDOANAA0gDUANUA3gDjAO4A8ADyAPQA+QD8AP4B
-AAECAREBGwEuAUoBXAFpAWsBbQFvAXEBcwF8AZgBnQGiAaQBpgGrAbYBvwHMAc8B3AHlFJoUnxStFLEU
-vxTKFM8U1xTaFN8U7hTyFP0VBRUSFScVLBUwFTIVNBU2FT8VRRVNFU8VURVTFVUm9Sb6JwInBScKJxIA
-AAAAAAACAQAAAAAAAABhAAAAAAAAAAAAAAAAAAAnFQ
-</mutableData>
-        </image>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

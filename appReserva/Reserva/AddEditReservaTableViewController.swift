@@ -11,6 +11,7 @@ import FirebaseCore
 import FirebaseAnalytics
 import FirebaseFirestore
 class AddEditReservaTableViewController: UITableViewController {
+    var conteo = 0
     @IBOutlet var aulaTextField: UITextField!
     @IBOutlet var tipoTextField: UITextField!
     @IBOutlet var horarioInicial: UITextField!
@@ -45,11 +46,13 @@ class AddEditReservaTableViewController: UITableViewController {
         
         
         //Aquí enviamos la información a la base de datos desde los datos que agrega el usuario
+        //Se crea un documento por reserva
+        /*db.collection("users/" + String(Usuario.id) + "/reservas").addDocument(data: ["aula" : aula, "tipo": tipo,"descripción": description, "horarioI": horarioI, "horarioF": horarioF])*/
         
-        db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva1").setData(["aula": aula, "tipo": tipo, "descripción": description, "horarioI":horarioI, "horarioF": horarioF],merge:true)
+        //Una forma de agregar a la base de datos
+        /*db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva" + String(conteo)).setData(["aula": aula, "tipo": tipo, "descripción": description, "horarioI":horarioI, "horarioF": horarioF],merge:true)*/
         
-        //db.collection("users/" + String(Usuario.id) + "/reservas").addDocument(data: ["year" : 2017])
-        //db.collection("users").document(Usuario.id).setData(["hofgfgfla": "testar545452"], merge: true)
+        //Este objeto es que se imprime en el menú
         reservas = Reservas(aula: aula, tipo: tipo, description: description, horarioInicio: horarioI, horarioFinal: horarioF)
         
     }

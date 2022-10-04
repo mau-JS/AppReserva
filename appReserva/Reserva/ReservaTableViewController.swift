@@ -12,14 +12,16 @@ import FirebaseAuth
 import FirebaseFirestore
 class ReservaTableViewController: UITableViewController {
     //Al presionar el botón save se crea un objeto y es agregado al vector
-    
+    let db = Firestore.firestore()
     @IBAction func unwindToTableView(_ segue: UIStoryboardSegue){
         
         guard segue.identifier == "saveUnwind",
               let sourceViewController = segue.source as? AddEditReservaTableViewController,
+              //Recibe el objeto reserva creado desde reservaTableViewCell
               let reserva = sourceViewController.reservas else {return}
             
         if let selectedIndexPath = tableView.indexPathForSelectedRow{
+            //Aquí atrapa a los objetos agregados
             reservas[selectedIndexPath.row] = reserva
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
             
@@ -28,6 +30,9 @@ class ReservaTableViewController: UITableViewController {
         else{
             let newIndexPath = IndexPath(row: reservas.count, section: 0)
             reservas.append(reserva)
+            db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva_" + String(reservas.count)).setData(["aula": reserva.aula, "tipo": reserva.tipo, "descripción": reserva.description, "horarioI":reserva.horarioInicio, "horarioF": reserva.horarioFinal],merge:true)            //Longitud de reservas
+            
+            
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
     }
@@ -40,11 +45,18 @@ class ReservaTableViewController: UITableViewController {
         //Reservas(dia: 5, mes: 10, anio: 2010, titulo: "hola")
     
     override func viewDidLoad() {
-        print(Usuario.id)
+        //print(Usuario.id)
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0
         navigationItem.leftBarButtonItem = editButtonItem
+        let docRef = db.document("users/\(Usuario.id)")
+        docRef.getDocument{snapshot, error in
+            guard let data = snapshot?.data(), error == nil else{
+                return
+            }
+            print(data)
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -142,4 +154,10 @@ class ReservaTableViewController: UITableViewController {
             return AddEditReservaTableViewController(coder: coder, reservas: nil)
         }
     }
+    //Escribiendo en base de datos
+    func writeData(text: String){
+        let docRef = db.document("users/\(Usuario.id)/reservas")
+        docRef.setData(["nombre": text])
+    }
 }
+
