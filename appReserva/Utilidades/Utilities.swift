@@ -13,15 +13,14 @@ class Utilities {
     
     static func styleTextField(_ textfield:UITextField) {
         
-        // Create the bottom line
         let bottomLine = CALayer()
         
         bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
         
-        bottomLine.backgroundColor = UIColor.init(red: 48/255, green: 173/255, blue: 99/255, alpha: 1).cgColor
+        bottomLine.backgroundColor = UIColor.init(red: 204/255, green: 0/255, blue: 204/255, alpha: 0.5).cgColor
         
         // Remove border on text field
-        textfield.borderStyle = .none
+        textfield.borderStyle = .roundedRect
         
         // Add the line to the text field
         textfield.layer.addSublayer(bottomLine)
@@ -31,9 +30,14 @@ class Utilities {
     static func styleFilledButton(_ button:UIButton) {
         
         // Filled rounded corner style
-        button.backgroundColor = UIColor.init(red: 48/255, green: 173/255, blue: 99/255, alpha: 1)
+        button.backgroundColor = UIColor.init(red: 204/255, green: 0/255, blue: 204/255, alpha: 0.5)
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.white
+        
+        //shadow color
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowRadius = 1.5
+        
     }
     
     static func styleHollowButton(_ button:UIButton) {
@@ -43,12 +47,8 @@ class Utilities {
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.black
-    }
-    //Función para validación
-   /* static func isPasswordValid(_ password : String) -> Bool {
         
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
-        return passwordTest.evaluate(with: password)
-    }*/
+    }
+    
     
 }
