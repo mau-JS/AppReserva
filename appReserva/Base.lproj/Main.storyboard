@@ -304,6 +304,12 @@
                                     <constraint firstItem="8Fp-Xc-chB" firstAttribute="height" secondItem="c3U-Ef-cYG" secondAttribute="height" id="40r-9X-vs3"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoTec" translatesAutoresizingMaskIntoConstraints="NO" id="R1B-0b-nTl">
+                                <rect key="frame" x="40" y="126" width="310" height="144"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="asa-OT-ht3"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="321-3S-8ny"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -311,6 +317,10 @@
                             <constraint firstItem="321-3S-8ny" firstAttribute="trailing" secondItem="fsl-9F-22o" secondAttribute="trailing" constant="40" id="AcL-si-PfA"/>
                             <constraint firstItem="321-3S-8ny" firstAttribute="bottom" secondItem="fsl-9F-22o" secondAttribute="bottom" constant="40" id="PXx-j0-bQi"/>
                             <constraint firstItem="fsl-9F-22o" firstAttribute="leading" secondItem="321-3S-8ny" secondAttribute="leading" constant="40" id="RDl-si-l8S"/>
+                            <constraint firstItem="R1B-0b-nTl" firstAttribute="leading" secondItem="321-3S-8ny" secondAttribute="leading" constant="40" id="ZkS-R0-2X0"/>
+                            <constraint firstItem="321-3S-8ny" firstAttribute="trailing" secondItem="R1B-0b-nTl" secondAttribute="trailing" constant="40" id="mVb-1C-Pji"/>
+                            <constraint firstItem="fsl-9F-22o" firstAttribute="top" secondItem="R1B-0b-nTl" secondAttribute="bottom" constant="400" id="pOW-Ct-5RL"/>
+                            <constraint firstItem="R1B-0b-nTl" firstAttribute="top" secondItem="321-3S-8ny" secondAttribute="top" constant="38" id="uHe-EY-WmT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2iQ-ta-PKa"/>
@@ -624,6 +634,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.2" width="14" height="11"/>
+        <image name="logoTec" width="1600" height="424"/>
         <image name="person.circle" width="11" height="11"/>
         <image name="questionmark.circle" width="11" height="11"/>
         <image name="studentdesk" width="10" height="12"/>
