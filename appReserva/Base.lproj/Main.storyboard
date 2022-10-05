@@ -414,6 +414,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="TabBar" destination="MuA-dd-jDq" id="rCi-3A-27Y"/>
                         <segue destination="8iq-bh-iJ9" kind="relationship" relationship="viewControllers" id="PeO-Rx-iOd"/>
                         <segue destination="doF-K0-KbS" kind="relationship" relationship="viewControllers" id="dYB-uS-GfT"/>
                         <segue destination="aR4-Zj-iqs" kind="relationship" relationship="viewControllers" id="VGT-01-8th"/>
@@ -480,7 +481,7 @@
         <scene sceneID="9fP-Ec-ymT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8iq-bh-iJ9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cuenta" id="bXf-8q-VqM"/>
+                    <tabBarItem key="tabBarItem" title="Cuenta" image="person.circle" id="bXf-8q-VqM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WXj-hi-k6x">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -624,6 +625,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.2" width="14" height="11"/>
+        <image name="person.circle" width="11" height="11"/>
         <image name="questionmark.circle" width="11" height="11"/>
         <image name="studentdesk" width="10" height="12"/>
         <systemColor name="systemBackgroundColor">
