@@ -480,7 +480,7 @@
         <scene sceneID="9fP-Ec-ymT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8iq-bh-iJ9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cuenta" id="bXf-8q-VqM"/>
+                    <tabBarItem key="tabBarItem" title="Cuenta" image="person.circle" id="bXf-8q-VqM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WXj-hi-k6x">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -624,6 +624,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape.2" width="14" height="11"/>
+        <image name="person.circle" width="11" height="11"/>
         <image name="questionmark.circle" width="11" height="11"/>
         <image name="studentdesk" width="10" height="12"/>
         <systemColor name="systemBackgroundColor">

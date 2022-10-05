@@ -16,7 +16,8 @@ class MainTabBarController: UITabBarController {
         
         super.viewDidLoad()
         //print(viewControllers!)
-        
+        //Cambiando color de la tab bar
+        self.tabBar.tintColor = UIColor.init(red: 204/255, green: 0/255, blue: 204/255, alpha: 0.5)
         //print(idUsuario)
         Usuario.id = idUsuario
         //Para enviar información a tab bars sin navigation controller
