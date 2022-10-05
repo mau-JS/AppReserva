@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C44D74A28E600DD00AB058E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C44D74928E600DD00AB058E /* GoogleService-Info.plist */; };
 		5C44D74C28E6150C00AB058E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44D74B28E6150C00AB058E /* HomeViewController.swift */; };
 		5C44D74E28E62DFD00AB058E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44D74D28E62DFD00AB058E /* MainTabBarController.swift */; };
 		5C44D75228E74ECE00AB058E /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44D75128E74ECE00AB058E /* Usuario.swift */; };
 		5C7A38FE28DEAF9700D0B501 /* Reservas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A38FD28DEAF9700D0B501 /* Reservas.swift */; };
 		5C87906A28E35FCA00980E06 /* AddEditReservaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */; };
+		5CC02A3428ECE0700019E8CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CC02A3328ECE0700019E8CD /* GoogleService-Info.plist */; };
 		5CCE173B28D94685008B9C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE173A28D94685008B9C1D /* AppDelegate.swift */; };
 		5CCE173D28D94685008B9C1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE173C28D94685008B9C1D /* SceneDelegate.swift */; };
 		5CCE174228D94685008B9C1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCE174028D94685008B9C1D /* Main.storyboard */; };
@@ -33,12 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C44D74928E600DD00AB058E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C44D74B28E6150C00AB058E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5C44D74D28E62DFD00AB058E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		5C44D75128E74ECE00AB058E /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		5C7A38FD28DEAF9700D0B501 /* Reservas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservas.swift; sourceTree = "<group>"; };
 		5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditReservaTableViewController.swift; sourceTree = "<group>"; };
+		5CC02A3328ECE0700019E8CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5CCE173728D94685008B9C1D /* appReserva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appReserva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCE173A28D94685008B9C1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CCE173C28D94685008B9C1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,8 +124,8 @@
 				5CCE174328D94687008B9C1D /* Assets.xcassets */,
 				5CCE174528D94687008B9C1D /* LaunchScreen.storyboard */,
 				5CCE174828D94687008B9C1D /* Info.plist */,
-				5C44D74928E600DD00AB058E /* GoogleService-Info.plist */,
 				5C44D75128E74ECE00AB058E /* Usuario.swift */,
+				5CC02A3328ECE0700019E8CD /* GoogleService-Info.plist */,
 			);
 			path = appReserva;
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CCE174728D94687008B9C1D /* LaunchScreen.storyboard in Resources */,
-				5C44D74A28E600DD00AB058E /* GoogleService-Info.plist in Resources */,
+				5CC02A3428ECE0700019E8CD /* GoogleService-Info.plist in Resources */,
 				5CCE174428D94687008B9C1D /* Assets.xcassets in Resources */,
 				5CCE174228D94685008B9C1D /* Main.storyboard in Resources */,
 			);

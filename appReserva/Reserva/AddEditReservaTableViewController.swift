@@ -35,7 +35,8 @@ class AddEditReservaTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "saveUnwind" else{return}
         let db = Firestore.firestore()
-        let aula = aulaTextField.text!
+        let id = Usuario.id
+        let aula = aulaTextField.text ?? ""
         let tipo = tipoTextField.text ?? ""
         let description = "Esta es una descripción"
         let horarioI = horarioInicial.text ?? ""
@@ -53,7 +54,7 @@ class AddEditReservaTableViewController: UITableViewController {
         /*db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva" + String(conteo)).setData(["aula": aula, "tipo": tipo, "descripción": description, "horarioI":horarioI, "horarioF": horarioF],merge:true)*/
         
         //Este objeto es que se imprime en el menú
-        reservas = Reservas(aula: aula, tipo: tipo, description: description, horarioInicio: horarioI, horarioFinal: horarioF)
+        reservas = Reservas(id: id, aula: aula, tipo: tipo, description: description, horarioInicio: horarioI, horarioFinal: horarioF)
         
     }
     //Aquí se agrega el contenido a guardar

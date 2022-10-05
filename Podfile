@@ -10,4 +10,5 @@ target 'appReserva' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseCore'
+  pod 'FirebaseDatabase'
 end
