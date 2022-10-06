@@ -15,14 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="titulo" translatesAutoresizingMaskIntoConstraints="NO" id="w0E-Hg-iNt">
-                                <rect key="frame" x="27" y="383" width="336" height="78"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Reservatio" translatesAutoresizingMaskIntoConstraints="NO" id="w0E-Hg-iNt">
+                                <rect key="frame" x="0.0" y="322" width="390" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="SaO-ug-cux"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="w0E-Hg-iNt" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="DoN-gi-1eu"/>
                             <constraint firstItem="w0E-Hg-iNt" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="G5n-ZV-hEK"/>
+                            <constraint firstAttribute="trailing" secondItem="w0E-Hg-iNt" secondAttribute="trailing" id="mkr-MP-tD4"/>
                             <constraint firstItem="w0E-Hg-iNt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nd8-nZ-IBZ"/>
                         </constraints>
                     </view>
@@ -33,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="titulo" width="336" height="78"/>
+        <image name="Reservatio" width="756" height="567"/>
     </resources>
 </document>

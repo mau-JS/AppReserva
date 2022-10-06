@@ -46,7 +46,7 @@ class ReservaTableViewController: UITableViewController {
     
     var reservas: [Reservas] = []
         //Reservas(aula: "A-102", tipo: "Este es un tipo",description: "Esta es una descripción", //horarioInicio: "2020-09-14", horarioFinal: "2022-10-25")
-        //Reservas(dia: 5, mes: 10, anio: 2021, titulo: "happiness"),
+        //Reservas(dia: 5, mes: 10, anio: 20x21, titulo: "happiness"),
         //Reservas(dia: 7, mes: 10, anio: 2022, titulo: "marte"),
         //Reservas(dia: 5, mes: 10, anio: 1994, titulo: "retiroA"),
         //Reservas(dia: 5, mes: 10, anio: 1996, titulo: "Mapas"),
@@ -124,6 +124,7 @@ class ReservaTableViewController: UITableViewController {
         cell.showsReorderControl = true
         return cell
     }
+    
     
 
     /*

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2FC01128EE3B65008D6605 /* HubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2FC01028EE3B65008D6605 /* HubViewController.swift */; };
+		5C2FC01328EE6576008D6605 /* CartaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2FC01228EE6576008D6605 /* CartaTableViewCell.swift */; };
+		5C2FC01728EE8F19008D6605 /* firstTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2FC01628EE8F19008D6605 /* firstTabViewController.swift */; };
 		5C44D74C28E6150C00AB058E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44D74B28E6150C00AB058E /* HomeViewController.swift */; };
 		5C44D74E28E62DFD00AB058E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44D74D28E62DFD00AB058E /* MainTabBarController.swift */; };
 		5C44D75228E74ECE00AB058E /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C44D75128E74ECE00AB058E /* Usuario.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C2FC01028EE3B65008D6605 /* HubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HubViewController.swift; sourceTree = "<group>"; };
+		5C2FC01228EE6576008D6605 /* CartaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaTableViewCell.swift; sourceTree = "<group>"; };
+		5C2FC01628EE8F19008D6605 /* firstTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstTabViewController.swift; sourceTree = "<group>"; };
 		5C44D74B28E6150C00AB058E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5C44D74D28E62DFD00AB058E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		5C44D75128E74ECE00AB058E /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
@@ -91,6 +97,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5C2FC00F28EE3B35008D6605 /* Hub */ = {
+			isa = PBXGroup;
+			children = (
+				5C2FC01028EE3B65008D6605 /* HubViewController.swift */,
+				5C2FC01228EE6576008D6605 /* CartaTableViewCell.swift */,
+				5C2FC01628EE8F19008D6605 /* firstTabViewController.swift */,
+			);
+			path = Hub;
+			sourceTree = "<group>";
+		};
 		5CCE172E28D94685008B9C1D = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +128,7 @@
 		5CCE173928D94685008B9C1D /* appReserva */ = {
 			isa = PBXGroup;
 			children = (
+				5C2FC00F28EE3B35008D6605 /* Hub */,
 				5CE47BC828E5F099001AA111 /* Utilidades */,
 				5CE47BC128E5E4C3001AA111 /* Login */,
 				5CCE175728D956EC008B9C1D /* Ayuda */,
@@ -312,6 +329,8 @@
 				5CE47BC328E5E4F7001AA111 /* SignUpViewController.swift in Sources */,
 				5CE47BD028E5FAAF001AA111 /* MainViewController.swift in Sources */,
 				5CCE175628D956C0008B9C1D /* AjustesViewController.swift in Sources */,
+				5C2FC01728EE8F19008D6605 /* firstTabViewController.swift in Sources */,
+				5C2FC01328EE6576008D6605 /* CartaTableViewCell.swift in Sources */,
 				5CCE175928D956FE008B9C1D /* AyudaViewController.swift in Sources */,
 				5CCE173B28D94685008B9C1D /* AppDelegate.swift in Sources */,
 				5C44D74C28E6150C00AB058E /* HomeViewController.swift in Sources */,
@@ -319,6 +338,7 @@
 				5CE2B88F28DEB324005FF7D7 /* ReservaTableViewController.swift in Sources */,
 				5C44D75228E74ECE00AB058E /* Usuario.swift in Sources */,
 				5CE47BCC28E5F0CF001AA111 /* Constants.swift in Sources */,
+				5C2FC01128EE3B65008D6605 /* HubViewController.swift in Sources */,
 				5CE47BC528E5E50B001AA111 /* LoginViewController.swift in Sources */,
 				5C44D74E28E62DFD00AB058E /* MainTabBarController.swift in Sources */,
 			);
