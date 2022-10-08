@@ -11,4 +11,6 @@ target 'appReserva' do
   pod 'FirebaseFirestore'
   pod 'FirebaseCore'
   pod 'FirebaseDatabase'
+  pod 'CardSlider'
+  pod 'SkeletonView'
 end

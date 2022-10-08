@@ -15,6 +15,7 @@ import FirebaseFirestore
 class ReservaTableViewController: UITableViewController {
     //Al presionar el botón save se crea un objeto y es agregado al vector
     let db = Firestore.firestore()
+    var docID: [String] = []
     @IBAction func unwindToTableView(_ segue: UIStoryboardSegue){
         
         guard segue.identifier == "saveUnwind",
@@ -33,16 +34,36 @@ class ReservaTableViewController: UITableViewController {
         else{
             let newIndexPath = IndexPath(row: reservas.count, section: 0)
             reservas.append(reserva)
-            db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva_" + String(reservas.count)).setData([
+            
+            
+            //Aquí creamos una referencia de donde obtendremos el ID del documento
+            var ref: DocumentReference? = nil
+            //Aquí subimos los datos de cada reservación
+            ref = db.collection("users").document(Usuario.id).collection("reservas").addDocument(data: [
                 "aula": reserva.aula,
                 "tipo": reserva.tipo,
                 "description": reserva.description,
                 "horarioInicio":reserva.horarioInicio,
-                "horarioFinal": reserva.horarioFinal],merge:true)
+                "horarioFinal": reserva.horarioFinal
+                ] ) { err in
+                    if let err = err {
+                        print("Error al agregar el documento: \(err)")
+                    } else {
+                        //print("Document added with ID: \(ref!.documentID)")
+                        self.docID.append(ref!.documentID)
+                    }
+                }
+            /*db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva_" + String(reservas.count)).setData([
+                "aula": reserva.aula,
+                "tipo": reserva.tipo,
+                "description": reserva.description,
+                "horarioInicio":reserva.horarioInicio,
+                "horarioFinal": reserva.horarioFinal],merge:true)*/
 
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
     }
+    //Creamos un vector donde guardamos los ID de las reservas
     
     var reservas: [Reservas] = []
         //Reservas(aula: "A-102", tipo: "Este es un tipo",description: "Esta es una descripción", //horarioInicio: "2020-09-14", horarioFinal: "2022-10-25")
@@ -59,18 +80,25 @@ class ReservaTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 44.0
         navigationItem.leftBarButtonItem = editButtonItem
         // Este es para imprimir o recibir todos los datos de diccionario
-        print(Usuario.id)
+        //print(Usuario.id)
         
             db.collection("users").document(Usuario.id).collection("reservas").getDocuments(){ (querySnapshot,err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             }
             else{
+                //Aquí es donde recibimos la información de la base de datos.
+                
                 for document in querySnapshot!.documents{
                     self.reservas.append(Reservas(json: document.data()))
+                    self.docID.append(document.documentID)
+                    //Aquí guardamos el ID del documento al momento de recibirlos
+                    //self.docID.append(document.documentID)
                     self.tableView.reloadData()
-                    print(self.reservas)
-                    print("\(document.documentID) =>  \(document.data())")
+                    
+                   // print(self.reservas)
+                    
+                    //print("\(document.documentID) =>  \(document.data())")
                 }
             }
         }
@@ -110,7 +138,7 @@ class ReservaTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return reservas.count
     }
     
@@ -119,6 +147,13 @@ class ReservaTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReserva", for: indexPath) as! ReservaTableViewCell
         let reserva = reservas[indexPath.row]
         cell.update(with: reserva)
+        //Update a la base de datos
+        db.collection("users").document(Usuario.id).collection("reservas").document(String(docID[indexPath.row])).updateData(["aula": reserva.aula,"tipo": reserva.tipo, "description": reserva.description, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
+        /*"aula": reserva.aula,
+        "tipo": reserva.tipo,
+        "description": reserva.description,
+        "horarioInicio":reserva.horarioInicio,
+        "horarioFinal": reserva.horarioFinal*/
         cell.showsReorderControl = true
         // Configure the cell...
         cell.showsReorderControl = true
@@ -139,9 +174,12 @@ class ReservaTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            
+            //Aquí borramos la información
             reservas.remove(at: indexPath.row)
+            //Borrando información de la base de datos
+            db.collection("users").document(String(Usuario.id)).collection("reservas").document(String(docID[indexPath.row])).delete()
+            //Borrando información del ID
+            docID.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             //Borrar información
