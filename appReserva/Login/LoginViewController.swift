@@ -47,8 +47,21 @@ class LoginViewController: UIViewController {
                 //Obteniendo userID
                 
                 //guard let userID = Auth.auth().currentUser?.uid else { return }
-        
-                self.performSegue(withIdentifier: "main", sender: self)
+                let user = Auth.auth().currentUser
+                
+                if ((user!.isEmailVerified) == true){
+                    print("Tu correo ya está verificado")
+                    self.performSegue(withIdentifier: "main", sender: self)                }
+                else{
+                    user!.sendEmailVerification(){(error) in
+                        guard error != nil else{
+                            print("Verificación enviada")
+                            return
+                        }
+                    }
+                }
+                
+                //self.performSegue(withIdentifier: "main", sender: self)
                // self.performSegue(withIdentifier: "main", sender: nil)
                 /*let mainTabBarController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.MainTabBarController) as? MainTabBarController
                 self.view.window?.rootViewController = mainTabBarController

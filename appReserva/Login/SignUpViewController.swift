@@ -10,6 +10,8 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseAnalytics
 import FirebaseFirestore
+import FirebaseEmailAuthUI
+
 
 class SignUpViewController: UIViewController {
 
@@ -27,8 +29,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet var errorLabel: UILabel!
     
     override func viewDidLoad() {
+        self.navigationItem.hidesBackButton = true
         super.viewDidLoad()
         setUpElements()
+        
+        
         
     }
     
@@ -83,23 +88,20 @@ class SignUpViewController: UIViewController {
                 //Checar errores
                 if err != nil{
                     //Hubo un error al crear el usuario
-                    self.showError("Error creando el usuario")
+                   self.showError("Error creando el usuario")
                 }
 //--------------------- Aquí es donde agregamos los nombres a la base de datos.-------------------------
                 else{
-                    //El usuario fue creado satisfactoriamente, ahora guardar el nombre y apellido
-                    //Creando el objeto donde llamaremos todas las funciones de la base de datos
+                                  
                     let db = Firestore.firestore()
-                    //Result contiene el id del usuario
-                    //result!.user.uid tiene el id del usuario
+                   
                     db.collection("users").document(result!.user.uid).setData(["first_name": firstName,"last_name": lastName])
-                    /*db.collection("users").addDocument(data: ["first_name":firstName, "last_name":lastName, "uid": result!.user.uid])*/{ (error) in
+                    { (error) in
                         if error != nil{
-                            self.showError("Error guardando la información del usuario")
+                            self.showError(error!.localizedDescription)
                         }
                     }
-                    //Transición a página de inicio
-                    self.performSegue(withIdentifier: "main2", sender: self)
+                    self.performSegue(withIdentifier: "Login", sender: self)
                 }
                 
             }
@@ -122,3 +124,4 @@ class SignUpViewController: UIViewController {
         }
     }
 }
+
