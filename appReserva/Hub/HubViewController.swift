@@ -8,44 +8,21 @@
 import UIKit
 import CardSlider
 
-struct Item: CardSliderItem{
 
-    var image: UIImage
-    var rating: Int?
-    var title: String
-    var subtitle: String?
-    var description: String?
-}
 
 class HubViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     //Aquí creamos un arreglo de estructuras
-    var data = [Item]()
+    
     
     @IBOutlet var cardTableView: UITableView!
     
-    let pictures: [UIImage] = [UIImage(named: "labCiberseguridad5")!, UIImage(named: "exteriores1")!, UIImage(named: "exteriores2")!]
+   /* let pictures: [UIImage] = [UIImage(named: "labCiberseguridad5")!, UIImage(named: "exteriores1")!, UIImage(named: "exteriores2")!]
+    let titles: [String] = ["Laboratorio de Ciberseguridad","Exteriores 2", "Exteriores 3"]*/
+    let pictures: [UIImage] = [UIImage(systemName: "star")!, UIImage(systemName: "star")!, UIImage(systemName: "star")!]
     let titles: [String] = ["Laboratorio de Ciberseguridad","Exteriores 2", "Exteriores 3"]
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        data.append(Item(image: UIImage(named: "exteriores1")!,
-                         rating: nil,
-                         title: "Conoce el Hub",
-                         subtitle: "Entrada",
-                         description: "Visualiza como es el Hub"))
         
-        data.append(Item(image: UIImage(named: "exteriores2")!,
-                         rating: nil,
-                         title: "Conoce el Hub",
-                         subtitle: "Entrada",
-                         description: "Visualiza como es el Hub"))
-        
-        data.append(Item(image: UIImage(named: "exteriores3")!,
-                         rating: nil,
-                         title: "Conoce el Hub",
-                         subtitle: "Entrada",
-                         description: "Visualiza como es el Hub"))
         
         
        /* myButton.setTitle("Titule", for: .normal)
