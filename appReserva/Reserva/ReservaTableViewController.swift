@@ -23,9 +23,13 @@ class ReservaTableViewController: UITableViewController {
               //Recibe el objeto reserva creado desde reservaTableViewCell
               let reserva = sourceViewController.reservas else {return}
             
+        // MARK: - Update en la base de datos.
         if let selectedIndexPath = tableView.indexPathForSelectedRow{
             //Aquí atrapa a los objetos agregados
             reservas[selectedIndexPath.row] = reserva
+            
+            db.collection("users").document(Usuario.id).collection("reservas").document(String(docID[selectedIndexPath.row])).updateData(["aula": reserva.aula,"tipo": reserva.tipo, "description": reserva.description, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
+            
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
             
         }
@@ -145,10 +149,14 @@ class ReservaTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReserva", for: indexPath) as! ReservaTableViewCell
+        
         let reserva = reservas[indexPath.row]
+        
         cell.update(with: reserva)
         //Update a la base de datos
-        db.collection("users").document(Usuario.id).collection("reservas").document(String(docID[indexPath.row])).updateData(["aula": reserva.aula,"tipo": reserva.tipo, "description": reserva.description, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
+        print(indexPath.row)
+        
+        /*db.collection("users").document(Usuario.id).collection("reservas").document(String(docID[indexPath.row])).updateData(["aula": reserva.aula,"tipo": reserva.tipo, "description": reserva.description, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])*/
         /*"aula": reserva.aula,
         "tipo": reserva.tipo,
         "description": reserva.description,
