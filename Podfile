@@ -13,4 +13,5 @@ target 'appReserva' do
   pod 'FirebaseDatabase'
   pod 'CardSlider'
   pod 'SkeletonView'
+  pod 'iCarousel'
 end

@@ -754,6 +754,7 @@ PODS:
     - Libuv-gRPC (= 0.0.10)
   - gRPC-Core/Interface (1.44.0)
   - GTMSessionFetcher/Core (2.1.0)
+  - iCarousel (1.8.3)
   - leveldb-library (1.22.1)
   - Libuv-gRPC (0.0.10):
     - Libuv-gRPC/Implementation (= 0.0.10)
@@ -776,6 +777,7 @@ DEPENDENCIES:
   - FirebaseCore
   - FirebaseDatabase
   - FirebaseFirestore
+  - iCarousel
   - SkeletonView
 
 SPEC REPOS:
@@ -797,6 +799,7 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - iCarousel
     - leveldb-library
     - Libuv-gRPC
     - nanopb
@@ -821,12 +824,13 @@ SPEC CHECKSUMS:
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
   GTMSessionFetcher: ffbb25ec00ebcb5201adab0a56d808f6f1902d9f
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   SkeletonView: f5b099c708e42a278079a12bcaaf71c303be65a3
 
-PODFILE CHECKSUM: 3d06db7c801348b9d6081f9fb14555b83186754a
+PODFILE CHECKSUM: eef8417b76949fcdf6b28fc0b452e3012f0f8cba
 
 COCOAPODS: 1.11.3
