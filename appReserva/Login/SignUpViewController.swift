@@ -99,7 +99,10 @@ class SignUpViewController: UIViewController {
                         }
                     }
                     //Transición a página de inicio
-                    self.performSegue(withIdentifier: "main2", sender: self)
+                    
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "main2", sender: self)
+                    }
                 }
                 
             }
@@ -117,6 +120,7 @@ class SignUpViewController: UIViewController {
         if segue.identifier == "main2" {
             if let destination = segue.destination as? MainTabBarController {
                 //Enviando el ID para realizar operaciones de usuario
+                destination.modalPresentationStyle = .fullScreen
                 destination.idUsuario = Auth.auth().currentUser!.uid
             }
         }

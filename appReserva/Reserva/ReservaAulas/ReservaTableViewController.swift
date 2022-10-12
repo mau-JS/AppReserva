@@ -156,12 +156,7 @@ class ReservaTableViewController: UITableViewController {
         //Update a la base de datos
         print(indexPath.row)
         
-        /*db.collection("users").document(Usuario.id).collection("reservas").document(String(docID[indexPath.row])).updateData(["aula": reserva.aula,"tipo": reserva.tipo, "description": reserva.description, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])*/
-        /*"aula": reserva.aula,
-        "tipo": reserva.tipo,
-        "description": reserva.description,
-        "horarioInicio":reserva.horarioInicio,
-        "horarioFinal": reserva.horarioFinal*/
+       
         cell.showsReorderControl = true
         // Configure the cell...
         cell.showsReorderControl = true
@@ -170,22 +165,19 @@ class ReservaTableViewController: UITableViewController {
     
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+  
 
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
             //Aquí borramos la información
             reservas.remove(at: indexPath.row)
+            
             //Borrando información de la base de datos
             db.collection("users").document(String(Usuario.id)).collection("reservas").document(String(docID[indexPath.row])).delete()
+            
             //Borrando información del ID
             docID.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -196,31 +188,6 @@ class ReservaTableViewController: UITableViewController {
         } 
     }
     
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBSegueAction func addEditReserva(_ coder: NSCoder, sender: Any?) -> UITableViewController? {
         if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
@@ -240,21 +207,5 @@ class ReservaTableViewController: UITableViewController {
     }
   
 }
-func getData(datos: [Reservas]) -> [Reservas]{
-    var data: [Reservas] = []
-    let db = Firestore.firestore()
-    db.collection("users").document(Usuario.id).collection("reservas").getDocuments(){ (querySnapshot,err) in
-    if let err = err {
-        print("Error getting documents: \(err)")
-    }
-    else{
-        for document in querySnapshot!.documents{
-            data.append(Reservas(json: document.data()))
-            print("\(type(of: document.documentID))\(document.documentID) => \(type(of: document.data()))  \(document.data())")
-        }
-        
-    }
-}
-    return data
-}
+
 

@@ -8,7 +8,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
     @IBOutlet var botonRegistro: UIButton!
     @IBOutlet var botonIniciarSesion: UIButton!
     override func viewDidLoad() {

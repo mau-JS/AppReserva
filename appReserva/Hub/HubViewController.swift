@@ -8,23 +8,29 @@
 import UIKit
 import CardSlider
 
+struct Item: CardSliderItem{
 
+    var image: UIImage
+    var rating: Int?
+    var title: String
+    var subtitle: String?
+    var description: String?
+}
 
 class HubViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     //Aquí creamos un arreglo de estructuras
     
-   
-    
     @IBOutlet var cardTableView: UITableView!
     
-   /* let pictures: [UIImage] = [UIImage(named: "labCiberseguridad5")!, UIImage(named: "exteriores1")!, UIImage(named: "exteriores2")!]
-    let titles: [String] = ["Laboratorio de Ciberseguridad","Exteriores 2", "Exteriores 3"]*/
     let pictures: [UIImage] = [UIImage(systemName: "star")!, UIImage(systemName: "star")!, UIImage(systemName: "star")!]
-    let titles: [String] = ["Laboratorio de Ciberseguridad","Laboratorios IoT", "Plataforma de Reservas"]
+    let titles: [String] = ["Laboratorio de Ciberseguridad","Exteriores 2", "Exteriores 3"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+        
+        
        /* myButton.setTitle("Titule", for: .normal)
         myButton.backgroundColor = .link
         myButton.setTitleColor(.white, for: .normal)*/
@@ -57,19 +63,12 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
             self.present(myWebView, animated: true, completion: nil)
         }
         if indexPath.row == 1 {
-            print("Escena 2")
-            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "secondTabSegue") as! secondTabViewController
-            myWebView.modalPresentationStyle = .fullScreen
-            self.present(myWebView, animated: true, completion: nil)
-        }
-        
-        if indexPath.row == 2 {
-            print("Escena 3")
-            
             let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
+            //Aquí configuramos como deseamos que se presente la pantalla
             myWebView.modalPresentationStyle = .fullScreen
             self.present(myWebView, animated: true, completion: nil)
         }
         
     }
+    
 }

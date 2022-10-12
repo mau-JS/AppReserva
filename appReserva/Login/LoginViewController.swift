@@ -69,6 +69,7 @@ class LoginViewController: UIViewController {
         
             if let destination = segue.destination as? MainTabBarController {
                 //Enviando el ID para realizar operaciones de usuario
+                destination.modalPresentationStyle = .fullScreen
                 destination.idUsuario = Auth.auth().currentUser!.uid
             }
         
