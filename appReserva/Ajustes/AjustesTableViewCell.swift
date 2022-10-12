@@ -10,12 +10,13 @@ import UIKit
 class AjustesTableViewCell: UITableViewCell {
     static let identifier = "AjustesTableViewcell"
     
+    //Configuración aplicada al contenedor
     private let iconContainer: UIView = {
         let view = UIView()
-        //Aplica al frame del view
+        
         view.clipsToBounds = true
         view.layer.cornerRadius = 10
-        //Aplica al layer del view
+        
         view.layer.masksToBounds = true
         return view
     }()
@@ -26,13 +27,13 @@ class AjustesTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
+    //Configuración etiqueta de texto
     private let label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         return label
     }()
-    
+    //Agregando cada componente como subview
     override init (style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(label)
@@ -48,18 +49,18 @@ class AjustesTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        //constraints
+        //constraints de todas las views
         let size: CGFloat = contentView.frame.size.height - 12
-        iconContainer.frame = CGRect(x: 10, y: 6, width: size, height: size)
+        iconContainer.frame = CGRect(x: 15, y: 6, width: size, height: size)
         
         let imageSize: CGFloat = size/1.5
-        iconImageView.frame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
+        iconImageView.frame = CGRect(x: (size - imageSize/2), y: (size - imageSize/2), width: imageSize, height: imageSize)
         //Centrando la imagen en el contenedor
         iconImageView.center = iconContainer.center
         
-        label.frame = CGRect(x: 15 + iconContainer.frame.size.width,
+        label.frame = CGRect(x: 20 + iconContainer.frame.size.width,
                              y: 0,
-                             width: contentView.frame.size.width - 15 - iconContainer.frame.size.width,
+                             width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
                              height: contentView.frame.size.height)
     }
     override func prepareForReuse() {

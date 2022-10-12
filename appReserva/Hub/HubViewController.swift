@@ -54,7 +54,8 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
     
     //Acciones a realizar cuando presionamos una celda.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath){
-        
+        //Es para remover la selección 
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0 {
             print("Escena 1")
             let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "firstTabSegue") as! firstTabViewController

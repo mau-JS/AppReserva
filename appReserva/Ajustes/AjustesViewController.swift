@@ -7,6 +7,13 @@
 
 import UIKit
 
+struct Section{
+    let title: String
+    let options: [SettingsOption]
+}
+
+
+
 struct SettingsOption{
     let title: String
     let icon: UIImage?
@@ -19,12 +26,12 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
         table.register(AjustesTableViewCell.self, forCellReuseIdentifier: AjustesTableViewCell.identifier)
         return table
     }()
-    var models = [SettingsOption]()
+    var models = [Section]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        title = "Settings"
+        title = "Ajustes"
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -32,42 +39,97 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
     }
     func configure(){
-        self.models = Array(0...100).compactMap({
-            SettingsOption(title: "Item \($0)", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
-                
+        
+        //1RA SECCIÓN
+        models.append(Section(title: "General", options: [
+            
+            SettingsOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
+                print("Tapped First Cell")
+            },
+            SettingsOption(title: "BlueTooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .link){
+            },
+            SettingsOption(title: "Airplane mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemGreen){
+            },
+            
+            SettingsOption(title: "Icloud", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemOrange){
             }
-        })
+            
+        ]))
+        //2DA SECCIÓN
+        models.append(Section(title: "Information", options: [
+            
+            SettingsOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
+            },
+            SettingsOption(title: "BlueTooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .link){
+            },
+            SettingsOption(title: "Airplane mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemGreen){
+            },
+            
+            SettingsOption(title: "Icloud", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemOrange){
+            }
+            
+        ]))
+        //3RA SECCIÓN
+        models.append(Section(title: "Apps", options: [
+            
+            SettingsOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
+            },
+            SettingsOption(title: "BlueTooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .link){
+            },
+            SettingsOption(title: "Airplane mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemGreen){
+            },
+            
+            SettingsOption(title: "Icloud", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemOrange){
+            }
+            
+        ]))
+        
+    }
+    
+    //Títulos de secciones
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = models[section]
+        return section.title
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return models[section].options.count
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
         return models.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = models[indexPath.row]
+        let model = models[indexPath.section].options[indexPath.row]
        guard let cell = tableView.dequeueReusableCell(withIdentifier: AjustesTableViewCell.identifier, for: indexPath) as? AjustesTableViewCell else{
             return UITableViewCell()
         }
         cell.configure(with: model)
         return cell
     }
-    
-    //Opciones al clickear menú de ajustes
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath){
-
-        if indexPath.row == 0 {
-            print("Escena 1")
-            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "firstTabSegue") as! firstTabViewController
-            //Aquí configuramos como deseamos que se presente la pantalla
-            myWebView.modalPresentationStyle = .fullScreen
-            self.present(myWebView, animated: true, completion: nil)
-        }
-        if indexPath.row == 1 {
-            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
-            //Aquí configuramos como deseamos que se presente la pantalla
-            myWebView.modalPresentationStyle = .fullScreen
-            self.present(myWebView, animated: true, completion: nil)
-        }
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let model = models[indexPath.section].options[indexPath.row]
+        model.handler()
     }
+    //Opciones al clickear menú de ajustes
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath){
+//
+//        if indexPath.row == 0 {
+//            print("Escena 1")
+//            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "firstTabSegue") as! firstTabViewController
+//            //Aquí configuramos como deseamos que se presente la pantalla
+//            myWebView.modalPresentationStyle = .fullScreen
+//            self.present(myWebView, animated: true, completion: nil)
+//        }
+//        if indexPath.row == 1 {
+//            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
+//            //Aquí configuramos como deseamos que se presente la pantalla
+//            myWebView.modalPresentationStyle = .fullScreen
+//            self.present(myWebView, animated: true, completion: nil)
+//        }
+//
+//    }
 
 }
