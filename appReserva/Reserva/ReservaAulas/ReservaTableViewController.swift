@@ -28,7 +28,7 @@ class ReservaTableViewController: UITableViewController {
             //Aquí atrapa a los objetos agregados
             reservas[selectedIndexPath.row] = reserva
             
-            db.collection("users").document(Usuario.id).collection("reservas").document(String(docID[selectedIndexPath.row])).updateData(["aula": reserva.aula,"tipo": reserva.tipo, "description": reserva.description, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
+            db.collection("users").document(Usuario.id).collection("reservasAula").document(String(docID[selectedIndexPath.row])).updateData(["Aula": reserva.nombreRecurso,"tipo": reserva.tipo, "ubicacion": reserva.ubicacion, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
             
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
             
@@ -43,10 +43,10 @@ class ReservaTableViewController: UITableViewController {
             //Aquí creamos una referencia de donde obtendremos el ID del documento
             var ref: DocumentReference? = nil
             //Aquí subimos los datos de cada reservación
-            ref = db.collection("users").document(Usuario.id).collection("reservas").addDocument(data: [
-                "aula": reserva.aula,
+            ref = db.collection("users").document(Usuario.id).collection("reservasAula").addDocument(data: [
+                "Aula": reserva.nombreRecurso,
                 "tipo": reserva.tipo,
-                "description": reserva.description,
+                "ubicacion": reserva.ubicacion,
                 "horarioInicio":reserva.horarioInicio,
                 "horarioFinal": reserva.horarioFinal
                 ] ) { err in
@@ -58,9 +58,9 @@ class ReservaTableViewController: UITableViewController {
                     }
                 }
             /*db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva_" + String(reservas.count)).setData([
-                "aula": reserva.aula,
+                "nombreRecurso": reserva.nombreRecurso,
                 "tipo": reserva.tipo,
-                "description": reserva.description,
+                "ubicacion": reserva.ubicacion,
                 "horarioInicio":reserva.horarioInicio,
                 "horarioFinal": reserva.horarioFinal],merge:true)*/
 
@@ -70,12 +70,7 @@ class ReservaTableViewController: UITableViewController {
     //Creamos un vector donde guardamos los ID de las reservas
     
     var reservas: [Reservas] = []
-        //Reservas(aula: "A-102", tipo: "Este es un tipo",description: "Esta es una descripción", //horarioInicio: "2020-09-14", horarioFinal: "2022-10-25")
-        //Reservas(dia: 5, mes: 10, anio: 20x21, titulo: "happiness"),
-        //Reservas(dia: 7, mes: 10, anio: 2022, titulo: "marte"),
-        //Reservas(dia: 5, mes: 10, anio: 1994, titulo: "retiroA"),
-        //Reservas(dia: 5, mes: 10, anio: 1996, titulo: "Mapas"),
-        //Reservas(dia: 5, mes: 10, anio: 2010, titulo: "hola")
+        
     
     override func viewDidLoad() {
         //print(Usuario.id)
@@ -83,16 +78,16 @@ class ReservaTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0
         navigationItem.leftBarButtonItem = editButtonItem
-        // Este es para imprimir o recibir todos los datos de diccionario
-        //print(Usuario.id)
         
-            db.collection("users").document(Usuario.id).collection("reservas").getDocuments(){ (querySnapshot,err) in
+        
+        
+            db.collection("users").document(Usuario.id).collection("reservasAula").getDocuments(){ (querySnapshot,err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             }
             else{
-                //Aquí es donde recibimos la información de la base de datos.
                 
+                //Aquí es donde recibimos la información de la base de datos.
                 for document in querySnapshot!.documents{
                     self.reservas.append(Reservas(json: document.data()))
                     self.docID.append(document.documentID)
@@ -109,8 +104,8 @@ class ReservaTableViewController: UITableViewController {
         
         /*docRef.getDocument{(document, error) in
             if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
+                let dataubicacion = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataubicacion)")
             }
             else{
                 print("Document does not exist")
@@ -124,20 +119,13 @@ class ReservaTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
     
-    //Es para dar la opción de borrar celdas
-    //Esta función es para mover celdas
-    /*override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let moverReserva = reservas.remove(at: fromIndexPath.row)
-        reservas.insert(moverReserva, at: to.row)
-    }*/
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+
         return 1
     }
     
@@ -176,7 +164,7 @@ class ReservaTableViewController: UITableViewController {
             reservas.remove(at: indexPath.row)
             
             //Borrando información de la base de datos
-            db.collection("users").document(String(Usuario.id)).collection("reservas").document(String(docID[indexPath.row])).delete()
+            db.collection("users").document(String(Usuario.id)).collection("reservasAula").document(String(docID[indexPath.row])).delete()
             
             //Borrando información del ID
             docID.remove(at: indexPath.row)
@@ -202,7 +190,7 @@ class ReservaTableViewController: UITableViewController {
     }
     //Escribiendo en base de datos
     func writeData(text: String){
-        let docRef = db.document("users/\(Usuario.id)/reservas")
+        let docRef = db.document("users/\(Usuario.id)/reservasAula")
         docRef.setData(["nombre": text])
     }
   

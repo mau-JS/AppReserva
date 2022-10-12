@@ -28,7 +28,7 @@ class ReservaEquipoTableViewController: UITableViewController
             //Aquí atrapa a los objetos agregados
             reservas[selectedIndexPath.row] = reserva
             
-            db.collection("users").document(Usuario.id).collection("reservas").document(String(docID[selectedIndexPath.row])).updateData(["aula": reserva.aula,"tipo": reserva.tipo, "description": reserva.description, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
+            db.collection("users").document(Usuario.id).collection("reservas").document(String(docID[selectedIndexPath.row])).updateData(["nombreRecurso": reserva.nombreRecurso,"tipo": reserva.tipo, "ubicacion": reserva.ubicacion, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
             
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
             
@@ -44,9 +44,9 @@ class ReservaEquipoTableViewController: UITableViewController
             var ref: DocumentReference? = nil
             //Aquí subimos los datos de cada reservación
             ref = db.collection("users").document(Usuario.id).collection("reservas").addDocument(data: [
-                "aula": reserva.aula,
+                "nombreRecurso": reserva.nombreRecurso,
                 "tipo": reserva.tipo,
-                "description": reserva.description,
+                "ubicacion": reserva.ubicacion,
                 "horarioInicio":reserva.horarioInicio,
                 "horarioFinal": reserva.horarioFinal
                 ] ) { err in
@@ -65,7 +65,7 @@ class ReservaEquipoTableViewController: UITableViewController
     //Creamos un vector donde guardamos los ID de las reservas
     
     var reservas: [Reservas] = []
-        //Reservas(aula: "A-102", tipo: "Este es un tipo",description: "Esta es una descripción", //horarioInicio: "2020-09-14", horarioFinal: "2022-10-25")
+        //Reservas(nombreRecurso: "A-102", tipo: "Este es un tipo",ubicacion: "Esta es una descripción", //horarioInicio: "2020-09-14", horarioFinal: "2022-10-25")
         //Reservas(dia: 5, mes: 10, anio: 20x21, titulo: "happiness"),
         //Reservas(dia: 7, mes: 10, anio: 2022, titulo: "marte"),
         //Reservas(dia: 5, mes: 10, anio: 1994, titulo: "retiroA"),
@@ -104,8 +104,8 @@ class ReservaEquipoTableViewController: UITableViewController
         
         /*docRef.getDocument{(document, error) in
             if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
+                let dataubicacion = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataubicacion)")
             }
             else{
                 print("Document does not exist")

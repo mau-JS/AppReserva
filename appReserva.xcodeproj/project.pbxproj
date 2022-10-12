@@ -27,7 +27,6 @@
 		5CCE175628D956C0008B9C1D /* AjustesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE175528D956C0008B9C1D /* AjustesViewController.swift */; };
 		5CCE175928D956FE008B9C1D /* AyudaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE175828D956FE008B9C1D /* AyudaViewController.swift */; };
 		5CD33CA628F5E072007DD877 /* ReservaMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD33CA528F5E072007DD877 /* ReservaMenuController.swift */; };
-		5CD33CAA28F5E538007DD877 /* ReservaEquipo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD33CA928F5E538007DD877 /* ReservaEquipo.swift */; };
 		5CD33CAE28F5E81A007DD877 /* ReservaEquipoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD33CAD28F5E81A007DD877 /* ReservaEquipoTableViewController.swift */; };
 		5CD33CB328F5FAF9007DD877 /* AddEditReservaEquipoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD33CB228F5FAF9007DD877 /* AddEditReservaEquipoTableViewController.swift */; };
 		5CD33CB828F71E72007DD877 /* ReservaEquipoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD33CB728F71E72007DD877 /* ReservaEquipoTableViewCell.swift */; };
@@ -65,7 +64,6 @@
 		5CCE175528D956C0008B9C1D /* AjustesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesViewController.swift; sourceTree = "<group>"; };
 		5CCE175828D956FE008B9C1D /* AyudaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyudaViewController.swift; sourceTree = "<group>"; };
 		5CD33CA528F5E072007DD877 /* ReservaMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaMenuController.swift; sourceTree = "<group>"; };
-		5CD33CA928F5E538007DD877 /* ReservaEquipo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaEquipo.swift; sourceTree = "<group>"; };
 		5CD33CAD28F5E81A007DD877 /* ReservaEquipoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaEquipoTableViewController.swift; sourceTree = "<group>"; };
 		5CD33CB228F5FAF9007DD877 /* AddEditReservaEquipoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditReservaEquipoTableViewController.swift; sourceTree = "<group>"; };
 		5CD33CB728F71E72007DD877 /* ReservaEquipoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaEquipoTableViewCell.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 		5CD33CA828F5E509007DD877 /* ReservaEquipo */ = {
 			isa = PBXGroup;
 			children = (
-				5CD33CA928F5E538007DD877 /* ReservaEquipo.swift */,
 				5CD33CAD28F5E81A007DD877 /* ReservaEquipoTableViewController.swift */,
 				5CD33CB228F5FAF9007DD877 /* AddEditReservaEquipoTableViewController.swift */,
 				5CD33CB728F71E72007DD877 /* ReservaEquipoTableViewCell.swift */,
@@ -364,7 +361,6 @@
 				5CD33CB328F5FAF9007DD877 /* AddEditReservaEquipoTableViewController.swift in Sources */,
 				5CCE175028D950AC008B9C1D /* CuentaViewController.swift in Sources */,
 				5CE47BCA28E5F0AC001AA111 /* Utilities.swift in Sources */,
-				5CD33CAA28F5E538007DD877 /* ReservaEquipo.swift in Sources */,
 				5CE47BC328E5E4F7001AA111 /* SignUpViewController.swift in Sources */,
 				5CD33CA628F5E072007DD877 /* ReservaMenuController.swift in Sources */,
 				5CE47BD028E5FAAF001AA111 /* MainViewController.swift in Sources */,

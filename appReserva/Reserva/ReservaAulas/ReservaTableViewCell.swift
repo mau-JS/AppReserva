@@ -18,8 +18,8 @@ class ReservaTableViewCell: UITableViewCell {
     }
     // En esta función, tenemos los valores a imprimir en cada celda
     func update(with reserva: Reservas){
-        AulaLabel.text = reserva.aula
-        DescripcionLabel.text = reserva.description
+        AulaLabel.text = reserva.nombreRecurso
+        DescripcionLabel.text = "tipo: " + reserva.tipo + "     " + "Ubicación: " + reserva.ubicacion
         HorarioLabel.text = "Inicio: " + reserva.horarioInicio + "      Termina el: " + reserva.horarioFinal
         //HorarioLabel.text = "Inicio: " + String(reserva.dia) + "/" + String(reserva.mes) + "/" + String(reserva.anio) + "    Final: " + String(reserva.diaFinal) + "/" + String(reserva.mesFinal) + "/" + String(reserva.anioFinal)
     }

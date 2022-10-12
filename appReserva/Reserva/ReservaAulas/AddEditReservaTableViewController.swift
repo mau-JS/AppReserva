@@ -36,9 +36,9 @@ class AddEditReservaTableViewController: UITableViewController {
         guard segue.identifier == "saveUnwind" else{return}
         let db = Firestore.firestore()
         let id = Usuario.id
-        let aula = aulaTextField.text ?? ""
+        let nombreRecurso = aulaTextField.text ?? ""
         let tipo = tipoTextField.text ?? ""
-        let description = "Esta es una descripción"
+        let ubicacion = "Aulas I, 3er Piso"
         let horarioI = horarioInicial.text ?? ""
         let horarioF = horarioFinal.text ?? ""
         
@@ -48,13 +48,13 @@ class AddEditReservaTableViewController: UITableViewController {
         
         //Aquí enviamos la información a la base de datos desde los datos que agrega el usuario
         //Se crea un documento por reserva
-        /*db.collection("users/" + String(Usuario.id) + "/reservas").addDocument(data: ["aula" : aula, "tipo": tipo,"descripción": description, "horarioI": horarioI, "horarioF": horarioF])*/
+        /*db.collection("users/" + String(Usuario.id) + "/reservas").addDocument(data: ["nombreRecurso" : nombreRecurso, "tipo": tipo,"descripción": ubicacion, "horarioI": horarioI, "horarioF": horarioF])*/
         
         //Una forma de agregar a la base de datos
-        /*db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva" + String(conteo)).setData(["aula": aula, "tipo": tipo, "descripción": description, "horarioI":horarioI, "horarioF": horarioF],merge:true)*/
+        /*db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva" + String(conteo)).setData(["nombreRecurso": nombreRecurso, "tipo": tipo, "descripción": ubicacion, "horarioI":horarioI, "horarioF": horarioF],merge:true)*/
         
         //Este objeto es que se imprime en el menú
-        reservas = Reservas(id: id, aula: aula, tipo: tipo, description: description, horarioInicio: horarioI, horarioFinal: horarioF)
+        reservas = Reservas(id: id, nombreRecurso: nombreRecurso, tipo: tipo, ubicacion: ubicacion, horarioInicio: horarioI, horarioFinal: horarioF)
         
     }
     //Aquí se agrega el contenido a guardar
@@ -67,7 +67,7 @@ class AddEditReservaTableViewController: UITableViewController {
         
         //Aquí almacenamos los datos en los text field
         if let reservas = reservas {
-            aulaTextField.text = reservas.aula
+            aulaTextField.text = reservas.nombreRecurso
             tipoTextField.text = reservas.tipo
             horarioInicial.text = reservas.horarioInicio
             horarioFinal.text = reservas.horarioFinal
