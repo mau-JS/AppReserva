@@ -175,6 +175,7 @@
 				5CD33CA828F5E509007DD877 /* ReservaEquipo */,
 				5CD33CA728F5E0C3007DD877 /* ReservaAulas */,
 				5CD33CA528F5E072007DD877 /* ReservaMenuController.swift */,
+				5C7A38FD28DEAF9700D0B501 /* Reservas.swift */,
 			);
 			path = Reserva;
 			sourceTree = "<group>";
@@ -198,7 +199,6 @@
 		5CD33CA728F5E0C3007DD877 /* ReservaAulas */ = {
 			isa = PBXGroup;
 			children = (
-				5C7A38FD28DEAF9700D0B501 /* Reservas.swift */,
 				5CE2B88E28DEB324005FF7D7 /* ReservaTableViewController.swift */,
 				5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */,
 				5CE2B89628E1631B005FF7D7 /* ReservaTableViewCell.swift */,

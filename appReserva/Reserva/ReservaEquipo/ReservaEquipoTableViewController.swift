@@ -28,7 +28,7 @@ class ReservaEquipoTableViewController: UITableViewController
             //Aquí atrapa a los objetos agregados
             reservas[selectedIndexPath.row] = reserva
             
-            db.collection("users").document(Usuario.id).collection("reservas").document(String(docID[selectedIndexPath.row])).updateData(["nombreRecurso": reserva.nombreRecurso,"tipo": reserva.tipo, "ubicacion": reserva.ubicacion, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
+            db.collection("users").document(Usuario.id).collection("reservasEquipo").document(String(docID[selectedIndexPath.row])).updateData(["nombreRecurso": reserva.nombreRecurso,"tipo": reserva.tipo, "ubicacion": reserva.ubicacion, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
             
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
             
@@ -43,8 +43,8 @@ class ReservaEquipoTableViewController: UITableViewController
             //Aquí creamos una referencia de donde obtendremos el ID del documento
             var ref: DocumentReference? = nil
             //Aquí subimos los datos de cada reservación
-            ref = db.collection("users").document(Usuario.id).collection("reservas").addDocument(data: [
-                "nombreRecurso": reserva.nombreRecurso,
+            ref = db.collection("users").document(Usuario.id).collection("reservasEquipo").addDocument(data: [
+                "nombreEquipo": reserva.nombreRecurso,
                 "tipo": reserva.tipo,
                 "ubicacion": reserva.ubicacion,
                 "horarioInicio":reserva.horarioInicio,
@@ -81,7 +81,7 @@ class ReservaEquipoTableViewController: UITableViewController
         // Este es para imprimir o recibir todos los datos de diccionario
         //print(Usuario.id)
         
-            db.collection("users").document(Usuario.id).collection("reservas").getDocuments(){ (querySnapshot,err) in
+            db.collection("users").document(Usuario.id).collection("reservasEquipo").getDocuments(){ (querySnapshot,err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             }
@@ -171,7 +171,7 @@ class ReservaEquipoTableViewController: UITableViewController
             reservas.remove(at: indexPath.row)
             
             //Borrando información de la base de datos
-            db.collection("users").document(String(Usuario.id)).collection("reservas").document(String(docID[indexPath.row])).delete()
+            db.collection("users").document(String(Usuario.id)).collection("reservasEquipo").document(String(docID[indexPath.row])).delete()
             
             //Borrando información del ID
             docID.remove(at: indexPath.row)
@@ -197,7 +197,7 @@ class ReservaEquipoTableViewController: UITableViewController
     }
     //Escribiendo en base de datos
     func writeData(text: String){
-        let docRef = db.document("users/\(Usuario.id)/reservas")
+        let docRef = db.document("users/\(Usuario.id)/reservasEquipo")
         docRef.setData(["nombre": text])
     }
   

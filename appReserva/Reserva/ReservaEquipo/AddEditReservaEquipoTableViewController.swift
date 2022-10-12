@@ -38,7 +38,7 @@ class AddEditReservaEquipoViewController: UITableViewController {
         let id = Usuario.id
         let nombreRecurso = aulaTextField.text ?? ""
         let tipo = tipoTextField.text ?? ""
-        let ubicacion = "Esta es una descripción"
+        let ubicacion = "Aulas II, 3er piso"
         let horarioI = horarioInicial.text ?? ""
         let horarioF = horarioFinal.text ?? ""
         
@@ -54,6 +54,7 @@ class AddEditReservaEquipoViewController: UITableViewController {
         /*db.collection("users/" + String(Usuario.id) + "/reservas").document("reserva" + String(conteo)).setData(["nombreRecurso": nombreRecurso, "tipo": tipo, "descripción": ubicacion, "horarioI":horarioI, "horarioF": horarioF],merge:true)*/
         
         //Este objeto es que se imprime en el menú
+        
         reservas = Reservas(id: id, nombreRecurso: nombreRecurso, tipo: tipo, ubicacion: ubicacion, horarioInicio: horarioI, horarioFinal: horarioF)
         
     }
