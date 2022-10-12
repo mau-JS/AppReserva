@@ -16,7 +16,7 @@ struct SettingsOption{
 class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(AjustesTableViewCell.self, forCellReuseIdentifier: AjustesTableViewCell.identifier)
         return table
     }()
     var models = [SettingsOption]()
@@ -44,12 +44,16 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = model.title
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: AjustesTableViewCell.identifier, for: indexPath) as? AjustesTableViewCell else{
+            return UITableViewCell()
+        }
+        cell.configure(with: model)
         return cell
     }
+    
+    //Opciones al clickear menú de ajustes
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath){
-        
+
         if indexPath.row == 0 {
             print("Escena 1")
             let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "firstTabSegue") as! firstTabViewController
@@ -63,7 +67,7 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
             myWebView.modalPresentationStyle = .fullScreen
             self.present(myWebView, animated: true, completion: nil)
         }
-        
+
     }
 
 }
