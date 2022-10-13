@@ -13,6 +13,7 @@ class MainTabBarController: UITabBarController {
     //Recibiendo información desde pantalla de inicio
     var cadena: String = ""
     var idUsuario: String = "Hola logré imprimir"
+    var fondoUsuario: String = ""
     override func viewDidLoad() {
         
         super.viewDidLoad()

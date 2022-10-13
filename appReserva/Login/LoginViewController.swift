@@ -71,6 +71,23 @@ class LoginViewController: UIViewController {
                 //Enviando el ID para realizar operaciones de usuario
                 destination.modalPresentationStyle = .fullScreen
                 destination.idUsuario = Auth.auth().currentUser!.uid
+                
+                let db = Firestore.firestore()
+                
+                let docRef = db.collection("users").document("0XUdlY5qQxVmQ0F0COuH7DewWQt1")
+
+                       docRef.getDocument(source: .cache) { (document, error) in
+                           if let document = document {
+                               let property = document.get("fondoUsuario")
+                               destination.fondoUsuario = property as! String
+                               //print(property!)
+                           } else {
+                               print("No existe el fondo asignado")
+                               destination.fondoUsuario = ""
+                           }
+                       }
+                
+                
             }
         
     }

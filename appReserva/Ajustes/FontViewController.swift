@@ -132,18 +132,21 @@ class FontViewController: UIViewController,UIFontPickerViewControllerDelegate {
         //Estas líneas son las que cambian de fondo
         
         guard let descriptor = viewController.selectedFontDescriptor else{return}
-        //label.font = .systemFont(ofSize: 24)
-        //label.font = UIFont (descriptor: descriptor, size: 24)
+        label.font = .systemFont(ofSize: 24)
+        label.font = UIFont (descriptor: descriptor, size: 24)
         //print(descriptor)
         //Aquí almacenamos el nombre del fondo
         
         //Guardando el nombre del fondo para subirlo a la nube
-        Usuario.fondo = descriptor.postscriptName
-        db.collection("users").document(Usuario.id).updateData(["fondoUsuario": descriptor.postscriptName])
+        //MARK: - AQUÍ ES DONDE MANDAMOS A LA BASE DE DATOS UN DOC
+       
+        
+        //Poscriptname guarda el nombre de la fuente
+       db.collection("users").document("0XUdlY5qQxVmQ0F0COuH7DewWQt1").updateData(["fondoUsuario": descriptor.postscriptName])
         //Esto almacena el nombre del fondo en cadena
-        //print(descriptor.postscriptName)
-       //print(UIFontDescriptor(name: "American Typewriter", size: 20))
-        //print("El tipo de variable es: \(type(of: descriptor)) \(descriptor)")
+//        print(descriptor.postscriptName)
+//       print(UIFontDescriptor(name: "American Typewriter", size: 20))
+//        print("El tipo de variable es: \(type(of: descriptor)) \(descriptor)")
     
     }
 }

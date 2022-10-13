@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseCore
+import FirebaseAnalytics
+import FirebaseFirestore
 
 struct Section{
     let title: String
@@ -21,15 +25,41 @@ struct SettingsOption{
     let handler: (() -> Void)
 }
 class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let db = Firestore.firestore()
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(AjustesTableViewCell.self, forCellReuseIdentifier: AjustesTableViewCell.identifier)
         return table
     }()
+    
     var models = [Section]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //MARK: - AQUÍ ES DONDE LEEMOS DE LA BASE DE DATOS EL FONDO
+        let docRef = db.collection("users").document("0XUdlY5qQxVmQ0F0COuH7DewWQt1")
+
+               docRef.getDocument(source: .cache) { (document, error) in
+                   if let document = document {
+                       let property = document.get("fondoUsuario")
+                       print(property!)
+                   } else {
+                       print("Document does not exist in cache")
+                   }
+               }
+        
+//        let docRef = db.collection("users").document("0XUdlY5qQxVmQ0F0COuH7DewWQt1").collection("Fondo").document("fondoUsuario")
+//
+//        docRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                print("Document data: \(type(of: dataDescription)) \(dataDescription)")
+//            } else {
+//                print("Document does not exist")
+//            }
+//        }
+        
+        
         configure()
         title = "Ajustes"
         view.addSubview(tableView)
