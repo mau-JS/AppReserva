@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PJ8-nr-9ev">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4hC-4r-kMH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -305,10 +305,63 @@
                     <view key="view" contentMode="scaleToFill" id="y4c-Nb-EB6">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1wq-BV-2XA">
+                                <rect key="frame" x="35" y="118" width="320" height="143"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2D-YV-ON0">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="56.666666666666664"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56.666666666666664" id="ZFP-b2-kcv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zrN-sJ-8WU">
+                                        <rect key="frame" x="0.0" y="66.666666666666657" width="320" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="2N4-jV-hWc"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wyh-VU-1nB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XKi-02-uWS">
+                                        <rect key="frame" x="0.0" y="126.66666666666664" width="320" height="16.333333333333329"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Z1-Wr-YBE">
+                                                <rect key="frame" x="0.0" y="0.0" width="191.66666666666666" height="16.333333333333332"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1s-wO-b2p">
+                                                <rect key="frame" x="201.66666666666666" y="0.0" width="118.33333333333334" height="16.333333333333332"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="presionaBoton:" destination="7dk-no-hOS" eventType="touchUpInside" id="PWH-YM-kRV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ob6-DY-LJw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1wq-BV-2XA" firstAttribute="leading" secondItem="Ob6-DY-LJw" secondAttribute="leading" constant="35" id="Ngi-3V-SL0"/>
+                            <constraint firstItem="Ob6-DY-LJw" firstAttribute="trailing" secondItem="1wq-BV-2XA" secondAttribute="trailing" constant="35" id="RFc-jz-BG1"/>
+                            <constraint firstItem="Ob6-DY-LJw" firstAttribute="bottom" secondItem="1wq-BV-2XA" secondAttribute="bottom" constant="500" id="c5u-SC-Xi6"/>
+                            <constraint firstItem="1wq-BV-2XA" firstAttribute="top" secondItem="Ob6-DY-LJw" secondAttribute="top" constant="30" id="wYM-xM-5eM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2a4-tD-GLH"/>
+                    <connections>
+                        <outlet property="editarButton" destination="S1s-wO-b2p" id="byS-gj-ZfO"/>
+                        <outlet property="nombreTextField" destination="zrN-sJ-8WU" id="Prj-Ch-5nn"/>
+                        <outlet property="tituloPlantillaLabel" destination="i2D-YV-ON0" id="kHg-nl-Vkc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IEq-YI-f4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
