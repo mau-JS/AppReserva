@@ -75,9 +75,9 @@ class ReservaEquipoTableViewController: UITableViewController
     override func viewDidLoad() {
         //print(Usuario.id)
         super.viewDidLoad()
-        UILabel.appearance().substituteFontName = Usuario.fondo
-        UITextView.appearance().substituteFontName = Usuario.fondo
-        UITextField.appearance().substituteFontName = Usuario.fondo
+//        UILabel.appearance().substituteFontName = Usuario.fondo
+//        UITextView.appearance().substituteFontName = Usuario.fondo
+//        UITextField.appearance().substituteFontName = Usuario.fondo
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44.0

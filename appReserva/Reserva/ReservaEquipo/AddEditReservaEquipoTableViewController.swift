@@ -65,9 +65,9 @@ class AddEditReservaEquipoViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UILabel.appearance().substituteFontName = Usuario.fondo
-        UITextView.appearance().substituteFontName = Usuario.fondo
-        UITextField.appearance().substituteFontName = Usuario.fondo
+//        UILabel.appearance().substituteFontName = Usuario.fondo
+//        UITextView.appearance().substituteFontName = Usuario.fondo
+//        UITextField.appearance().substituteFontName = Usuario.fondo
         //Aquí almacenamos los datos en los text field
         if let reservas = reservas {
             aulaTextField.text = reservas.nombreRecurso

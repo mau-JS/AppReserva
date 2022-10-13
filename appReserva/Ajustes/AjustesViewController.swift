@@ -37,9 +37,9 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         //MARK: - AQUÍ ES DONDE LEEMOS DE LA BASE DE DATOS EL FONDO
-        UILabel.appearance().substituteFontName = Usuario.fondo
-        UITextView.appearance().substituteFontName = Usuario.fondo
-        UITextField.appearance().substituteFontName = Usuario.fondo
+//        UILabel.appearance().substituteFontName = Usuario.fondo
+//        UITextView.appearance().substituteFontName = Usuario.fondo
+//        UITextField.appearance().substituteFontName = Usuario.fondo
 //        let docRef = db.collection("users").document("0XUdlY5qQxVmQ0F0COuH7DewWQt1")
 //
 //               docRef.getDocument(source: .cache) { (document, error) in
@@ -100,19 +100,19 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         ]))
         //3RA SECCIÓN
-        models.append(Section(title: "Apps", options: [
-            
-            SettingsOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
-            },
-            SettingsOption(title: "BlueTooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .link){
-            },
-            SettingsOption(title: "Airplane mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemGreen){
-            },
-            
-            SettingsOption(title: "Icloud", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemOrange){
-            }
-            
-        ]))
+//        models.append(Section(title: "Apps", options: [
+//
+//            SettingsOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
+//            },
+//            SettingsOption(title: "BlueTooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .link){
+//            },
+//            SettingsOption(title: "Airplane mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemGreen){
+//            },
+//
+//            SettingsOption(title: "Icloud", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemOrange){
+//            }
+//
+//        ]))
         
     }
     
