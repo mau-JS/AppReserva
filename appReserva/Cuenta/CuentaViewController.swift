@@ -20,12 +20,15 @@ class CuentaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nombreTextField.isUserInteractionEnabled = false
+        var nombreTemporal: String = ""
         let docRef = db.collection("users").document(Usuario.id)
 
                docRef.getDocument(source: .cache) { (document, error) in
                    if let document = document {
                        let property = document.get("first_name")
-                       print(property!)
+                       nombreTemporal = property as! String                       //print(property!)
+                       
                        self.nombreTextField.attributedPlaceholder = NSAttributedString(string: property as! String)
                    } else {
                        print("No es posible asignar nombre")
@@ -54,6 +57,26 @@ class CuentaViewController: UIViewController {
 
     
     @IBAction func presionaBoton(_ sender: Any) {
+        nombreTextField.isUserInteractionEnabled.toggle()
+        if nombreTextField.isUserInteractionEnabled == true{
+            editarButton.setTitle("Guardar", for: .normal)
+        }
+        
+        else{
+            //Aquí guardamos la información del usuario
+            editarButton.setTitle("Editar", for: .normal)
+            let name: String = nombreTextField.text!
+            //print(name)
+            if name == ""{
+                print("nombre Vacio")
+            }
+            else{
+                //Aquí limpiamos de espacios el text field
+                let nombreActual = (nombreTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
+                db.collection("users").document(Usuario.id).setData(["first_name": nombreActual],merge: true)
+               print(nombreActual)
+            }
+        }
     }
     
 
