@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseFirestore
+import FirebaseAnalytics
+
 
 
 class firstTabViewController: UIViewController {
@@ -13,7 +19,9 @@ class firstTabViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UILabel.appearance().substituteFontName = Usuario.fondo // USE YOUR FONT NAME INSTEAD
+        UITextView.appearance().substituteFontName = Usuario.fondo // USE YOUR FONT NAME INSTEAD
+        UITextField.appearance().substituteFontName = Usuario.fondo
         // Do any additional setup after loading the view.
     }
     

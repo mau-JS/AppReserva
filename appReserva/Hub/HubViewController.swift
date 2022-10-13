@@ -29,8 +29,6 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
        /* myButton.setTitle("Titule", for: .normal)
         myButton.backgroundColor = .link
         myButton.setTitleColor(.white, for: .normal)*/

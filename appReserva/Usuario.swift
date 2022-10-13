@@ -11,4 +11,7 @@ import FirebaseAnalytics
 import FirebaseAuth
 struct Usuario{
     static var id: String = "Not Set"
+    //Aquí guardamos una variable de tipo Font Descriptor
+    static var fondo: String = ""
+    
 }

@@ -43,12 +43,9 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
         //1RA SECCIÓN
         models.append(Section(title: "General", options: [
             
-            SettingsOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
-                print("Tapped First Cell")
+            SettingsOption(title: "Modo Oscuro", icon: UIImage(systemName: "moon.circle"), iconBackgroundColor: .systemCyan){
             },
-            SettingsOption(title: "BlueTooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .link){
-            },
-            SettingsOption(title: "Airplane mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemGreen){
+            SettingsOption(title: "Cambiar Fondo", icon: UIImage(systemName: "a.circle.fill"), iconBackgroundColor: .systemGreen){
             },
             
             SettingsOption(title: "Icloud", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemOrange){
@@ -56,7 +53,7 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         ]))
         //2DA SECCIÓN
-        models.append(Section(title: "Information", options: [
+        models.append(Section(title: "Accesibilidad", options: [
             
             SettingsOption(title: "Wifi", icon: UIImage(systemName: "house"), iconBackgroundColor: .systemPink){
             },
@@ -99,7 +96,7 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
         return models.count
     }
-    
+    //Opciones al clickear las opciones
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = models[indexPath.section].options[indexPath.row]
        guard let cell = tableView.dequeueReusableCell(withIdentifier: AjustesTableViewCell.identifier, for: indexPath) as? AjustesTableViewCell else{
@@ -112,6 +109,15 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.deselectRow(at: indexPath, animated: true)
         let model = models[indexPath.section].options[indexPath.row]
         model.handler()
+        //Aquí realizamos acciones al seleccionar celdas
+        if indexPath.row == 0 && indexPath.section == 0{
+            
+            print("Escena 1")
+            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "fontViewController") as! FontViewController
+                     //Aquí configuramos como deseamos que se presente la pantalla
+                     myWebView.modalPresentationStyle = .fullScreen
+                      self.present(myWebView, animated: true, completion: nil)
+        }
     }
     //Opciones al clickear menú de ajustes
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath:IndexPath){
