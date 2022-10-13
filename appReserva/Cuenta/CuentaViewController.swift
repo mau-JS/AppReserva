@@ -13,15 +13,27 @@ import FirebaseAnalytics
 
 class CuentaViewController: UIViewController {
     let db = Firestore.firestore()
+    
+    //Variables de campo Nombre
     @IBOutlet var tituloPlantillaLabel: UILabel!
     @IBOutlet var nombreTextField: UITextField!
-    @IBOutlet var buttonLabel: UILabel!
     @IBOutlet var editarButton: UIButton!
+    
+    //Variables de campo apellido
+    @IBOutlet var tituloApellidoLabel: UILabel!
+    @IBOutlet var apellidoTextField: UITextField!
+    @IBOutlet var editarButtonApellido: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        apellidoTextField.isUserInteractionEnabled = false
         nombreTextField.isUserInteractionEnabled = false
+        
         var nombreTemporal: String = ""
+        var apellidoTemporal: String = ""
+        
+        
+        
         let docRef = db.collection("users").document(Usuario.id)
 
                docRef.getDocument(source: .cache) { (document, error) in
@@ -34,6 +46,29 @@ class CuentaViewController: UIViewController {
                        print("No es posible asignar nombre")
                    }
                }
+        
+        let docRef2 = db.collection("users").document(Usuario.id)
+
+               docRef2.getDocument(source: .cache) { (document, error) in
+                   if let document = document {
+                       let propertyApellido = document.get("last_name")
+                       apellidoTemporal = propertyApellido as! String
+                       
+                       self.apellidoTextField.attributedPlaceholder = NSAttributedString(string: propertyApellido as! String)
+                   } else {
+                       print("No es posible asignar apellido")
+                   }
+               }
+        
+        
+        
+        //MARK: - Configurando para Apellidos
+        self.tituloApellidoLabel.text = "Apellido"
+        self.tituloApellidoLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
+        editarButtonApellido.setTitle("Editar", for: .normal)
+        editarButtonApellido.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+        editarButtonApellido.setImage(UIImage(systemName: "pencil"), for: .normal)
+        
         self.tituloPlantillaLabel.text = "Nombre"
         self.tituloPlantillaLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
         editarButton.setTitle("Editar", for: .normal)
@@ -51,7 +86,6 @@ class CuentaViewController: UIViewController {
 //        UILabel.appearance().substituteFontName = Usuario.fondo
 //        UITextView.appearance().substituteFontName = Usuario.fondo
 //        UITextField.appearance().substituteFontName = Usuario.fondo
-        // Do any additional setup after loading the view.
     }
     
 
@@ -79,5 +113,27 @@ class CuentaViewController: UIViewController {
         }
     }
     
-
+    @IBAction func presionaBotonApellido(_ sender: Any) {
+        apellidoTextField.isUserInteractionEnabled.toggle()
+        if apellidoTextField.isUserInteractionEnabled == true{
+            editarButtonApellido.setTitle("Guardar", for: .normal)
+        }
+        
+        else{
+            //Aquí guardamos la información del usuario
+            editarButtonApellido.setTitle("Editar", for: .normal)
+            let apellido: String = nombreTextField.text!
+            //print(name)
+            if apellido == ""{
+                print("nombre Vacio")
+            }
+            else{
+                //Aquí limpiamos de espacios el text field
+                let apellidoActual = (apellidoTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
+                db.collection("users").document(Usuario.id).setData(["last_name": apellidoActual],merge: true)
+               print(apellidoActual)
+            }
+        }
+    }
+    
 }
