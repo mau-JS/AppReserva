@@ -100,11 +100,10 @@ class FontViewController: UIViewController,UIFontPickerViewControllerDelegate {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        //AQUÍ EXTRAER EL FONDO COMO CONSULTA
-        //Aquí asignamos el fondo
-        UILabel.appearance().substituteFontName = Usuario.fondo; // USE YOUR FONT NAME INSTEAD
-        UITextView.appearance().substituteFontName = Usuario.fondo; // USE YOUR FONT NAME INSTEAD
-        UITextField.appearance().substituteFontName = Usuario.fondo; // USE YOUR FONT NAME INSTEAD
+        //MARK: - Asignando el fondo a aplicar 
+        UILabel.appearance().substituteFontName = Usuario.fondo
+        UITextView.appearance().substituteFontName = Usuario.fondo
+        UITextField.appearance().substituteFontName = Usuario.fondo
         view.addSubview(label)
         view.addSubview(button)
         button.addTarget(self, action: #selector(presionaFondo), for: .touchUpInside)

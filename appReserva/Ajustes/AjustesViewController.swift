@@ -37,16 +37,19 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         //MARK: - AQUÍ ES DONDE LEEMOS DE LA BASE DE DATOS EL FONDO
-        let docRef = db.collection("users").document("0XUdlY5qQxVmQ0F0COuH7DewWQt1")
-
-               docRef.getDocument(source: .cache) { (document, error) in
-                   if let document = document {
-                       let property = document.get("fondoUsuario")
-                       print(property!)
-                   } else {
-                       print("Document does not exist in cache")
-                   }
-               }
+        UILabel.appearance().substituteFontName = Usuario.fondo
+        UITextView.appearance().substituteFontName = Usuario.fondo
+        UITextField.appearance().substituteFontName = Usuario.fondo
+//        let docRef = db.collection("users").document("0XUdlY5qQxVmQ0F0COuH7DewWQt1")
+//
+//               docRef.getDocument(source: .cache) { (document, error) in
+//                   if let document = document {
+//                       let property = document.get("fondoUsuario")
+//                       print(property!)
+//                   } else {
+//                       print("Document does not exist in cache")
+//                   }
+//               }
         
 //        let docRef = db.collection("users").document("0XUdlY5qQxVmQ0F0COuH7DewWQt1").collection("Fondo").document("fondoUsuario")
 //

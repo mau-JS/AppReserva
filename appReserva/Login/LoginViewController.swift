@@ -80,6 +80,7 @@ class LoginViewController: UIViewController {
                            if let document = document {
                                let property = document.get("fondoUsuario")
                                destination.fondoUsuario = property as! String
+                               Usuario.fondo = property as! String
                                //print(property!)
                            } else {
                                print("No existe el fondo asignado")
