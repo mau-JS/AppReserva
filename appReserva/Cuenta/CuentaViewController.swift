@@ -26,20 +26,20 @@ class CuentaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Con esto cambiamos la contraseña del usuario
+//        Auth.auth().currentUser?.updatePassword(to: "hola1234567!") { error in
+//          // ...
+//        }
         apellidoTextField.isUserInteractionEnabled = false
         nombreTextField.isUserInteractionEnabled = false
-        
-        var nombreTemporal: String = ""
-        var apellidoTemporal: String = ""
-        
-        
         
         let docRef = db.collection("users").document(Usuario.id)
 
                docRef.getDocument(source: .cache) { (document, error) in
                    if let document = document {
                        let property = document.get("first_name")
-                       nombreTemporal = property as! String                       //print(property!)
+                                           //print(property!)
                        
                        self.nombreTextField.attributedPlaceholder = NSAttributedString(string: property as! String)
                    } else {
@@ -52,7 +52,7 @@ class CuentaViewController: UIViewController {
                docRef2.getDocument(source: .cache) { (document, error) in
                    if let document = document {
                        let propertyApellido = document.get("last_name")
-                       apellidoTemporal = propertyApellido as! String
+                       
                        
                        self.apellidoTextField.attributedPlaceholder = NSAttributedString(string: propertyApellido as! String)
                    } else {
