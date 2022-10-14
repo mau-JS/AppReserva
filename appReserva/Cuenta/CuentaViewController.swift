@@ -39,9 +39,11 @@ class CuentaViewController: UIViewController {
         let user = Auth.auth().currentUser
         if let user = user {
           let email = user.email
-            print(email ?? "")
+            //print(email ?? "")
             self.correoTextField.attributedPlaceholder = NSAttributedString(string: email!)
         }
+        
+        
         tituloGeneralLabel.text = "Menú de Cuenta"
         self.tituloGeneralLabel.font = UIFont.boldSystemFont(ofSize: 28.0)
         //Con esto cambiamos la contraseña del usuario
@@ -50,6 +52,7 @@ class CuentaViewController: UIViewController {
 //        }
         apellidoTextField.isUserInteractionEnabled = false
         nombreTextField.isUserInteractionEnabled = false
+        correoTextField.isUserInteractionEnabled = false
         
         let docRef = db.collection("users").document(Usuario.id)
 
@@ -161,4 +164,39 @@ class CuentaViewController: UIViewController {
         }
     }
     
+    @IBAction func presionaBotonCorreo(_ sender: Any) {
+        correoTextField.isUserInteractionEnabled.toggle()
+        if correoTextField.isUserInteractionEnabled == true{
+            editarButtonCorreo.setTitle("Guardar", for: .normal)
+        }
+        
+        else{
+            //Aquí guardamos la información del usuario
+            editarButtonCorreo.setTitle("Editar", for: .normal)
+            let correo: String = correoTextField.text!
+            //print(name)
+            if correo == ""{
+                print("nombre Vacio")
+            }
+            else{
+                //Aquí limpiamos de espacios el text field
+                let credential = EmailAuthProvider.credential(withEmail: "example@email.com", password: "myPassword")
+                
+                
+                
+                let correoActual = (correoTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
+                
+                Auth.auth().currentUser?.updateEmail(to: correoActual) { error in
+                    if let error = error{
+                        print(error.localizedDescription)
+                    }
+                    else{
+                        print("Cambio de correo satisfactorio")
+                    }
+                }
+               print(correoActual)
+            }
+        }
+        
+    }
 }

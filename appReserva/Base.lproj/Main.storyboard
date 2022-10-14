@@ -433,6 +433,9 @@
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="presionaBotonCorreo:" destination="lXb-TO-9wX" eventType="touchUpInside" id="3mg-w6-bos"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
