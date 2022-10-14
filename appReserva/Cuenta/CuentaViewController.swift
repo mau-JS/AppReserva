@@ -14,6 +14,8 @@ import FirebaseAnalytics
 class CuentaViewController: UIViewController {
     let db = Firestore.firestore()
     
+    @IBOutlet var tituloGeneralLabel: UILabel!
+    
     //Variables de campo Nombre
     @IBOutlet var tituloPlantillaLabel: UILabel!
     @IBOutlet var nombreTextField: UITextField!
@@ -24,9 +26,24 @@ class CuentaViewController: UIViewController {
     @IBOutlet var apellidoTextField: UITextField!
     @IBOutlet var editarButtonApellido: UIButton!
     
+    //Variables de campo correo electrónico
+    
+    @IBOutlet var tituloCorreoLabel: UILabel!
+    @IBOutlet var correoTextField: UITextField!
+    @IBOutlet var editarButtonCorreo: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Extrayendo correo del usuario
+        let user = Auth.auth().currentUser
+        if let user = user {
+          let email = user.email
+            print(email ?? "")
+            self.correoTextField.attributedPlaceholder = NSAttributedString(string: email!)
+        }
+        tituloGeneralLabel.text = "Menú de Cuenta"
+        self.tituloGeneralLabel.font = UIFont.boldSystemFont(ofSize: 28.0)
         //Con esto cambiamos la contraseña del usuario
 //        Auth.auth().currentUser?.updatePassword(to: "hola1234567!") { error in
 //          // ...
@@ -69,13 +86,21 @@ class CuentaViewController: UIViewController {
         editarButtonApellido.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
         editarButtonApellido.setImage(UIImage(systemName: "pencil"), for: .normal)
         
+        //MARK: - Configurando para Nombre
         self.tituloPlantillaLabel.text = "Nombre"
         self.tituloPlantillaLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
         editarButton.setTitle("Editar", for: .normal)
         editarButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
         editarButton.setImage(UIImage(systemName: "pencil"), for: .normal)
         
-        //MARK: - Aquí extramoes el nombre del usuario
+        //MARK: - Configurando para correo electrónico
+        self.tituloCorreoLabel.text = "Correo Electrónico"
+        self.tituloCorreoLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
+        editarButtonCorreo.setTitle("Editar", for: .normal)
+        editarButtonCorreo.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+        editarButtonCorreo.setImage(UIImage(systemName: "pencil"), for: .normal)
+        
+        //MARK: - Aquí extraemos el nombre del usuario
         
         
         
