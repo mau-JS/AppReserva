@@ -58,7 +58,7 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
             print("Escena 1")
             let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "firstTabSegue") as! firstTabViewController
             //Aquí configuramos como deseamos que se presente la pantalla
-            myWebView.modalPresentationStyle = .fullScreen
+            myWebView.modalPresentationStyle = .formSheet
             self.present(myWebView, animated: true, completion: nil)
         }
         if indexPath.row == 1 {

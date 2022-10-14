@@ -24,6 +24,8 @@ class firstTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 2
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .systemBackground
@@ -64,13 +66,61 @@ class firstTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         cell.imageView.image = UIImage(named: imageNames[indexPath.row])
         return cell
     }
-    
+    //Función para cambiar el tamaño de las fotos
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (view.frame.self.size.width/2) - 4, height: (view.frame.self.size.width/2) - 4)
+    }
+    //Agregando efectos a las imágenes
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+            //Acciones a realizar
+            
+            let favorite = UIAction(
+                title: "Favorite",
+                subtitle: "Esta es una descripción",
+                image: UIImage(systemName: "star"),
+                identifier: nil,
+                discoverabilityTitle: nil,
+                attributes: .destructive,
+                state: .off){ _ in
+                print("tapped open")
+            }
+            
+            let search = UIAction(
+                title: "Search",
+                subtitle: "Esta es una descripción",
+                image: UIImage(systemName: "magnifyingglass"),
+                identifier: nil,
+                discoverabilityTitle: nil,
+                attributes: .destructive,
+                state: .off){ _ in
+                print("tapped open")
+            }
+            let open = UIAction(
+                title: "Abrir",
+                subtitle: "Esta es una descripción",
+                image: UIImage(systemName: "photo.tv"),
+                identifier: nil,
+                discoverabilityTitle: nil,
+                attributes: .destructive,
+                state: .off){ _ in
+                print("tapped open")
+            }
+            
+            
+            
+            return UIMenu(title: "Acciones", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [open,favorite, search])
+        }
+        return config
+    }
 }
 
 class ImageCollectionViewCell: UICollectionViewCell{
     static let identifier = "ImageCollectionViewCell"
     let imageView: UIImageView = {
        let imageView = UIImageView()
+        //Ajusta a los bordes
+        imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
