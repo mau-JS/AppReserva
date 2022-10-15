@@ -14,6 +14,7 @@ class CartaTableViewCell: UITableViewCell {
     
     //Configuración de celda
     func configure(picture: UIImage, title: String){
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 25.0)
         pictureView.image = picture
         titleLabel.text = title
         //Edición de las tarjetas

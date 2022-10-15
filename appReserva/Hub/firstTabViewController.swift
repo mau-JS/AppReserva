@@ -18,17 +18,17 @@ import FirebaseAnalytics
 
 class firstTabViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet var botonSalida: UIButton!
-    
-    let imageNames = Array(1...6).map {"image\($0)"}
+    let imageNames = Array(1...8).map {"labCiberseguridad\($0)"}
     
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 2
-        layout.minimumInteritemSpacing = 2
+        layout.minimumInteritemSpacing = 4
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .systemBackground
+//        collectionView.backgroundColor = UIColor.init(red: 204/255, green: 0/255, blue: 204/255, alpha: 0.1)
         collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
         return collectionView
     }()
@@ -72,44 +72,39 @@ class firstTabViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     //Agregando efectos a las imágenes
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
         let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
-            //Acciones a realizar
-            
-            let favorite = UIAction(
-                title: "Favorite",
-                subtitle: "Esta es una descripción",
-                image: UIImage(systemName: "star"),
-                identifier: nil,
-                discoverabilityTitle: nil,
-                attributes: .destructive,
-                state: .off){ _ in
-                print("tapped open")
+            //MARK: - Acciones a realizar acorde al índice del objeto
+            if indexPath.row == 0 {
+                let open = UIAction(
+                    title: "Entrada",
+                    subtitle: "Aquí es donde mostramos una de las mejores pruebas",
+                    image: UIImage(systemName: "photo.tv"),
+                    identifier: nil,
+                    discoverabilityTitle: nil,
+                    attributes: .disabled,
+                    state: .off){ _ in
+                    print("tapped open")
+                }
+                return UIMenu(title: "Laboratorio de Ciberseguridad", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [open])
             }
-            
-            let search = UIAction(
-                title: "Search",
-                subtitle: "Esta es una descripción",
-                image: UIImage(systemName: "magnifyingglass"),
-                identifier: nil,
-                discoverabilityTitle: nil,
-                attributes: .destructive,
-                state: .off){ _ in
-                print("tapped open")
-            }
-            let open = UIAction(
-                title: "Abrir",
-                subtitle: "Esta es una descripción",
-                image: UIImage(systemName: "photo.tv"),
-                identifier: nil,
-                discoverabilityTitle: nil,
-                attributes: .destructive,
-                state: .off){ _ in
-                print("tapped open")
-            }
+            else{
+                let open = UIAction(
+                    title: "Salida",
+                    subtitle: "Aquí es donde mostramos una de las mejores pruebas",
+                    image: UIImage(systemName: "photo.tv"),
+                    identifier: nil,
+                    discoverabilityTitle: nil,
+                    attributes: .disabled,
+                    state: .off){ _ in
+                    print("tapped open")
+                }
+                return UIMenu(title: "Laboratorio de Ciberseguridad", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [open])            }
             
             
             
-            return UIMenu(title: "Acciones", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [open,favorite, search])
+            
+            
         }
         return config
     }
@@ -133,10 +128,14 @@ class ImageCollectionViewCell: UICollectionViewCell{
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
+    //MARK: - Aquí editamos cada una de las fotos
     override func layoutSubviews() {
         super.layoutSubviews()
+        imageView.layer.cornerRadius = 12
         imageView.frame = contentView.bounds
+        
+//        imageView.layer.borderWidth = 2
+//        imageView.layer.borderColor = .init(red: 244, green: 0, blue: 244, alpha: 0.1)
     }
     
     override func prepareForReuse() {
