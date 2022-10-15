@@ -53,6 +53,8 @@ class LoginViewController: UIViewController {
                     print("Tu correo ya está verificado")
                     self.performSegue(withIdentifier: "main", sender: self)                }
                 else{
+                    
+                    
                     user!.sendEmailVerification(){(error) in
                         guard error != nil else{
                             print("Verificación enviada")

@@ -28,6 +28,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpElements()
         
     }
@@ -93,16 +94,19 @@ class SignUpViewController: UIViewController {
                     //Result contiene el id del usuario
                     //result!.user.uid tiene el id del usuario
                     
-                    db.collection("users").document(result!.user.uid).setData(["first_name": firstName,"last_name": lastName, "fondoUsuario": ""]) { (error) in
+                    db.collection("users").document(result!.user.uid).setData(["first_name": firstName,"last_name": lastName]) { (error) in
                         if error != nil{
                             self.showError("Error guardando la información del usuario")
                         }
                     }
                     //Transición a página de inicio
                     
-                    DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "main2", sender: self)
-                    }
+                    
+                        let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
+                        //Aquí configuramos como deseamos que se presente la pantalla
+                        myWebView.modalPresentationStyle = .fullScreen
+                        self.present(myWebView, animated: true, completion: nil)
+                    
                 }
                 
             }
@@ -114,15 +118,5 @@ class SignUpViewController: UIViewController {
     func showError(_ message: String){
         errorLabel.text = message
         errorLabel.alpha = 1
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Enviando UID a los demás controllers
-        if segue.identifier == "main2" {
-            if let destination = segue.destination as? MainTabBarController {
-                //Enviando el ID para realizar operaciones de usuario
-                destination.modalPresentationStyle = .fullScreen
-                destination.idUsuario = Auth.auth().currentUser!.uid
-            }
-        }
     }
 }

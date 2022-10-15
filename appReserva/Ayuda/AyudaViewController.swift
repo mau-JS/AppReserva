@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import MessageUI
 class AyudaViewController: UIViewController {
 
     override func viewDidLoad() {
