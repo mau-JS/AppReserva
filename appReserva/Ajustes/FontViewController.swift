@@ -141,6 +141,7 @@ class FontViewController: UIViewController,UIFontPickerViewControllerDelegate {
        
         
         //Poscriptname guarda el nombre de la fuente
+        
        db.collection("users").document("0XUdlY5qQxVmQ0F0COuH7DewWQt1").updateData(["fondoUsuario": descriptor.postscriptName])
         //Esto almacena el nombre del fondo en cadena
 //        print(descriptor.postscriptName)

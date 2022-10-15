@@ -18,9 +18,9 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         
         
-//        UILabel.appearance().substituteFontName = Usuario.fondo
-//        UITextView.appearance().substituteFontName = Usuario.fondo
-//        UITextField.appearance().substituteFontName = Usuario.fondo
+        //UILabel.appearance().substituteFontName = Usuario.fondo
+        //UITextView.appearance().substituteFontName = Usuario.fondo
+        //UITextField.appearance().substituteFontName = Usuario.fondo
         
         self.tabBar.tintColor = UIColor.init(red: 204/255, green: 0/255, blue: 204/255, alpha: 0.5)
         //print(idUsuario)
