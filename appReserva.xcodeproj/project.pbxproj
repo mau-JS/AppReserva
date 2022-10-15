@@ -17,6 +17,7 @@
 		5C4AE19528F76E0200D6C3B3 /* AjustesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AE19428F76E0200D6C3B3 /* AjustesViewController.swift */; };
 		5C4AE19728F7732E00D6C3B3 /* AjustesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AE19628F7732E00D6C3B3 /* AjustesTableViewCell.swift */; };
 		5C7A38FE28DEAF9700D0B501 /* Reservas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7A38FD28DEAF9700D0B501 /* Reservas.swift */; };
+		5C83224828FB254500FD42EC /* OlvidasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83224728FB254500FD42EC /* OlvidasteViewController.swift */; };
 		5C87906A28E35FCA00980E06 /* AddEditReservaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */; };
 		5CC02A3428ECE0700019E8CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CC02A3328ECE0700019E8CD /* GoogleService-Info.plist */; };
 		5CCE173B28D94685008B9C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE173A28D94685008B9C1D /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 		5C4AE19428F76E0200D6C3B3 /* AjustesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesViewController.swift; sourceTree = "<group>"; };
 		5C4AE19628F7732E00D6C3B3 /* AjustesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesTableViewCell.swift; sourceTree = "<group>"; };
 		5C7A38FD28DEAF9700D0B501 /* Reservas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservas.swift; sourceTree = "<group>"; };
+		5C83224728FB254500FD42EC /* OlvidasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OlvidasteViewController.swift; sourceTree = "<group>"; };
 		5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditReservaTableViewController.swift; sourceTree = "<group>"; };
 		5CC02A3328ECE0700019E8CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5CCE173728D94685008B9C1D /* appReserva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appReserva.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +243,7 @@
 				5CE47BCF28E5FAAF001AA111 /* MainViewController.swift */,
 				5C44D74B28E6150C00AB058E /* HomeViewController.swift */,
 				5C44D74D28E62DFD00AB058E /* MainTabBarController.swift */,
+				5C83224728FB254500FD42EC /* OlvidasteViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				5CE2B89728E1631B005FF7D7 /* ReservaTableViewCell.swift in Sources */,
 				5CE47BCE28E5F890001AA111 /* formUtilities.swift in Sources */,
 				5C7A38FE28DEAF9700D0B501 /* Reservas.swift in Sources */,
+				5C83224828FB254500FD42EC /* OlvidasteViewController.swift in Sources */,
 				5CD33CB328F5FAF9007DD877 /* AddEditReservaEquipoTableViewController.swift in Sources */,
 				5CCE175028D950AC008B9C1D /* CuentaViewController.swift in Sources */,
 				5CE47BCA28E5F0AC001AA111 /* Utilities.swift in Sources */,

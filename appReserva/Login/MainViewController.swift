@@ -20,5 +20,10 @@ class MainViewController: UIViewController {
         Utilities.styleHollowButton(botonIniciarSesion)
     }
     
-
+    @IBAction func presionaInicarSesion(_ sender: Any) {
+        let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "menuIniciarSesion") as! LoginViewController
+        //Aquí configuramos como deseamos que se presente la pantalla
+        myWebView.modalPresentationStyle = .fullScreen
+        self.present(myWebView, animated: true, completion: nil)
+    }
 }

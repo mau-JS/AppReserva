@@ -12,7 +12,7 @@ import FirebaseAnalytics
 import FirebaseFirestore
 
 class LoginViewController: UIViewController {
-    
+    @IBOutlet var olvidasteButton: UIButton!
     @IBOutlet var eMailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var LoginButton: UIButton!
@@ -20,10 +20,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        setUpElements()
+        olvidasteButton.layer.borderWidth = 0
+        olvidasteButton.tintColor = UIColor.init(red: 204/255, green: 0/255, blue: 204/255, alpha: 0.5)
+        olvidasteButton.setTitle("¿Olvidaste tu contraseña?", for: .normal)
     }
     
     func setUpElements(){
         errorLabel.alpha = 0
+        Utilities.styleHollowButton(olvidasteButton)
         Utilities.styleTextField(eMailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(LoginButton)

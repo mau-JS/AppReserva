@@ -20,6 +20,7 @@ struct Item: CardSliderItem{
 class HubViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     //Aquí creamos un arreglo de estructuras
     
+    @IBOutlet var tituloLabel: UILabel!
     @IBOutlet var cardTableView: UITableView!
     
     let pictures: [UIImage] = [UIImage(systemName: "star")!, UIImage(systemName: "star")!, UIImage(systemName: "star")!]
@@ -28,10 +29,10 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tituloLabel.text = "Bienvenido al HUB"
         
-       /* myButton.setTitle("Titule", for: .normal)
-        myButton.backgroundColor = .link
-        myButton.setTitleColor(.white, for: .normal)*/
+//        myButton.backgroundColor = .link
+//        myButton.setTitleColor(.white, for: .normal)
         
     }
 
