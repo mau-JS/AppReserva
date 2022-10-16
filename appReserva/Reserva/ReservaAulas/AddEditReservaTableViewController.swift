@@ -12,8 +12,16 @@ import FirebaseAnalytics
 import FirebaseFirestore
 class AddEditReservaTableViewController: UITableViewController {
     var conteo = 0
-    let countries = ["India","Brazil", "Mexico", "USA"]
-    var pickerView = UIPickerView()
+    let aulas = ["A-101","A-102", "A103", "A-201", "A-202"]
+    let laboratorios = ["CEDETEC 102","CEDETEC 103", "CEDETEC 202", "CEDETEC 203", "CEDETEC 203"]
+    let cubiculos = ["eere 102","CEDETEC 232", "CEDETEC 2323", "CEDETEC 112", "CEDETE"]
+    let tipo = ["Laboratorio","Salón", "Cubiculo"]
+    
+    var selectedItemsArray = [String]()
+    //MARK: - Aquí declaramos los pickerview
+    var lugarPickerView = UIPickerView()
+    var tipoPickerView = UIPickerView()
+    
     @IBOutlet var aulaTextField: UITextField!
     @IBOutlet var tipoTextField: UITextField!
     @IBOutlet var horarioInicial: UITextField!
@@ -66,10 +74,19 @@ class AddEditReservaTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        aulaTextField.inputView = pickerView
+        //MARK: - Aquí también manipulamos pickerview
+        lugarPickerView.delegate = self
+        lugarPickerView.dataSource = self
+        
+        tipoPickerView.delegate = self
+        tipoPickerView.dataSource = self
+        
+        tipoTextField.inputView = tipoPickerView
+        tipoTextField.textAlignment = .center
+        aulaTextField.inputView = lugarPickerView
         aulaTextField.textAlignment = .center
+        
+        
         
         
         
@@ -112,7 +129,6 @@ class AddEditReservaTableViewController: UITableViewController {
     }
     //Función para botón
     func createDatePicker(){
-        
         datePicker.preferredDatePickerStyle = .wheels // Darle formato de wheels a la fecha
         datePicker.datePickerMode = .date
         horarioInicial.inputView = datePicker
@@ -162,14 +178,74 @@ extension AddEditReservaTableViewController: UIPickerViewDelegate, UIPickerViewD
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return countries.count
+        if pickerView == tipoPickerView{
+            return tipo.count
+        }
+        else if pickerView == lugarPickerView{
+            return selectedItemsArray.count
+        }
+        return 0
+//        switch pickerView{
+//        case lugarPickerView:
+//            return lugares.count
+//        case tipoPickerView:
+//            return tipo.count
+//        default:
+//            return 0
+//        }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return countries[row]
+        if pickerView == tipoPickerView{
+            return tipo[row]
+        }
+        else if pickerView == lugarPickerView{
+            return selectedItemsArray[row]
+        }
+        return ""
+//        switch pickerView{
+//        case lugarPickerView:
+//            return lugares[row]
+//        case tipoPickerView:
+//            return tipo[row]
+//        default:
+//            return ""
+//        }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        aulaTextField.text = countries[row]
-        aulaTextField.resignFirstResponder()
+        if pickerView == tipoPickerView{
+            switch row{
+            case 0:
+                selectedItemsArray = aulas
+                tipoTextField.text = tipo[row]
+            case 1:
+                selectedItemsArray = laboratorios
+                tipoTextField.text = tipo[row]
+            case 2:
+                selectedItemsArray = cubiculos
+                tipoTextField.text = tipo[row]
+            default:
+                selectedItemsArray = []
+            }
+            lugarPickerView.reloadAllComponents()
+        }
+        else if pickerView == lugarPickerView{
+            print(row)
+            var item = selectedItemsArray[row]
+                //tipoTextField.text = tipo[row]
+                aulaTextField.text = item
+        }
+//        if pickerView == lugarPickerView{
+//            aulaTextField.text = lugares[row]
+//            aulaTextField.resignFirstResponder()
+//        }
+//        if pickerView == tipoPickerView{
+//            tipoTextField.text = tipo[row]
+//            tipoTextField.resignFirstResponder()
+//        }
     }
+    
+    
+    
 }
