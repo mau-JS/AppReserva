@@ -92,11 +92,7 @@ class AjustesViewController: UIViewController, UITableViewDelegate, UITableViewD
             },
             SettingsOption(title: "BlueTooth", icon: UIImage(systemName: "bluetooth"), iconBackgroundColor: .link){
             },
-            SettingsOption(title: "Airplane mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemGreen){
-            },
-            
-            SettingsOption(title: "Icloud", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemOrange){
-            }
+           
             
         ]))
         //3RA SECCIÓN

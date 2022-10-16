@@ -12,6 +12,8 @@ import FirebaseAnalytics
 import FirebaseFirestore
 class AddEditReservaTableViewController: UITableViewController {
     var conteo = 0
+    let countries = ["India","Brazil", "Mexico", "USA"]
+    var pickerView = UIPickerView()
     @IBOutlet var aulaTextField: UITextField!
     @IBOutlet var tipoTextField: UITextField!
     @IBOutlet var horarioInicial: UITextField!
@@ -64,6 +66,12 @@ class AddEditReservaTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        aulaTextField.inputView = pickerView
+        aulaTextField.textAlignment = .center
+        
+        
         
         //Aquí almacenamos los datos en los text field
         if let reservas = reservas {
@@ -149,4 +157,19 @@ class AddEditReservaTableViewController: UITableViewController {
     //Terminan funciones de horario
 
     
+}
+extension AddEditReservaTableViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countries.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return countries[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        aulaTextField.text = countries[row]
+        aulaTextField.resignFirstResponder()
+    }
 }

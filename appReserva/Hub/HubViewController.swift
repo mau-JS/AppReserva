@@ -23,7 +23,7 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
     @IBOutlet var tituloLabel: UILabel!
     @IBOutlet var cardTableView: UITableView!
     
-    let pictures: [UIImage] = [UIImage(systemName: "star")!, UIImage(systemName: "star")!, UIImage(systemName: "star")!]
+    let pictures: [UIImage] = [UIImage(systemName: "pencil")!, UIImage(systemName: "star")!, UIImage(systemName: "star")!]
     let titles: [String] = ["Laboratorio de Ciberseguridad","Exteriores 2", "Exteriores 3"]
     
     
