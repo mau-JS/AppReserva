@@ -81,10 +81,14 @@ class AddEditReservaTableViewController: UITableViewController {
         tipoPickerView.delegate = self
         tipoPickerView.dataSource = self
         
+        
         tipoTextField.inputView = tipoPickerView
         tipoTextField.textAlignment = .center
+        tipoTextField.inputAccessoryView = createToolbar()
+        
         aulaTextField.inputView = lugarPickerView
         aulaTextField.textAlignment = .center
+        aulaTextField.inputAccessoryView = createToolbar()
         
         
         
@@ -204,14 +208,6 @@ extension AddEditReservaTableViewController: UIPickerViewDelegate, UIPickerViewD
             return selectedItemsArray[row]
         }
         return ""
-//        switch pickerView{
-//        case lugarPickerView:
-//            return lugares[row]
-//        case tipoPickerView:
-//            return tipo[row]
-//        default:
-//            return ""
-//        }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == tipoPickerView{
