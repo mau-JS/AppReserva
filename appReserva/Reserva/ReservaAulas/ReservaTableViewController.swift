@@ -97,8 +97,9 @@ class ReservaTableViewController: UITableViewController {
                     
                    // print(self.reservas)
                     
-                    //print("\(document.documentID) =>  \(document.data())")
+                    print("\(document.documentID) =>  \(document.data())")
                 }
+                
             }
         }
         
@@ -148,6 +149,7 @@ class ReservaTableViewController: UITableViewController {
         cell.showsReorderControl = true
         // Configure the cell...
         cell.showsReorderControl = true
+        
         return cell
     }
     

@@ -14,8 +14,8 @@ class AddEditReservaTableViewController: UITableViewController {
     var conteo = 0
     let aulas = ["A-101","A-102", "A103", "A-201", "A-202"]
     let laboratorios = ["CEDETEC 102","CEDETEC 103", "CEDETEC 202", "CEDETEC 203", "CEDETEC 203"]
-    let cubiculos = ["eere 102","CEDETEC 232", "CEDETEC 2323", "CEDETEC 112", "CEDETE"]
-    let tipo = ["Laboratorio","Salón", "Cubiculo"]
+    let cubiculos = ["CUB-102","CUB-201", "CUB-302", "CUB-301", "CUB-101"]
+    let tipo = ["Selecciona el tipo...","Laboratorio","Salón", "Cubiculo"]
     
     var selectedItemsArray = [String]()
     //MARK: - Aquí declaramos los pickerview
@@ -74,6 +74,7 @@ class AddEditReservaTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utilities.styleTextField(aulaTextField)
         //MARK: - Aquí también manipulamos pickerview
         lugarPickerView.delegate = self
         lugarPickerView.dataSource = self
@@ -134,7 +135,8 @@ class AddEditReservaTableViewController: UITableViewController {
     //Función para botón
     func createDatePicker(){
         datePicker.preferredDatePickerStyle = .wheels // Darle formato de wheels a la fecha
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.minimumDate =  Date(timeIntervalSinceNow: 0)
         horarioInicial.inputView = datePicker
         horarioInicial.inputAccessoryView = createToolbar()
         
@@ -142,7 +144,8 @@ class AddEditReservaTableViewController: UITableViewController {
     func createDatePicker2(){
         
         datePicker2.preferredDatePickerStyle = .wheels // Darle formato de wheels a la fecha
-        datePicker2.datePickerMode = .date
+        datePicker2.datePickerMode = .dateAndTime
+        datePicker2.minimumDate =  Date(timeIntervalSinceNow: 0)
         horarioFinal.inputView = datePicker2
         horarioFinal.inputAccessoryView = createToolbar2()
         
@@ -155,7 +158,7 @@ class AddEditReservaTableViewController: UITableViewController {
         //Extraemos el texto de la fecha
         //self.birthdayField.text = "\(datePicker.date)"
         horarioInicial.textAlignment = .center
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         self.horarioInicial.text = dateFormatter.string(from: datePicker.date)
         print(self.horarioInicial.text!)
         self.view.endEditing(true)
@@ -168,7 +171,7 @@ class AddEditReservaTableViewController: UITableViewController {
         //Extraemos el texto de la fecha
         //self.birthdayField.text = "\(datePicker.date)"
         horarioFinal.textAlignment = .center
-        dateFormatter2.dateFormat = "yyyy-MM-dd"
+        dateFormatter2.dateFormat = "yyyy-MM-dd HH:mm"
         self.horarioFinal.text = dateFormatter2.string(from: datePicker2.date)
         print(self.horarioFinal.text!)
         self.view.endEditing(true)
@@ -212,13 +215,13 @@ extension AddEditReservaTableViewController: UIPickerViewDelegate, UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == tipoPickerView{
             switch row{
-            case 0:
-                selectedItemsArray = aulas
-                tipoTextField.text = tipo[row]
             case 1:
                 selectedItemsArray = laboratorios
                 tipoTextField.text = tipo[row]
             case 2:
+                selectedItemsArray = aulas
+                tipoTextField.text = tipo[row]
+            case 3:
                 selectedItemsArray = cubiculos
                 tipoTextField.text = tipo[row]
             default:
@@ -230,6 +233,7 @@ extension AddEditReservaTableViewController: UIPickerViewDelegate, UIPickerViewD
             print(row)
             var item = selectedItemsArray[row]
                 //tipoTextField.text = tipo[row]
+            aulaTextField.text = ""
                 aulaTextField.text = item
         }
 //        if pickerView == lugarPickerView{

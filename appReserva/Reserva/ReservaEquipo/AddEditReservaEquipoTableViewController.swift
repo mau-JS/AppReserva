@@ -12,6 +12,15 @@ import FirebaseAnalytics
 import FirebaseFirestore
 class AddEditReservaEquipoViewController: UITableViewController {
     var conteo = 0
+    let aulas = ["A-101","A-102", "A103", "A-201", "A-202"]
+    let laboratorios = ["CEDETEC 102","CEDETEC 103", "CEDETEC 202", "CEDETEC 203", "CEDETEC 203"]
+    let cubiculos = ["eere 102","CEDETEC 232", "CEDETEC 2323", "CEDETEC 112", "CEDETE"]
+    let tipo = ["Selecciona un tipo...","Laboratorio","Salón", "Cubiculo"]
+    
+    var selectedItemsArray = [String]()
+    //MARK: - Aquí declaramos los pickerview
+    var lugarPickerView = UIPickerView()
+    var tipoPickerView = UIPickerView()
     @IBOutlet var aulaTextField: UITextField!
     @IBOutlet var tipoTextField: UITextField!
     @IBOutlet var horarioInicial: UITextField!
@@ -65,10 +74,21 @@ class AddEditReservaEquipoViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UILabel.appearance().substituteFontName = Usuario.fondo
-//        UITextView.appearance().substituteFontName = Usuario.fondo
-//        UITextField.appearance().substituteFontName = Usuario.fondo
-        //Aquí almacenamos los datos en los text field
+        lugarPickerView.delegate = self
+        lugarPickerView.dataSource = self
+        
+        tipoPickerView.delegate = self
+        tipoPickerView.dataSource = self
+        
+        
+        tipoTextField.inputView = tipoPickerView
+        tipoTextField.textAlignment = .center
+        tipoTextField.inputAccessoryView = createToolbar()
+        
+        aulaTextField.inputView = lugarPickerView
+        aulaTextField.textAlignment = .center
+        aulaTextField.inputAccessoryView = createToolbar()
+
         if let reservas = reservas {
             aulaTextField.text = reservas.nombreRecurso
             tipoTextField.text = reservas.tipo
@@ -110,6 +130,8 @@ class AddEditReservaEquipoViewController: UITableViewController {
         
         datePicker.preferredDatePickerStyle = .wheels // Darle formato de wheels a la fecha
         datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.minimumDate =  Date(timeIntervalSinceNow: 0)
         horarioInicial.inputView = datePicker
         horarioInicial.inputAccessoryView = createToolbar()
         
@@ -118,6 +140,8 @@ class AddEditReservaEquipoViewController: UITableViewController {
         
         datePicker2.preferredDatePickerStyle = .wheels // Darle formato de wheels a la fecha
         datePicker2.datePickerMode = .date
+        datePicker2.datePickerMode = .dateAndTime
+        datePicker2.minimumDate =  Date(timeIntervalSinceNow: 0)
         horarioFinal.inputView = datePicker2
         horarioFinal.inputAccessoryView = createToolbar2()
         
@@ -130,7 +154,7 @@ class AddEditReservaEquipoViewController: UITableViewController {
         //Extraemos el texto de la fecha
         //self.birthdayField.text = "\(datePicker.date)"
         horarioInicial.textAlignment = .center
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         self.horarioInicial.text = dateFormatter.string(from: datePicker.date)
         print(self.horarioInicial.text!)
         self.view.endEditing(true)
@@ -143,11 +167,75 @@ class AddEditReservaEquipoViewController: UITableViewController {
         //Extraemos el texto de la fecha
         //self.birthdayField.text = "\(datePicker.date)"
         horarioFinal.textAlignment = .center
-        dateFormatter2.dateFormat = "yyyy-MM-dd"
+        dateFormatter2.dateFormat = "yyyy-MM-dd HH:mm"
         self.horarioFinal.text = dateFormatter2.string(from: datePicker2.date)
         print(self.horarioFinal.text!)
         self.view.endEditing(true)
     }
     //Terminan funciones de horario
 
+}
+extension AddEditReservaEquipoViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == tipoPickerView{
+            return tipo.count
+        }
+        else if pickerView == lugarPickerView{
+            return selectedItemsArray.count
+        }
+        return 0
+//        switch pickerView{
+//        case lugarPickerView:
+//            return lugares.count
+//        case tipoPickerView:
+//            return tipo.count
+//        default:
+//            return 0
+//        }
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == tipoPickerView{
+            return tipo[row]
+        }
+        else if pickerView == lugarPickerView{
+            return selectedItemsArray[row]
+        }
+        return ""
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == tipoPickerView{
+            switch row{
+            case 1:
+                selectedItemsArray = aulas
+                tipoTextField.text = tipo[row]
+            case 2:
+                selectedItemsArray = laboratorios
+                tipoTextField.text = tipo[row]
+            case 3:
+                selectedItemsArray = cubiculos
+                tipoTextField.text = tipo[row]
+            default:
+                selectedItemsArray = []
+            }
+            lugarPickerView.reloadAllComponents()
+        }
+        else if pickerView == lugarPickerView{
+            print(row)
+            var item = selectedItemsArray[row]
+                //tipoTextField.text = tipo[row]
+                aulaTextField.text = item
+        }
+//        if pickerView == lugarPickerView{
+//            aulaTextField.text = lugares[row]
+//            aulaTextField.resignFirstResponder()
+//        }
+//        if pickerView == tipoPickerView{
+//            tipoTextField.text = tipo[row]
+//            tipoTextField.resignFirstResponder()
+//        }
+    }
 }

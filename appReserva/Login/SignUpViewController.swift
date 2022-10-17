@@ -65,6 +65,7 @@ class SignUpViewController: UIViewController {
     }
     @IBAction func presionaRegistrarse(_ sender: Any) {
         //Validar campos y crear usuarios
+        
         let error = validateFields()
        
         if error != nil{

@@ -9,11 +9,16 @@ import UIKit
 
 class ReservaTableViewCell: UITableViewCell {
     //Outlet de cada una de las etiquetas
+    
     @IBOutlet var AulaLabel: UILabel!
     @IBOutlet var DescripcionLabel: UILabel!
     @IBOutlet var HorarioLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        AulaLabel.layer.borderWidth = 3.0
+        AulaLabel.layer.cornerRadius = 10
+        
+        DescripcionLabel.layer.cornerRadius = 20
         // Initialization code
     }
     // En esta función, tenemos los valores a imprimir en cada celda
@@ -28,5 +33,6 @@ class ReservaTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
+
