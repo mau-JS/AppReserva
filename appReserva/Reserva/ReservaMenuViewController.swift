@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReservaMenuViewController: UIViewController, UITableViewDataSource {
+class ReservaMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(CollectionTableViewCell.self, forCellReuseIdentifier: CollectionTableViewCell.identifier)
@@ -17,10 +17,9 @@ class ReservaMenuViewController: UIViewController, UITableViewDataSource {
     private let viewModels: [CollectionTableViewCellViewModel] = [
         //Vector de todo lo que aparece
         CollectionTableViewCellViewModel(viewModels: [
-            TileCollectionViewCellViewModel(name: "Apple", backgroundColor: .systemBlue),
-            TileCollectionViewCellViewModel(name: "Apple", backgroundColor: .systemPink),
-            TileCollectionViewCellViewModel(name: "Apple", backgroundColor: .systemRed),
-            TileCollectionViewCellViewModel(name: "Apple", backgroundColor: .systemCyan)
+            TileCollectionViewCellViewModel(name: "Reserva de Aulas", backgroundColor: .systemBlue),
+            TileCollectionViewCellViewModel(name: "Reserva de Materiales", backgroundColor: .systemPink),
+            TileCollectionViewCellViewModel(name: "Reserva de Equipos", backgroundColor: .systemRed),
         ])
     ]
     
@@ -30,6 +29,7 @@ class ReservaMenuViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         view.addSubview(tableView)
         tableView.dataSource = self
+        tableView.delegate = self
         // Do any additional setup after loading the view.
     }
     override func viewDidLayoutSubviews() {
@@ -44,18 +44,28 @@ class ReservaMenuViewController: UIViewController, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell else{
             fatalError()
         }
+        cell.delegatee = self
         cell.configure(with: viewModel)
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.frame.size.width/2
     }
-    */
 
+}
+
+extension ReservaMenuViewController: CollectionTableViewCellDelegate{
+    func collectionTableViewCellDidTapItem(with viewModel: TileCollectionViewCellViewModel) {
+        switch viewModel.name{
+        case "Reserva de Aulas":
+            self.performSegue(withIdentifier: "ReservaAulaSegue", sender: nil)
+        case "Reserva de Equipos":
+            self.performSegue(withIdentifier: "ReservaEquipoSegue", sender: nil)
+        case "Reserva de Materiales":
+            self.performSegue(withIdentifier: "ReservaMaterialSegue", sender: nil)
+        default:
+            print("Hola")
+        }
+    }
 }

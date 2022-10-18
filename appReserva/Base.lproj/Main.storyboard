@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4zV-jW-0bt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4hC-4r-kMH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -13,7 +13,7 @@
             <objects>
                 <tableViewController id="h01-Zs-inT" userLabel="Reserva Table View Controller" customClass="ReservaTableViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="CUs-S8-Tvw">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -90,7 +90,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJS-s0-MxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6223.0769230769229" y="11.374407582938389"/>
+            <point key="canvasLocation" x="6497" y="-77"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="EHf-IC-ZJy">
@@ -541,7 +541,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3V4-Z0-giu">
-                                <rect key="frame" x="40" y="96.000000000000014" width="310" height="236.33333333333337"/>
+                                <rect key="frame" x="40" y="84.000000000000014" width="310" height="236.33333333333337"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kkf-wK-PbG">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="34"/>
@@ -619,7 +619,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DGD-El-BKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4243.0769230769229" y="-107.34597156398104"/>
+            <point key="canvasLocation" x="4192" y="1"/>
         </scene>
         <!--Ayuda View Controller-->
         <scene sceneID="7xN-wM-FLK">
@@ -864,7 +864,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcT-WK-wfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5449.2307692307686" y="10.663507109004739"/>
+            <point key="canvasLocation" x="5286" y="746"/>
         </scene>
         <!--Cuenta-->
         <scene sceneID="9fP-Ec-ymT">
@@ -899,7 +899,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGb-18-FFp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4677" y="709"/>
+            <point key="canvasLocation" x="4462" y="757"/>
         </scene>
         <!--Ayuda-->
         <scene sceneID="1In-Wu-k3u">
@@ -1197,7 +1197,7 @@
         <!--Reserva Menu View Controller-->
         <scene sceneID="jSS-6E-yYf">
             <objects>
-                <viewController id="BeN-We-LtB" customClass="ReservaMenuViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Re" id="BeN-We-LtB" customClass="ReservaMenuViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kqS-76-jLo">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1205,17 +1205,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="yI6-s4-qwd"/>
+                    <connections>
+                        <segue destination="h01-Zs-inT" kind="show" identifier="ReservaAulaSegue" id="Jdh-MR-hml"/>
+                        <segue destination="gYM-aR-WQ3" kind="show" identifier="ReservaEquipoSegue" id="MSa-qC-wnt"/>
+                        <segue destination="9Zr-8f-XKM" kind="show" identifier="ReservaMaterialSegue" id="emT-p0-j0r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4t-ss-3xw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4105" y="-750"/>
+            <point key="canvasLocation" x="5400" y="-77"/>
         </scene>
         <!--Reserva Table View Controller-->
         <scene sceneID="80s-sm-fci">
             <objects>
                 <tableViewController id="gYM-aR-WQ3" userLabel="Reserva Table View Controller" customClass="ReservaEquipoTableViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="A2e-Nb-hbA">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -1463,7 +1468,7 @@
             <objects>
                 <tableViewController id="9Zr-8f-XKM" userLabel="Reserva Table View Controller" customClass="ReservaMaterialTableViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ccW-Ff-5LA">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
