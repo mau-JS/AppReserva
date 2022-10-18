@@ -123,10 +123,26 @@ class SignUpViewController: UIViewController {
                                     self.showError("Error guardando la información del usuario")
                                 }
                             }
-                            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
-                            //Aquí configuramos como deseamos que se presente la pantalla
-                            myWebView.modalPresentationStyle = .fullScreen
-                            self.present(myWebView, animated: true, completion: nil)
+                            let alert = UIAlertController(title: "Cuenta creada", message: "Se ha creado la cuenta, ahora puedes iniciar sesión.", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: NSLocalizedString("Aceptar", comment: "Default action"), style: .default, handler: { _ in
+                            print("hola")
+                                let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
+                                //Aquí configuramos como deseamos que se presente la pantalla
+                        
+                                myWebView.modalPresentationStyle = .fullScreen
+                                self.present(myWebView, animated: true, completion: nil)
+                            }))
+                            self.present(alert, animated: true, completion: nil)
+                            return
+//                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                                let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
+//                                //Aquí configuramos como deseamos que se presente la pantalla
+//
+//                                myWebView.modalPresentationStyle = .fullScreen
+//                                self.present(myWebView, animated: true, completion: nil)
+//                            }
+                            
+                            
                         }
                     }
                     //El usuario fue creado satisfactoriamente, ahora guardar el nombre y apellido

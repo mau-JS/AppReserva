@@ -74,6 +74,7 @@ class AddEditReservaEquipoViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpElements()
         lugarPickerView.delegate = self
         lugarPickerView.dataSource = self
         
@@ -102,6 +103,15 @@ class AddEditReservaEquipoViewController: UITableViewController {
         createDatePicker()  //Función para fecha inicial
         createDatePicker2() //Función para fecha final
 
+        
+    }
+    func setUpElements(){
+        // Para ocultar el botón de error
+        //Para dar formato a los text field y botones
+        Utilities.styleTextField(aulaTextField)
+        Utilities.styleTextField(tipoTextField)
+        Utilities.styleTextField(horarioInicial)
+        Utilities.styleTextField(horarioFinal)
         
     }
     //Código para botón de fecha

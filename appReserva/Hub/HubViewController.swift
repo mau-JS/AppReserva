@@ -22,14 +22,17 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
     
     @IBOutlet var tituloLabel: UILabel!
     @IBOutlet var cardTableView: UITableView!
-    
+    @IBOutlet var reservaButton: UIButton!
     let pictures: [UIImage] = [UIImage(systemName: "pencil")!, UIImage(systemName: "star")!, UIImage(systemName: "star")!]
     let titles: [String] = ["Laboratorio de Ciberseguridad","Exteriores 2", "Exteriores 3"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reservaButton.setTitle("Plataforma de Reservas", for: .normal)
+        reservaButton.layer.borderWidth = 1.5
         tituloLabel.text = "Bienvenido al HUB"
+        Utilities.styleFilledButton(reservaButton)
         
 //        myButton.backgroundColor = .link
 //        myButton.setTitleColor(.white, for: .normal)
@@ -71,4 +74,10 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
         
     }
     
+    @IBAction func presionaReservaButton(_ sender: Any) {
+        let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
+        //Aquí configuramos como deseamos que se presente la pantalla
+        myWebView.modalPresentationStyle = .fullScreen
+        self.present(myWebView, animated: true, completion: nil)
+    }
 }

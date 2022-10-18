@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4hC-4r-kMH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4zV-jW-0bt">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -583,7 +583,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3V4-Z0-giu">
-                                <rect key="frame" x="40" y="84.000000000000014" width="310" height="236.33333333333337"/>
+                                <rect key="frame" x="40" y="96.000000000000014" width="310" height="236.33333333333337"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kkf-wK-PbG">
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="34"/>
@@ -1097,7 +1097,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="275" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KUH-Uh-lEq">
-                                <rect key="frame" x="0.0" y="119" width="390" height="691"/>
+                                <rect key="frame" x="0.0" y="119" width="390" height="702.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cartaCell" id="nBJ-YL-lDf" customClass="CartaTableViewCell" customModule="appReserva" customModuleProvider="target">
@@ -1162,15 +1162,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4H-8O-ubR">
+                                <rect key="frame" x="260" y="760" width="120" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Qhg-G9-oU9"/>
+                                    <constraint firstAttribute="width" constant="120" id="e8R-dm-pm6"/>
+                                    <constraint firstAttribute="height" constant="50" id="gKN-Yj-Jng"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="presionaReservaButton:" destination="4zV-jW-0bt" eventType="touchUpInside" id="Avu-hC-zoe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wNX-Jn-OG4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wNX-Jn-OG4" firstAttribute="bottom" secondItem="KUH-Uh-lEq" secondAttribute="bottom" id="412-SP-Mau"/>
                             <constraint firstItem="wNX-Jn-OG4" firstAttribute="trailing" secondItem="KUH-Uh-lEq" secondAttribute="trailing" id="5Sm-6o-j2r"/>
                             <constraint firstItem="KUH-Uh-lEq" firstAttribute="leading" secondItem="wNX-Jn-OG4" secondAttribute="leading" id="BiZ-2r-k4X"/>
                             <constraint firstItem="KUH-Uh-lEq" firstAttribute="leading" secondItem="wNX-Jn-OG4" secondAttribute="leading" id="C6Z-u7-eg1"/>
+                            <constraint firstAttribute="bottom" secondItem="KUH-Uh-lEq" secondAttribute="bottom" constant="22.670000000000002" id="P8i-bT-Z2v"/>
                             <constraint firstItem="tPe-tL-XbE" firstAttribute="leading" secondItem="wNX-Jn-OG4" secondAttribute="leading" constant="20" id="RyG-n2-PCh"/>
+                            <constraint firstAttribute="trailing" secondItem="W4H-8O-ubR" secondAttribute="trailing" constant="10" id="Tlh-dz-58Q"/>
+                            <constraint firstItem="wNX-Jn-OG4" firstAttribute="bottom" secondItem="W4H-8O-ubR" secondAttribute="bottom" id="bDO-or-hle"/>
                             <constraint firstItem="tPe-tL-XbE" firstAttribute="top" secondItem="wNX-Jn-OG4" secondAttribute="top" constant="20" id="bkz-VC-Yi9"/>
                             <constraint firstItem="KUH-Uh-lEq" firstAttribute="top" secondItem="wNX-Jn-OG4" secondAttribute="top" constant="75" id="e3g-mS-vHX"/>
                             <constraint firstItem="KUH-Uh-lEq" firstAttribute="trailing" secondItem="wNX-Jn-OG4" secondAttribute="trailing" id="uuB-mQ-8xq"/>
@@ -1178,12 +1193,13 @@
                     </view>
                     <connections>
                         <outlet property="cardTableView" destination="KUH-Uh-lEq" id="bXC-Co-D5h"/>
+                        <outlet property="reservaButton" destination="W4H-8O-ubR" id="GIQ-OR-pk6"/>
                         <outlet property="tituloLabel" destination="tPe-tL-XbE" id="7Kg-Cj-o1o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nm7-9X-Uyf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3660" y="-145"/>
+            <point key="canvasLocation" x="-3672" y="-145"/>
         </scene>
         <!--First Tab View Controller-->
         <scene sceneID="Pnk-I9-Gwv">

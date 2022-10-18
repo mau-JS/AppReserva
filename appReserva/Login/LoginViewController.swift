@@ -69,9 +69,12 @@ class LoginViewController: UIViewController {
                             Usuario.id = Auth.auth().currentUser!.uid
                             let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "main") as! MainTabBarController
                             //Aquí configuramos como deseamos que se presente la pantalla
+                            
                             myWebView.modalPresentationStyle = .fullScreen
                             self.present(myWebView, animated: true, completion: nil)
+                            
 //                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            
 //                            }
                         }
                     }
@@ -84,7 +87,7 @@ class LoginViewController: UIViewController {
                             user!.sendEmailVerification(){(error) in
                                 guard error != nil else{
                                     print("Estoy aquí")
-                                    let alert = UIAlertController(title: "Verificar", message: "Se ha enviado un correo electrónico a tu cuenta para que verifiques tu cuenta", preferredStyle: .alert)
+                                    let alert = UIAlertController(title: "Verifica la cuenta", message: "Se ha enviado un correo electrónico a tu cuenta para que te verifiques.", preferredStyle: .alert)
                                     alert.addAction(UIAlertAction(title: NSLocalizedString("Aceptar", comment: "Default action"), style: .default, handler: { _ in
                                     NSLog("The \"Aceptar\" alert occured.")
                                     }))
