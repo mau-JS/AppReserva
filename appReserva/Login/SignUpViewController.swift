@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet var passwordtextField: UITextField!
     
-    @IBOutlet var registrarse: UIButton!
+
     
     
     @IBOutlet var errorLabel: UILabel!
@@ -53,7 +53,7 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(apellidosTextField)
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordtextField)
-        Utilities.styleFilledButton(registrarse)
+        
     }
     //Checando campos y validando información
     func validateFields() -> String? {
@@ -105,88 +105,39 @@ class SignUpViewController: UIViewController {
                     //Hubo un error al crear el usuario
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.button.stopAnimation(animationStyle: .shake, revertAfterDelay: 1) {
-                            self.showError("Error creando el usuario")
+                            self.showError("Error creando el usuario, ya existe una cuenta asociada al correo proporcionado.")
                                 self.errorLabel.alpha = 1
                         }
                     }
                 }
 //--------------------- Aquí es donde agregamos los nombres a la base de datos.-------------------------
                 else{
-                    //El usuario fue creado satisfactoriamente, ahora guardar el nombre y apellido
-                    //Creando el objeto donde llamaremos todas las funciones de la base de datos
-                    let db = Firestore.firestore()
-                    //Result contiene el id del usuario
-                    //result!.user.uid tiene el id del usuario
-                    
-                    db.collection("users").document(result!.user.uid).setData(["first_name": firstName,"last_name": lastName]) { (error) in
-                        if error != nil{
-                            self.showError("Error guardando la información del usuario")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.button.stopAnimation(animationStyle: .normal, revertAfterDelay: 1) {
+                            let db = Firestore.firestore()
+                            //Result contiene el id del usuario
+                            //result!.user.uid tiene el id del usuario
+                            
+                            db.collection("users").document(result!.user.uid).setData(["first_name": firstName,"last_name": lastName]) { (error) in
+                                if error != nil{
+                                    self.showError("Error guardando la información del usuario")
+                                }
+                            }
+                            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
+                            //Aquí configuramos como deseamos que se presente la pantalla
+                            myWebView.modalPresentationStyle = .fullScreen
+                            self.present(myWebView, animated: true, completion: nil)
                         }
                     }
+                    //El usuario fue creado satisfactoriamente, ahora guardar el nombre y apellido
+                    //Creando el objeto donde llamaremos todas las funciones de la base de datos
                     //Transición a página de inicio
                     
                     
-                        let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
-                        //Aquí configuramos como deseamos que se presente la pantalla
-                        myWebView.modalPresentationStyle = .fullScreen
-                        self.present(myWebView, animated: true, completion: nil)
-                    
-                }
+                } //Aquí corta el código
                 
             }
         }
-    }
-    @IBAction func presionaRegistrarse(_ sender: Any) {
-        //Validar campos y crear usuarios
-        
-        let error = validateFields()
-       
-        if error != nil{
-            //Hay un problema con los campos
-            showError(error!)
-        }
-        else{
-            //Crear usuario
-            //Transicionar a pantalla de inicio
-            //Asegurarse de que no haya espacios primero
-            let firstName = nombreTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lastName = apellidosTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let password = passwordtextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            Auth.auth().createUser(withEmail: email, password: password){(result, err) in
-                //Checar errores
-                if err != nil{
-                    //Hubo un error al crear el usuario
-                    self.showError("Error creando el usuario")
-                }
-//--------------------- Aquí es donde agregamos los nombres a la base de datos.-------------------------
-                else{
-                    //El usuario fue creado satisfactoriamente, ahora guardar el nombre y apellido
-                    //Creando el objeto donde llamaremos todas las funciones de la base de datos
-                    let db = Firestore.firestore()
-                    //Result contiene el id del usuario
-                    //result!.user.uid tiene el id del usuario
-                    
-                    db.collection("users").document(result!.user.uid).setData(["first_name": firstName,"last_name": lastName]) { (error) in
-                        if error != nil{
-                            self.showError("Error guardando la información del usuario")
-                        }
-                    }
-                    //Transición a página de inicio
-                    
-                    
-                        let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
-                        //Aquí configuramos como deseamos que se presente la pantalla
-                        myWebView.modalPresentationStyle = .fullScreen
-                        self.present(myWebView, animated: true, completion: nil)
-                    
-                }
-                
-            }
-        }
-     
-        
     }
     
     func showError(_ message: String){

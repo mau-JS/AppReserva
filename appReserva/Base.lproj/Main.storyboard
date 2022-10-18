@@ -583,48 +583,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3V4-Z0-giu">
-                                <rect key="frame" x="40" y="84" width="310" height="320.33333333333331"/>
+                                <rect key="frame" x="40" y="84.000000000000014" width="310" height="236.33333333333337"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kkf-wK-PbG">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellidos" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCT-nQ-qqF">
-                                        <rect key="frame" x="0.0" y="60" width="310" height="40"/>
+                                        <rect key="frame" x="0.0" y="54" width="310" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kS-Ty-DrQ">
-                                        <rect key="frame" x="0.0" y="120" width="310" height="40"/>
+                                        <rect key="frame" x="0.0" y="108" width="310" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gay-uW-pdS">
-                                        <rect key="frame" x="0.0" y="180" width="310" height="40"/>
+                                        <rect key="frame" x="0.0" y="162" width="310" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7D-JO-h73">
-                                        <rect key="frame" x="0.0" y="240" width="310" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="fL9-M8-80J"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Registrarse"/>
-                                        <connections>
-                                            <action selector="presionaRegistrarse:" destination="3zg-pT-Qw5" eventType="touchUpInside" id="V96-iE-3fv"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CA8-pW-QTT">
-                                        <rect key="frame" x="0.0" y="300" width="310" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="216" width="310" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.93069820800000003" green="0.1541466346" blue="0.22380354020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="f7D-JO-h73" firstAttribute="height" secondItem="Kkf-wK-PbG" secondAttribute="height" id="AEG-XE-naU"/>
                                     <constraint firstItem="hCT-nQ-qqF" firstAttribute="height" secondItem="Kkf-wK-PbG" secondAttribute="height" id="Fkg-He-6ih"/>
                                     <constraint firstItem="gay-uW-pdS" firstAttribute="height" secondItem="Kkf-wK-PbG" secondAttribute="height" id="QO4-5K-aN2"/>
                                     <constraint firstItem="8kS-Ty-DrQ" firstAttribute="height" secondItem="Kkf-wK-PbG" secondAttribute="height" id="uID-n1-u3x"/>
@@ -646,7 +634,6 @@
                         <outlet property="errorLabel" destination="CA8-pW-QTT" id="S7x-Mh-0y5"/>
                         <outlet property="nombreTextField" destination="Kkf-wK-PbG" id="g93-Bs-h4I"/>
                         <outlet property="passwordtextField" destination="gay-uW-pdS" id="2mh-p0-KlL"/>
-                        <outlet property="registrarse" destination="f7D-JO-h73" id="2HW-dF-ms4"/>
                         <segue destination="aec-LN-JMH" kind="show" identifier="main2" id="Y2G-tt-ceH"/>
                         <segue destination="SKc-2d-WBN" kind="show" identifier="MainView" id="L6y-rr-O96"/>
                     </connections>
@@ -1772,7 +1759,7 @@
         <segue reference="L6y-rr-O96"/>
         <segue reference="SbF-nS-9Uu"/>
         <segue reference="A1m-Oe-J1b"/>
-        <segue reference="hXq-M6-sV5"/>
+        <segue reference="Y2G-tt-ceH"/>
         <segue reference="AyU-Um-aBs"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemPurpleColor"/>
