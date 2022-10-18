@@ -769,6 +769,7 @@ PODS:
   - PromisesObjC (2.1.1)
   - SkeletonView (1.30.3)
   - TransitionButton (0.5.3)
+  - ViewAnimator (3.1.0)
 
 DEPENDENCIES:
   - CardSlider
@@ -779,6 +780,7 @@ DEPENDENCIES:
   - FirebaseFirestore
   - SkeletonView
   - TransitionButton
+  - ViewAnimator
 
 SPEC REPOS:
   trunk:
@@ -805,6 +807,7 @@ SPEC REPOS:
     - PromisesObjC
     - SkeletonView
     - TransitionButton
+    - ViewAnimator
 
 SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
@@ -830,7 +833,8 @@ SPEC CHECKSUMS:
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   SkeletonView: f5b099c708e42a278079a12bcaaf71c303be65a3
   TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
+  ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
 
-PODFILE CHECKSUM: 0a55d2716133f1ede2aa18bf660a236d83a9678d
+PODFILE CHECKSUM: 810d073bba4dcd8e0e40aaab2f3bfd2ac41ca93a
 
 COCOAPODS: 1.11.3

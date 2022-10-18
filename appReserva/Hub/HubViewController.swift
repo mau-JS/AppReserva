@@ -7,6 +7,7 @@
 
 import UIKit
 import CardSlider
+import ViewAnimator
 
 struct Item: CardSliderItem{
 
@@ -23,7 +24,7 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
     @IBOutlet var tituloLabel: UILabel!
     @IBOutlet var cardTableView: UITableView!
     @IBOutlet var reservaButton: UIButton!
-    let pictures: [UIImage] = [UIImage(systemName: "pencil")!, UIImage(systemName: "star")!, UIImage(systemName: "star")!]
+    let pictures: [UIImage] = [UIImage(named: "labCiberseguridad1")!, UIImage(systemName: "star")!, UIImage(systemName: "star")!]
     let titles: [String] = ["Laboratorio de Ciberseguridad","Exteriores 2", "Exteriores 3"]
     
     
@@ -37,6 +38,14 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
 //        myButton.backgroundColor = .link
 //        myButton.setTitleColor(.white, for: .normal)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let animation = AnimationType.from(direction: .left, offset: 300)
+        UIView.animate(views: cardTableView.visibleCells, animations: [animation], delay: 0.5, duration: 1)
+        
+//        cardTableView.animate(animations: <#T##[Animation]#>, reversed: <#T##Bool#>, initialAlpha: <#T##CGFloat#>, finalAlpha: <#T##CGFloat#>, delay: <#T##Double#>, duration: <#T##TimeInterval#>, usingSpringWithDamping: <#T##CGFloat#>, initialSpringVelocity: <#T##CGFloat#>, options: <#T##UIView.AnimationOptions#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

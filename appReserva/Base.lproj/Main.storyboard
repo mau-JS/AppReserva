@@ -129,6 +129,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="reservaTableView" destination="CUs-S8-Tvw" id="ehL-2M-vNf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJS-s0-MxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1111,30 +1114,30 @@
                                                     <rect key="frame" x="10" y="11" width="370" height="261"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l7A-Ed-Rdo">
-                                                            <rect key="frame" x="10" y="0.0" width="350" height="150"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="150"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="150" id="0BR-f8-Agx"/>
                                                                 <constraint firstAttribute="width" constant="150" id="1F5-Hq-pVg"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uet-1q-tQY">
-                                                            <rect key="frame" x="10" y="180" width="350" height="61"/>
+                                                            <rect key="frame" x="10" y="150" width="350" height="91"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="uet-1q-tQY" firstAttribute="top" secondItem="l7A-Ed-Rdo" secondAttribute="bottom" constant="30" id="96u-rm-gfH"/>
+                                                        <constraint firstItem="l7A-Ed-Rdo" firstAttribute="leading" secondItem="oDZ-a0-e3Y" secondAttribute="leading" id="5Mf-Cg-607"/>
                                                         <constraint firstItem="l7A-Ed-Rdo" firstAttribute="height" secondItem="oDZ-a0-e3Y" secondAttribute="height" multiplier="0.57476" id="C9X-zK-YEv"/>
                                                         <constraint firstAttribute="trailing" secondItem="uet-1q-tQY" secondAttribute="trailing" constant="10" id="CFi-LU-1Yf"/>
-                                                        <constraint firstItem="l7A-Ed-Rdo" firstAttribute="leading" secondItem="oDZ-a0-e3Y" secondAttribute="leading" constant="10" id="F38-nY-w3e"/>
                                                         <constraint firstAttribute="bottom" secondItem="uet-1q-tQY" secondAttribute="bottom" constant="20" id="FNH-wu-B4J"/>
                                                         <constraint firstItem="l7A-Ed-Rdo" firstAttribute="centerX" secondItem="oDZ-a0-e3Y" secondAttribute="centerX" id="GR5-hn-L1A"/>
-                                                        <constraint firstAttribute="trailing" secondItem="l7A-Ed-Rdo" secondAttribute="trailing" constant="10" id="ZVU-Q4-jVA"/>
+                                                        <constraint firstItem="uet-1q-tQY" firstAttribute="top" secondItem="l7A-Ed-Rdo" secondAttribute="bottom" id="NoP-1M-gf2"/>
                                                         <constraint firstItem="l7A-Ed-Rdo" firstAttribute="top" secondItem="oDZ-a0-e3Y" secondAttribute="top" id="cmd-3e-dzu"/>
                                                         <constraint firstItem="uet-1q-tQY" firstAttribute="leading" secondItem="oDZ-a0-e3Y" secondAttribute="leading" constant="10" id="eFM-Wg-XaS"/>
+                                                        <constraint firstAttribute="trailing" secondItem="l7A-Ed-Rdo" secondAttribute="trailing" id="hvc-QD-Fnn"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

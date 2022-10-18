@@ -14,4 +14,5 @@ target 'appReserva' do
   pod 'CardSlider'
   pod 'SkeletonView'
   pod 'TransitionButton'
+  pod 'ViewAnimator'
 end

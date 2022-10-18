@@ -13,7 +13,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseFirestore
 import FirebaseAnalytics
-
+import ViewAnimator
 
 
 class firstTabViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -37,14 +37,13 @@ class firstTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
-      
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
     }
     
-   
+ 
     
     
     

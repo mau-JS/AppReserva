@@ -10,10 +10,11 @@ import FirebaseCore
 import FirebaseAnalytics
 import FirebaseAuth
 import FirebaseFirestore
-
+import ViewAnimator
 
 class ReservaTableViewController: UITableViewController {
     //Al presionar el botón save se crea un objeto y es agregado al vector
+    @IBOutlet var reservaTableView: UITableView!
     let db = Firestore.firestore()
     var docID: [String] = []
     @IBAction func unwindToTableView(_ segue: UIStoryboardSegue){
@@ -81,6 +82,7 @@ class ReservaTableViewController: UITableViewController {
         
         
         
+        
             db.collection("users").document(Usuario.id).collection("reservasAula").getDocuments(){ (querySnapshot,err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -119,7 +121,6 @@ class ReservaTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -146,9 +147,8 @@ class ReservaTableViewController: UITableViewController {
         print(indexPath.row)
         
        
-        cell.showsReorderControl = true
-        // Configure the cell...
-        cell.showsReorderControl = true
+//        cell.showsReorderControl = true
+//        cell.showsReorderControl = true
         
         return cell
     }
