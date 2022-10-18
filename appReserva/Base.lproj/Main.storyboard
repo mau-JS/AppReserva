@@ -8,57 +8,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Reserva Menu Controller-->
-        <scene sceneID="ksu-xu-Or8">
-            <objects>
-                <viewController id="hV2-WE-mP7" customClass="ReservaMenuController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hdN-zb-SMV">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRp-EY-sQx">
-                                <rect key="frame" x="142" y="221" width="108" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Reserva Aula"/>
-                                <connections>
-                                    <segue destination="h01-Zs-inT" kind="show" id="0aD-NJ-6ol"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iac-xU-sCA">
-                                <rect key="frame" x="134" y="407" width="124" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Reserva Equipo"/>
-                                <connections>
-                                    <segue destination="gYM-aR-WQ3" kind="show" id="86t-MD-Wgr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1V-cA-7f6">
-                                <rect key="frame" x="130" y="585" width="132" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Reserva Material"/>
-                                <connections>
-                                    <segue destination="9Zr-8f-XKM" kind="show" id="npT-PR-mF8"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="obt-37-vrS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="OD8-pv-ZU8"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bo9-P7-8hl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4072" y="-831"/>
-        </scene>
         <!--Reserva Table View Controller-->
         <scene sceneID="GYT-XM-KBT">
             <objects>
                 <tableViewController id="h01-Zs-inT" userLabel="Reserva Table View Controller" customClass="ReservaTableViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="CUs-S8-Tvw">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -904,7 +859,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="hV2-WE-mP7" kind="relationship" relationship="rootViewController" id="n8W-sE-Sgv"/>
+                        <segue destination="BeN-We-LtB" kind="relationship" relationship="rootViewController" id="o8m-pY-9Kk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PcT-WK-wfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1239,12 +1194,37 @@
             </objects>
             <point key="canvasLocation" x="-1288" y="77"/>
         </scene>
+        <!--Reserva Menu View Controller-->
+        <scene sceneID="jSS-6E-yYf">
+            <objects>
+                <viewController id="BeN-We-LtB" customClass="ReservaMenuViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kqS-76-jLo">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3e-Id-lLN">
+                                <rect key="frame" x="174" y="228" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lpt-x8-Mpv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yI6-s4-qwd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4t-ss-3xw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4105" y="-750"/>
+        </scene>
         <!--Reserva Table View Controller-->
         <scene sceneID="80s-sm-fci">
             <objects>
                 <tableViewController id="gYM-aR-WQ3" userLabel="Reserva Table View Controller" customClass="ReservaEquipoTableViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="A2e-Nb-hbA">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -1492,7 +1472,7 @@
             <objects>
                 <tableViewController id="9Zr-8f-XKM" userLabel="Reserva Table View Controller" customClass="ReservaMaterialTableViewController" customModule="appReserva" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ccW-Ff-5LA">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -1778,7 +1758,7 @@
         <segue reference="L6y-rr-O96"/>
         <segue reference="SbF-nS-9Uu"/>
         <segue reference="A1m-Oe-J1b"/>
-        <segue reference="Y2G-tt-ceH"/>
+        <segue reference="hXq-M6-sV5"/>
         <segue reference="AyU-Um-aBs"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemPurpleColor"/>
