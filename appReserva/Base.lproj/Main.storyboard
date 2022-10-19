@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4zV-jW-0bt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4pf-kd-kDs">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -90,7 +90,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJS-s0-MxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6497" y="-77"/>
+            <point key="canvasLocation" x="6495" y="-92"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="EHf-IC-ZJy">
@@ -258,7 +258,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V4Q-Ph-LMc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7346" y="-77"/>
+            <point key="canvasLocation" x="7345" y="-92"/>
         </scene>
         <!--Cuenta View Controller-->
         <scene sceneID="c7B-7C-HCp">
@@ -852,17 +852,43 @@
                     <view key="view" contentMode="scaleToFill" id="w4x-ks-7pM">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zB-17-GBz">
+                                <rect key="frame" x="50" y="391" width="290" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SYQ-oL-DFX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cerrar Sesión"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Reservatio" translatesAutoresizingMaskIntoConstraints="NO" id="p4L-SS-zLE">
+                                <rect key="frame" x="50" y="117" width="290" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="dqP-wx-0l0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gLM-VU-O7Y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p4L-SS-zLE" firstAttribute="top" secondItem="gLM-VU-O7Y" secondAttribute="top" constant="61" id="HTe-pO-YgU"/>
+                            <constraint firstItem="p4L-SS-zLE" firstAttribute="centerX" secondItem="4zB-17-GBz" secondAttribute="centerX" id="M0i-jE-cLJ"/>
+                            <constraint firstItem="gLM-VU-O7Y" firstAttribute="bottom" secondItem="4zB-17-GBz" secondAttribute="bottom" constant="300" id="VN5-1I-cfd"/>
+                            <constraint firstItem="4zB-17-GBz" firstAttribute="leading" secondItem="gLM-VU-O7Y" secondAttribute="leading" constant="50" id="dyZ-DD-DMQ"/>
+                            <constraint firstItem="p4L-SS-zLE" firstAttribute="leading" secondItem="gLM-VU-O7Y" secondAttribute="leading" constant="50" id="fIG-Cq-vWT"/>
+                            <constraint firstItem="gLM-VU-O7Y" firstAttribute="trailing" secondItem="4zB-17-GBz" secondAttribute="trailing" constant="50" id="lB3-z6-z5v"/>
+                            <constraint firstItem="gLM-VU-O7Y" firstAttribute="trailing" secondItem="p4L-SS-zLE" secondAttribute="trailing" constant="50" id="tBM-Fz-a4b"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Salir" image="door" id="lLj-Uz-QKf"/>
                     <connections>
+                        <outlet property="botonCerrarSesion" destination="4zB-17-GBz" id="4sK-da-i8P"/>
                         <segue destination="OFL-sV-9iS" kind="show" identifier="cerrarSesion" id="RqS-XP-D87"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3L4-nh-aYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4283" y="795"/>
+            <point key="canvasLocation" x="4280" y="795"/>
         </scene>
         <!--Reservaciones-->
         <scene sceneID="QXJ-qk-sa7">
@@ -1244,7 +1270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4t-ss-3xw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5400" y="-77"/>
+            <point key="canvasLocation" x="5408" y="-92"/>
         </scene>
         <!--Reserva Table View Controller-->
         <scene sceneID="80s-sm-fci">
@@ -1732,6 +1758,7 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemPurpleColor"/>
     <resources>
+        <image name="Reservatio" width="756" height="567"/>
         <image name="door" width="8" height="11"/>
         <image name="email" width="11" height="9"/>
         <image name="logoTec" width="1600" height="424"/>

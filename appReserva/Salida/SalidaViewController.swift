@@ -8,11 +8,11 @@
 import UIKit
 
 class SalidaViewController: UIViewController {
-    
+    @IBOutlet var botonCerrarSesion: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utilities.styleFilledButton(botonCerrarSesion)
         self.performSegue(withIdentifier: "cerrarSesion", sender: nil)
     }
     
-
 }
