@@ -44,7 +44,7 @@ class ReservaEquipoTableViewController: UITableViewController
             var ref: DocumentReference? = nil
             //Aquí subimos los datos de cada reservación
             ref = db.collection("users").document(Usuario.id).collection("reservasEquipo").addDocument(data: [
-                "nombreEquipo": reserva.nombreRecurso,
+                "nombreRecurso": reserva.nombreRecurso,
                 "tipo": reserva.tipo,
                 "ubicacion": reserva.ubicacion,
                 "horarioInicio":reserva.horarioInicio,
