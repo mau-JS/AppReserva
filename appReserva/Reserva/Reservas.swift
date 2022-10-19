@@ -31,11 +31,13 @@ struct Reservas {
     
     init (json: [String: Any]){
         self.id = json ["id"] as? String ?? ""
-        self.nombreRecurso = json["Aula"] as? String ?? ""
+        self.nombreRecurso = json["nombreRecurso"] as? String ?? ""
         self.tipo = json["tipo"] as? String ?? ""
         self.ubicacion = json["ubicacion"] as? String ?? ""
         self.horarioInicio = json["horarioInicio"] as? String ?? ""
         self.horarioFinal = json["horarioFinal"] as? String ?? ""
     }
     
+    
 }
+

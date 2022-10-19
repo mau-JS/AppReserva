@@ -28,7 +28,7 @@ class ReservaMaterialTableViewController: UITableViewController
             //Aquí atrapa a los objetos agregados
             reservas[selectedIndexPath.row] = reserva
             
-            db.collection("users").document(Usuario.id).collection("reservasMaterial").document(String(docID[selectedIndexPath.row])).updateData(["nombreMaterial": reserva.nombreRecurso,"tipo": reserva.tipo, "ubicacion": reserva.ubicacion, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
+            db.collection("users").document(Usuario.id).collection("reservasMaterial").document(String(docID[selectedIndexPath.row])).updateData(["nombreRecurso": reserva.nombreRecurso,"tipo": reserva.tipo, "ubicacion": reserva.ubicacion, "horarioInicio": reserva.horarioInicio, "horarioFinal": reserva.horarioFinal])
             
             tableView.reloadRows(at: [selectedIndexPath], with: .none)
             
@@ -44,7 +44,7 @@ class ReservaMaterialTableViewController: UITableViewController
             var ref: DocumentReference? = nil
             //Aquí subimos los datos de cada reservación
             ref = db.collection("users").document(Usuario.id).collection("reservasMaterial").addDocument(data: [
-                "nombreMaterial": reserva.nombreRecurso,
+                "nombreRecurso": reserva.nombreRecurso,
                 "tipo": reserva.tipo,
                 "ubicacion": reserva.ubicacion,
                 "horarioInicio":reserva.horarioInicio,
