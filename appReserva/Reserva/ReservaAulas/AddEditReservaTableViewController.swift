@@ -45,6 +45,7 @@ class AddEditReservaTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "saveUnwind" else{return}
         let db = Firestore.firestore()
+        
         let id = Usuario.id
         let nombreRecurso = aulaTextField.text ?? ""
         let tipo = tipoTextField.text ?? ""
@@ -75,6 +76,9 @@ class AddEditReservaTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Utilities.styleTextField(aulaTextField)
+        Utilities.styleTextField(tipoTextField)
+        Utilities.styleTextField(horarioInicial)
+        Utilities.styleTextField(horarioFinal)
         //MARK: - Aquí también manipulamos pickerview
         lugarPickerView.delegate = self
         lugarPickerView.dataSource = self

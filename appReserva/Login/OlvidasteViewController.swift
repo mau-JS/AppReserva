@@ -10,22 +10,35 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseAnalytics
 import FirebaseDatabase
+import TransitionButton
 
 class OlvidasteViewController: UIViewController {
-    
+    let button = TransitionButton(frame: CGRect(x:0 ,y:-100,width: 250,height: 50))
     @IBOutlet var tituloLabel: UILabel!
     @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var enviarButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
+        button.center = view.center
+        button.backgroundColor =  UIColor.init(red: 204/255, green: 0/255, blue: 204/255, alpha: 0.5)
+        button.layer.cornerRadius = 25.0
+        button.tintColor = UIColor.white
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowRadius = 1.5
+        button.layer.cornerRadius = 12
+        button.setTitle("Restablecer Contraseña", for: .normal)
+        setUpElements()
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button.spinnerColor = .white
+        view.addSubview(button)
     }
     
     func setUpElements(){
         //Utilities.styleHollowButton(olvidasteButton)
         Utilities.styleTextField(emailTextField)
         //Utilities.styleTextField(passwordTextField)
-        Utilities.styleFilledButton(enviarButton)
+      
     }
     
 
@@ -38,26 +51,37 @@ class OlvidasteViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    @IBAction func presionaEnviarButton(_ sender: Any) {
+    @objc func didTapButton(){
+        button.startAnimation()
         let auth = Auth.auth()
         Auth.auth().languageCode = "es"
         auth.sendPasswordReset(withEmail: emailTextField.text!) { (error) in
             if let error = error{
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                           self.button.stopAnimation(animationStyle: .shake, revertAfterDelay: 1) {
+                               let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                               
+                               alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                               NSLog("The \"OK\" alert occured.")
+                               }))
+                               self.present(alert, animated: true, completion: nil)
+                           }
+                       }
                 
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-                }))
-                self.present(alert, animated: true, completion: nil)
             }
             else{
-                let alert = UIAlertController(title: "Correcto", message: "Se ha enviado un correo electrónico a tu cuenta", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-                }))
-                self.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.button.stopAnimation(animationStyle: .normal, revertAfterDelay: 1) {
+                               let alert = UIAlertController(title: "Correcto", message: "Se ha enviado un correo electrónico a tu cuenta.", preferredStyle: .alert)
+                               alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                               NSLog("The \"OK\" alert occured.")
+                               }))
+                               self.present(alert, animated: true, completion: nil)
+                           }
+                       }
+              
             }
         }
     }
+ 
 }

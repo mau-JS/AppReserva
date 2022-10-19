@@ -26,8 +26,8 @@ class TileCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect){
         super.init(frame: frame)
         contentView.addSubview(label)
-        contentView.layer.cornerRadius = 6
-        contentView.layer.borderWidth = 1.5
+        contentView.layer.cornerRadius = 20
+        contentView.layer.borderWidth = 4
         contentView.layer.borderColor = UIColor.quaternaryLabel.cgColor
     }
     required init?(coder: NSCoder) {

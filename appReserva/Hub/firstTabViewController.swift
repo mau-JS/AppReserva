@@ -17,7 +17,6 @@ import ViewAnimator
 
 
 class firstTabViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    @IBOutlet var botonSalida: UIButton!
     let imageNames = Array(1...8).map {"labCiberseguridad\($0)"}
     
     
@@ -55,6 +54,8 @@ class firstTabViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageNames.count
     }
@@ -81,7 +82,7 @@ class firstTabViewController: UIViewController, UICollectionViewDelegate, UIColl
                     image: UIImage(systemName: "photo.tv"),
                     identifier: nil,
                     discoverabilityTitle: nil,
-                    attributes: .disabled,
+                    attributes: .destructive,
                     state: .off){ _ in
                     print("tapped open")
                 }
@@ -94,7 +95,7 @@ class firstTabViewController: UIViewController, UICollectionViewDelegate, UIColl
                     image: UIImage(systemName: "photo.tv"),
                     identifier: nil,
                     discoverabilityTitle: nil,
-                    attributes: .disabled,
+                    attributes: .destructive,
                     state: .off){ _ in
                     print("tapped open")
                 }

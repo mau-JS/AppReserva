@@ -122,10 +122,12 @@ class CuentaViewController: UIViewController {
         nombreTextField.isUserInteractionEnabled.toggle()
         if nombreTextField.isUserInteractionEnabled == true{
             editarButton.setTitle("Guardar", for: .normal)
+            editarButton.setImage(UIImage(named: "checkmark.shield.fill"), for: .normal)
         }
         
         else{
             //Aquí guardamos la información del usuario
+            editarButton.setImage(UIImage(systemName: "pencil"), for: .normal)
             editarButton.setTitle("Editar", for: .normal)
             let name: String = nombreTextField.text!
             //print(name)
@@ -145,10 +147,12 @@ class CuentaViewController: UIViewController {
         apellidoTextField.isUserInteractionEnabled.toggle()
         if apellidoTextField.isUserInteractionEnabled == true{
             editarButtonApellido.setTitle("Guardar", for: .normal)
+            editarButtonApellido.setImage(UIImage(named: "checkmark.shield.fill"), for: .normal)
         }
         
         else{
             //Aquí guardamos la información del usuario
+            editarButtonApellido.setImage(UIImage(systemName: "pencil"), for: .normal)
             editarButtonApellido.setTitle("Editar", for: .normal)
             let apellido: String = nombreTextField.text!
             //print(name)
@@ -168,10 +172,12 @@ class CuentaViewController: UIViewController {
         correoTextField.isUserInteractionEnabled.toggle()
         if correoTextField.isUserInteractionEnabled == true{
             editarButtonCorreo.setTitle("Guardar", for: .normal)
+            editarButtonCorreo.setImage(UIImage(named: "checkmark.shield.fill"), for: .normal)
         }
         
         else{
             //Aquí guardamos la información del usuario
+            editarButtonCorreo.setImage(UIImage(systemName: "pencil"), for: .normal)
             editarButtonCorreo.setTitle("Editar", for: .normal)
             let correo: String = correoTextField.text!
             //print(name)
@@ -180,9 +186,7 @@ class CuentaViewController: UIViewController {
             }
             else{
                 //Aquí limpiamos de espacios el text field
-                let credential = EmailAuthProvider.credential(withEmail: "example@email.com", password: "myPassword")
-                
-                
+               // let credential = EmailAuthProvider.credential(withEmail: "example@email.com", password: "myPassword")
                 
                 let correoActual = (correoTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines))!
                 
@@ -191,7 +195,13 @@ class CuentaViewController: UIViewController {
                         print(error.localizedDescription)
                     }
                     else{
-                        print("Cambio de correo satisfactorio")
+                        let alert = UIAlertController(title: "Error", message: "Te hemos enviado un correo para que confirmes el cambio de correo.", preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                        NSLog("The \"OK\" alert occured.")
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                        print("Te hemos enviado un correo para que confirmes el cambio de correo.")
                     }
                 }
                print(correoActual)

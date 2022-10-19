@@ -11,15 +11,21 @@ import FirebaseCore
 import FirebaseAnalytics
 import FirebaseFirestore
 class AddEditReservaMaterialViewController: UITableViewController {
+    
+    
     var conteo = 0
+
+    //MARK: - Aquí declaramos los pickerview
     @IBOutlet var aulaTextField: UITextField!
-    @IBOutlet var tipoTextField: UITextField!
     @IBOutlet var horarioInicial: UITextField!
     @IBOutlet var horarioFinal: UITextField!
     @IBOutlet var saveButton: UIBarButtonItem!
     @IBAction func textEditingChanged (_ sender: UITextField){
-        
     }
+    
+    let equipos = ["Elige Material...","Licencia Matlab","Licencia AutoCAD,LicenciaPhotoshop"]
+    var equipoPickerView = UIPickerView()
+    
     var reservas: Reservas?
     //Código para fechas
     let datePicker = UIDatePicker()
@@ -37,7 +43,7 @@ class AddEditReservaMaterialViewController: UITableViewController {
         let db = Firestore.firestore()
         let id = Usuario.id
         let nombreRecurso = aulaTextField.text ?? ""
-        let tipo = tipoTextField.text ?? ""
+        let tipo = "Material"
         let ubicacion = "N/A"
         let horarioI = horarioInicial.text ?? ""
         let horarioF = horarioFinal.text ?? ""
@@ -65,11 +71,14 @@ class AddEditReservaMaterialViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        aulaTextField.inputAccessoryView =  createToolbar()
+        equipoPickerView.delegate = self
+        equipoPickerView.dataSource = self
+        aulaTextField.inputView = equipoPickerView
+        aulaTextField.textAlignment = .center
         //Aquí almacenamos los datos en los text field
         if let reservas = reservas {
             aulaTextField.text = reservas.nombreRecurso
-            tipoTextField.text = reservas.tipo
             horarioInicial.text = reservas.horarioInicio
             horarioFinal.text = reservas.horarioFinal
             title = "Editar Reserva"
@@ -105,9 +114,9 @@ class AddEditReservaMaterialViewController: UITableViewController {
     }
     //Función para botón
     func createDatePicker(){
-        
         datePicker.preferredDatePickerStyle = .wheels // Darle formato de wheels a la fecha
         datePicker.datePickerMode = .date
+        datePicker.minimumDate =  Date(timeIntervalSinceNow: 0)
         horarioInicial.inputView = datePicker
         horarioInicial.inputAccessoryView = createToolbar()
         
@@ -116,6 +125,7 @@ class AddEditReservaMaterialViewController: UITableViewController {
         
         datePicker2.preferredDatePickerStyle = .wheels // Darle formato de wheels a la fecha
         datePicker2.datePickerMode = .date
+        datePicker2.minimumDate =  Date(timeIntervalSinceNow: 0)
         horarioFinal.inputView = datePicker2
         horarioFinal.inputAccessoryView = createToolbar2()
         
@@ -146,6 +156,34 @@ class AddEditReservaMaterialViewController: UITableViewController {
         print(self.horarioFinal.text!)
         self.view.endEditing(true)
     }
-    //Terminan funciones de horario
 
+}
+extension AddEditReservaMaterialViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return equipos.count
+        
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch row{
+        case 0:
+            return ""
+        case 1,2:
+            return equipos[row]
+        default:
+            return ""
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row != 0{
+            aulaTextField.text = equipos[row]
+        }
+        else{
+            aulaTextField.text = ""
+        }
+    }
+    
 }

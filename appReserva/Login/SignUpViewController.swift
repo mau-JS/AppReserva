@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController {
         button.layer.shadowOpacity = 0.5
         button.layer.shadowRadius = 1.5
         button.layer.cornerRadius = 12
-        button.setTitle("Continue", for: .normal)
+        button.setTitle("Registrarse", for: .normal)
         setUpElements()
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.spinnerColor = .white

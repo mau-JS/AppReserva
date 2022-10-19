@@ -33,7 +33,7 @@ class AyudaViewController: UIViewController, MFMailComposeViewControllerDelegate
             vc.delegate = self
             vc.setSubject("Contáctanos")
             vc.setToRecipients(["soporte@reservatio.com"])
-            vc.setMessageBody("<h1>Necesito ayuda<h1>", isHTML: true)
+            vc.setMessageBody("<h1>Necesito ayuda con la aplicación de reservas.<h1>", isHTML: true)
             present(UINavigationController(rootViewController: vc),animated: true)
         }
         else{

@@ -20,6 +20,8 @@
 		5C83224828FB254500FD42EC /* OlvidasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C83224728FB254500FD42EC /* OlvidasteViewController.swift */; };
 		5C87906A28E35FCA00980E06 /* AddEditReservaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */; };
 		5CC02A3428ECE0700019E8CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CC02A3328ECE0700019E8CD /* GoogleService-Info.plist */; };
+		5CC6C8A32900A21F00A3D599 /* secondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6C8A22900A21F00A3D599 /* secondTabViewController.swift */; };
+		5CC6C8A52900AA6400A3D599 /* thirdTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6C8A42900AA6400A3D599 /* thirdTabViewController.swift */; };
 		5CCE173B28D94685008B9C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE173A28D94685008B9C1D /* AppDelegate.swift */; };
 		5CCE173D28D94685008B9C1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE173C28D94685008B9C1D /* SceneDelegate.swift */; };
 		5CCE174228D94685008B9C1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CCE174028D94685008B9C1D /* Main.storyboard */; };
@@ -44,6 +46,7 @@
 		5CF5C1FD28FF382D00C00E62 /* ReservaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF5C1FC28FF382D00C00E62 /* ReservaMenuViewController.swift */; };
 		5CF5C1FF28FF3A7600C00E62 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF5C1FE28FF3A7600C00E62 /* CollectionTableViewCell.swift */; };
 		5CF5C20128FF3D8900C00E62 /* TileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF5C20028FF3D8900C00E62 /* TileCollectionViewCell.swift */; };
+		5CF5C20429004D3C00C00E62 /* SalidaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF5C20329004D3C00C00E62 /* SalidaViewController.swift */; };
 		C6669B068834FE01EFA6A3C6 /* Pods_appReserva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E42BAAAA11AC73CD6BD6DE /* Pods_appReserva.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,8 @@
 		5C83224728FB254500FD42EC /* OlvidasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OlvidasteViewController.swift; sourceTree = "<group>"; };
 		5C87906928E35FCA00980E06 /* AddEditReservaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditReservaTableViewController.swift; sourceTree = "<group>"; };
 		5CC02A3328ECE0700019E8CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5CC6C8A22900A21F00A3D599 /* secondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondTabViewController.swift; sourceTree = "<group>"; };
+		5CC6C8A42900AA6400A3D599 /* thirdTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thirdTabViewController.swift; sourceTree = "<group>"; };
 		5CCE173728D94685008B9C1D /* appReserva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appReserva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCE173A28D94685008B9C1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CCE173C28D94685008B9C1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +92,7 @@
 		5CF5C1FC28FF382D00C00E62 /* ReservaMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaMenuViewController.swift; sourceTree = "<group>"; };
 		5CF5C1FE28FF3A7600C00E62 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		5CF5C20028FF3D8900C00E62 /* TileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCollectionViewCell.swift; sourceTree = "<group>"; };
+		5CF5C20329004D3C00C00E62 /* SalidaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalidaViewController.swift; sourceTree = "<group>"; };
 		69E42BAAAA11AC73CD6BD6DE /* Pods_appReserva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_appReserva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39D9B28BD332B914BBF45C4 /* Pods-appReserva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appReserva.release.xcconfig"; path = "Target Support Files/Pods-appReserva/Pods-appReserva.release.xcconfig"; sourceTree = "<group>"; };
 		CA7F82CC50BF66E27FD00336 /* Pods-appReserva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appReserva.debug.xcconfig"; path = "Target Support Files/Pods-appReserva/Pods-appReserva.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 			children = (
 				5C2FC01028EE3B65008D6605 /* HubViewController.swift */,
 				5C2FC01628EE8F19008D6605 /* firstTabViewController.swift */,
+				5CC6C8A22900A21F00A3D599 /* secondTabViewController.swift */,
+				5CC6C8A42900AA6400A3D599 /* thirdTabViewController.swift */,
 				5C2FC01228EE6576008D6605 /* CartaTableViewCell.swift */,
 			);
 			path = Hub;
@@ -152,6 +160,7 @@
 		5CCE173928D94685008B9C1D /* appReserva */ = {
 			isa = PBXGroup;
 			children = (
+				5CF5C20229004D1F00C00E62 /* Salida */,
 				5C2FC00F28EE3B35008D6605 /* Hub */,
 				5CE47BC828E5F099001AA111 /* Utilidades */,
 				5CE47BC128E5E4C3001AA111 /* Login */,
@@ -262,6 +271,14 @@
 				5CE47BCD28E5F890001AA111 /* formUtilities.swift */,
 			);
 			path = Utilidades;
+			sourceTree = "<group>";
+		};
+		5CF5C20229004D1F00C00E62 /* Salida */ = {
+			isa = PBXGroup;
+			children = (
+				5CF5C20329004D3C00C00E62 /* SalidaViewController.swift */,
+			);
+			path = Salida;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,8 +409,11 @@
 				5CE47BCA28E5F0AC001AA111 /* Utilities.swift in Sources */,
 				5CE47BC328E5E4F7001AA111 /* SignUpViewController.swift in Sources */,
 				5CE47BD028E5FAAF001AA111 /* MainViewController.swift in Sources */,
+				5CF5C20429004D3C00C00E62 /* SalidaViewController.swift in Sources */,
+				5CC6C8A32900A21F00A3D599 /* secondTabViewController.swift in Sources */,
 				5CD33CC128F748F2007DD877 /* ReservaMaterialTableViewCell.swift in Sources */,
 				5C2FC01728EE8F19008D6605 /* firstTabViewController.swift in Sources */,
+				5CC6C8A52900AA6400A3D599 /* thirdTabViewController.swift in Sources */,
 				5C2BEDF428F7B23600000EAD /* FontViewController.swift in Sources */,
 				5C2FC01328EE6576008D6605 /* CartaTableViewCell.swift in Sources */,
 				5CCE175928D956FE008B9C1D /* AyudaViewController.swift in Sources */,

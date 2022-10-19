@@ -3,4 +3,114 @@
    uuid = "422E3495-4796-48BC-AB52-72700999B1C9"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FB836DD-DC1B-40B9-989B-4877EEA72261"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "appReserva/Reserva/ReservaEquipo/AddEditReservaEquipoTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "AddEditReservaEquipoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "1FB836DD-DC1B-40B9-989B-4877EEA72261 - dabeea01029d4ed3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "appReserva.AddEditReservaEquipoViewController.conteo.getter : Swift.Int"
+                  moduleName = "appReserva"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mau/Desktop/AppReserva/appReserva/Reserva/ReservaEquipo/AddEditReservaEquipoTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "1FB836DD-DC1B-40B9-989B-4877EEA72261 - 9011558069c43c27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "appReserva.AddEditReservaEquipoViewController.conteo.setter : Swift.Int"
+                  moduleName = "appReserva"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mau/Desktop/AppReserva/appReserva/Reserva/ReservaEquipo/AddEditReservaEquipoTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "1FB836DD-DC1B-40B9-989B-4877EEA72261 - df402e58e1efb556"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "appReserva.AddEditReservaEquipoViewController.conteo.modify : Swift.Int"
+                  moduleName = "appReserva"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mau/Desktop/AppReserva/appReserva/Reserva/ReservaEquipo/AddEditReservaEquipoTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "1FB836DD-DC1B-40B9-989B-4877EEA72261 - f05de04ac4e5fd9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "appReserva.AddEditReservaEquipoViewController.conteo.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "appReserva"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mau/Desktop/AppReserva/appReserva/Reserva/ReservaEquipo/AddEditReservaEquipoTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "1FB836DD-DC1B-40B9-989B-4877EEA72261 - 345559ef02b5c7b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "appReserva.AddEditReservaEquipoViewController.init(coder: __C.NSCoder, reservas: Swift.Optional&lt;appReserva.Reservas&gt;) -&gt; Swift.Optional&lt;appReserva.AddEditReservaEquipoViewController&gt;"
+                  moduleName = "appReserva"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mau/Desktop/AppReserva/appReserva/Reserva/ReservaEquipo/AddEditReservaEquipoTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "1FB836DD-DC1B-40B9-989B-4877EEA72261 - d2dd0d1a61f2b097"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "appReserva.AddEditReservaEquipoViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;appReserva.AddEditReservaEquipoViewController&gt;"
+                  moduleName = "appReserva"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mau/Desktop/AppReserva/appReserva/Reserva/ReservaEquipo/AddEditReservaEquipoTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

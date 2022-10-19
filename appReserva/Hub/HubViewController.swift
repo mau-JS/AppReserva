@@ -20,12 +20,11 @@ struct Item: CardSliderItem{
 
 class HubViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     //Aquí creamos un arreglo de estructuras
-    
     @IBOutlet var tituloLabel: UILabel!
     @IBOutlet var cardTableView: UITableView!
     @IBOutlet var reservaButton: UIButton!
     let pictures: [UIImage] = [UIImage(named: "labCiberseguridad1")!, UIImage(systemName: "star")!, UIImage(systemName: "star")!]
-    let titles: [String] = ["Laboratorio de Ciberseguridad","Exteriores 2", "Exteriores 3"]
+    let titles: [String] = ["Laboratorio de Ciberseguridad","Laboratorio de Internet de las Cosas", "Exteriores"]
     
     
     override func viewDidLoad() {
@@ -42,10 +41,9 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let animation = AnimationType.from(direction: .left, offset: 300)
-        UIView.animate(views: cardTableView.visibleCells, animations: [animation], delay: 0.5, duration: 1)
+        let animation = AnimationType.from(direction: .left, offset: 200)
+        UIView.animate(views: cardTableView.visibleCells, animations: [animation], delay: 0.5, duration: 0.5)
         
-//        cardTableView.animate(animations: <#T##[Animation]#>, reversed: <#T##Bool#>, initialAlpha: <#T##CGFloat#>, finalAlpha: <#T##CGFloat#>, delay: <#T##Double#>, duration: <#T##TimeInterval#>, usingSpringWithDamping: <#T##CGFloat#>, initialSpringVelocity: <#T##CGFloat#>, options: <#T##UIView.AnimationOptions#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,9 +73,15 @@ class HubViewController: UIViewController,UITableViewDataSource, UITableViewDele
             self.present(myWebView, animated: true, completion: nil)
         }
         if indexPath.row == 1 {
-            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "MainView") as! MainViewController
+            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "secondTabSegue") as! secondTabViewController
             //Aquí configuramos como deseamos que se presente la pantalla
-            myWebView.modalPresentationStyle = .fullScreen
+            myWebView.modalPresentationStyle = .formSheet
+            self.present(myWebView, animated: true, completion: nil)
+        }
+        if indexPath.row == 2 {
+            let myWebView = self.storyboard!.instantiateViewController(withIdentifier: "thirdTabSegue") as! thirdTabViewController
+            //Aquí configuramos como deseamos que se presente la pantalla
+            myWebView.modalPresentationStyle = .formSheet
             self.present(myWebView, animated: true, completion: nil)
         }
         
